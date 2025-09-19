@@ -1,0 +1,265 @@
+html { font-size: 16px; }
+
+:root{
+  --cor-fundo:#f4f4f4;
+  --cor-texto:#333;
+  --cor-titulo:#222;
+  --cor-ficha:#fff;
+  --cor-borda:#aaa;
+  --cor-sombra:rgba(0,0,0,.1);
+
+  --pv-bg:#2e7d32;   --pv-soft:#e8f5e9; --pv-text:#2e7d32;
+  --ar-bg:#616161;   --ar-soft:#eeeeee; --ar-text:#424242;
+  --mana-bg:#0288d1; --mana-soft:#e3f2fd; --mana-text:#1565c0;
+  --pa-bg:#ffb300;   --pa-soft:#fff8e1; --pa-text:#f57c00;
+
+  --radius:.5rem;
+  --padding:.9375rem; /* 15px */
+  --margem:1.25rem;   /* 20px */
+  --gap:.5rem;
+}
+
+/* DARK MODE */
+body.dark{
+  --cor-fundo:#121212;
+  --cor-texto:#eaeaea;
+  --cor-titulo:#ffffff;
+  --cor-ficha:#1e1e1e;
+  --cor-borda:#3a3a3a;
+  --cor-sombra:rgba(0,0,0,.5);
+
+  --pv-soft:#163a1a;   --pv-text:#a5d6a7;
+  --ar-soft:#2a2a2a;   --ar-text:#bdbdbd;
+  --mana-soft:#0a2a3a; --mana-text:#90caf9;
+  --pa-soft:#3a2b00;   --pa-text:#ffd180;
+}
+
+/* Layout base */
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  padding:var(--margem);
+  padding-bottom:7.5rem; /* espaço para a barra fixa */
+  background:var(--cor-fundo);
+  color:var(--cor-texto);
+}
+
+.topbar{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  margin-bottom:var(--margem);
+}
+.topbar h1{ margin:0; }
+.topbar-actions{ display:flex; gap:.5rem; align-items:center; }
+
+.toggle{ display:flex; align-items:center; gap:.35rem; cursor:pointer; }
+.toggle input{ accent-color:#666; }
+
+.btn{
+  border:1px solid var(--cor-borda);
+  background:transparent;
+  padding:.45rem .75rem;
+  border-radius:.5rem;
+  cursor:pointer;
+}
+.btn:hover{ filter:brightness(0.95); }
+.btn.ghost{ opacity:.85; }
+.btn.small{ padding:.15rem .45rem; border-radius:.35rem; }
+
+/* Cartões / seções */
+h2{ margin-bottom:.625rem; color:var(--cor-titulo); }
+.ficha{
+  background:var(--cor-ficha);
+  border-radius:var(--radius);
+  padding:var(--padding);
+  margin-bottom:var(--margem);
+  box-shadow:0 .125rem .3125rem var(--cor-sombra);
+}
+.ficha label{
+  display:inline-block; width:9.375rem; margin:.3125rem .625rem; font-weight:bold;
+}
+.ficha input[type="number"]{
+  width:3.75rem; padding:.3125rem; margin-right:.625rem;
+  border-radius:var(--radius); border:.0625rem solid var(--cor-borda);
+  background:transparent; color:inherit;
+}
+.ficha span, .ficha p{
+  display:inline-block; margin-top:.3125rem; font-size:.9rem; opacity:.85;
+}
+textarea{
+  width:100%; min-height:3.75rem; margin-top:.3125rem; padding:.5rem;
+  border-radius:var(--radius); border:.0625rem solid var(--cor-borda);
+  background:transparent; color:inherit; resize:vertical;
+}
+
+/* Responsivo */
+@media (max-width:37.5rem){
+  .ficha label{ display:block; width:100%; margin-bottom:.3125rem; }
+  .ficha input[type="number"]{ width:100%; margin-bottom:.625rem; }
+}
+
+/* ==========================
+   RECURSOS VITAIS (base + extras)
+========================== */
+.recursos-vitais{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;
+  margin:1rem auto; padding:1rem;
+  background:var(--cor-ficha); border:1px solid var(--cor-borda);
+  border-radius:.5rem; box-shadow:0 2px 6px var(--cor-sombra);
+  max-width:1000px;
+}
+.recursos-vitais .recurso{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  min-width:140px; padding:.5rem;
+  border:1px solid var(--cor-borda); border-radius:.4rem;
+  background:transparent; text-align:center;
+}
+.recursos-vitais .titulo{ font-weight:bold; margin-bottom:.3rem; font-size:.95rem; }
+.recursos-vitais .valor{
+  font-size:1.1rem; font-weight:bold; padding:.35rem .6rem;
+  border-radius:.3rem; display:inline-block; min-width:2.5rem; text-align:center;
+}
+.linha-valor{ display:flex; align-items:center; gap:.5rem; margin:.25rem 0; }
+.extra-input{
+  width:4.5rem; padding:.3rem; border-radius:.35rem;
+  border:1px solid var(--cor-borda); background:transparent; color:inherit;
+}
+
+/* Cores consistentes entre painel e barra */
+.valor.vida{ background:var(--pv-soft); color:var(--pv-text);}
+.valor.armadura{ background:var(--ar-soft); color:var(--ar-text);}
+.valor.mana{ background:var(--mana-soft); color:var(--mana-text);}
+.valor.pa{ background:var(--pa-soft); color:var(--pa-text);}
+
+/* ==========================
+   BARRA FIXA (TOTAIS + controles)
+========================== */
+.barra-status{
+  position:fixed; bottom:0; left:0; width:100%;
+  background:#222; padding:.5rem;
+  display:flex; justify-content:space-around; flex-wrap:wrap; gap:.5rem;
+  box-shadow:0 -2px 6px rgba(0,0,0,.4); z-index:1000;
+}
+.status-area{ display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center; }
+
+/* Escalabilidade visual com clamp */
+.status-box{
+  width:clamp(3.2rem, 8.5vw, 5.2rem);
+  height:clamp(3.2rem, 8.5vw, 5.2rem);
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  border-radius:.5rem; font-size:.8rem; text-align:center;
+  border:1px solid #444; background:#333; color:white;
+  box-shadow:inset 0 0 5px rgba(0,0,0,.3); padding:.25rem;
+}
+.status-box span{ font-weight:bold; font-size:1rem; }
+
+.pv{ background:var(--pv-bg); }
+.ar{ background:var(--ar-bg); }
+.mana{ background:var(--mana-bg); }
+.pa{ background:var(--pa-bg); }
+
+.controls{ display:flex; gap:.25rem; margin-top:.15rem; }
+
+/*===========================
+Ajustes pontuais
+===========================*/
+/* === 1. Botões no Dark Mode === */
+body.dark .btn {
+  background: #444;         /* fundo cinza escuro */
+  border-color: #666;
+  color: #fff;
+}
+body.dark .btn:hover {
+  background: #555;
+}
+
+/* === 2. Inputs e Textareas não ultrapassarem container === */
+input, textarea {
+  box-sizing: border-box;
+  max-width: 100%; /* nunca passar do limite */
+}
+
+/* === 3. Espaço extra no fim da página (para barra fixa não cobrir) === */
+body {
+  padding-bottom: 20rem; /* antes era 7.5rem, agora tem folga extra */
+}
+
+/* === 4. Especializações em Grid === */
+.ficha.especializacoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: .75rem;
+}
+.ficha.especializacoes label {
+  width: auto; /* libera a largura fixa */
+  margin: 0;
+}
+.ficha.especializacoes input {
+  width: 100%;
+  margin: 0;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: var(--cor-ficha);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  border-radius: .5rem;
+  min-width: 180px;
+  z-index: 1001;
+  right: 0;
+}
+
+.dropdown-content .btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ==========================
+   IMPRESSÃO EM PDF
+========================== */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .topbar,
+  .barra-status,
+  .dropdown,
+  .btn,
+  .toggle {
+    display: none !important;
+  }
+
+  .ficha, .recursos-vitais {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  textarea, input {
+    border: none !important;
+    background: transparent !important;
+    color: black !important;
+  }
+}
+
