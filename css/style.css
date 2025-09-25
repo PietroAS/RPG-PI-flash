@@ -335,10 +335,9 @@ textarea {
 /*===========================
 Ajustes pontuais
 ===========================*/
-/* === 1. Botões no Dark Mode === */
+/* === Botões no Dark Mode === */
 body.dark .btn {
   background: #444;
-  /* fundo cinza escuro */
   border-color: #666;
   color: #fff;
 }
@@ -347,22 +346,20 @@ body.dark .btn:hover {
   background: #555;
 }
 
-/* === 2. Inputs e Textareas não ultrapassarem container === */
+/* === Inputs e Textareas não ultrapassarem container === */
 input,
 textarea {
   box-sizing: border-box;
-  max-width: 100%;
-  /* nunca passar do limite */
+  max-width: 100%; /* nunca passar do limite */
 }
 
-/* === 3. Espaço extra no fim da página (para barra fixa não cobrir) === */
+/* === Espaço extra no fim da página (para barra fixa não cobrir) === */
 body {
   padding-bottom: 20rem;
-  /* antes era 7.5rem, agora tem folga extra */
 }
 
 /*===========================
-Informaçoes do Personagem
+Informaçoes Basicas do Personagem
 ===========================*/
 #basicos h2 {
   display: flex;
@@ -370,27 +367,31 @@ Informaçoes do Personagem
   flex-basis: 100%;
 }
 
-/* Alinha label + input lado a lado */
 #basicos .conteudo {
-  margin: 0 auto; /* centraliza na página */
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-  gap: 1rem; /* espaço entre colunas/linhas */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
   width: 100%;
+  box-sizing: border-box; /* evita overflow */
 }
 
-#basicos label {
-  font-weight: bold;
+#basicos div {
+  display: flex;
+  align-items: center;
 }
 
 #basicos input {
-  flex: 1;
+  width: 100%; /* ocupa toda a coluna */
   padding: 0.3rem;
   border: 1px solid var(--cor-borda);
   border-radius: var(--radius);
   background: transparent;
   color: inherit;
+  box-sizing: border-box;
+  /* impede que a borda aumente o tamanho */
 }
+
 
 /* === 4. Especializações em Grid === */
 .ficha.especializacoes {
@@ -464,7 +465,8 @@ Informaçoes do Personagem
   }
 
   #basicos label {
-    width: 100%; /* ocupa a linha inteira */
+    width: 100%;
+    /* ocupa a linha inteira */
     margin-bottom: 0.25rem;
   }
 
