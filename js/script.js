@@ -260,6 +260,23 @@ function restaurarLocal() {
 }
 
 // =========================
+// Toggle barra fixa
+// =========================
+
+const barra = document.querySelector('.barra-status');
+const btnGaveta = document.getElementById('toggleBarra');
+
+if (btnGaveta && barra) {
+  btnGaveta.addEventListener('click', () => {
+    const collapsed = barra.classList.toggle('colapsada');
+    btnGaveta.textContent = collapsed ? '▲' : '▼';
+    btnGaveta.setAttribute('aria-expanded', String(!collapsed));
+  });
+}
+
+
+
+// =========================
 // Inicialização
 // =========================
 document.addEventListener("DOMContentLoaded", () => { restaurarLocal(); bindInputs(); atualizarTudo(); });

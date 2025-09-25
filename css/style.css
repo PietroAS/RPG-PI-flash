@@ -116,6 +116,9 @@ body {
 h2 {
   margin-bottom: 0.625rem;
   color: var(--cor-titulo);
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
 }
 
 .ficha {
@@ -350,39 +353,35 @@ body.dark .btn:hover {
 input,
 textarea {
   box-sizing: border-box;
-  max-width: 100%; /* nunca passar do limite */
-}
-
-/* === Espaço extra no fim da página (para barra fixa não cobrir) === */
-body {
-  padding-bottom: 20rem;
+  max-width: 100%;
+  /* nunca passar do limite */
 }
 
 /*===========================
-Informaçoes Basicas do Personagem
+Informaçoes Basicas e especializações
 ===========================*/
-#basicos h2 {
-  display: flex;
-  flex-wrap: wrap;
-  flex-basis: 100%;
-}
 
-#basicos .conteudo {
+#basicos .conteudo,
+#especializacoes .conteudo {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   width: 100%;
-  box-sizing: border-box; /* evita overflow */
+  box-sizing: border-box;
+  /* evita overflow */
 }
 
-#basicos div {
+#basicos div,
+#especializacoes div {
   display: flex;
   align-items: center;
 }
 
-#basicos input {
-  width: 100%; /* ocupa toda a coluna */
+#basicos input,
+#especializaçoes input {
+  width: 100%;
+  /* ocupa toda a coluna */
   padding: 0.3rem;
   border: 1px solid var(--cor-borda);
   border-radius: var(--radius);
@@ -393,23 +392,73 @@ Informaçoes Basicas do Personagem
 }
 
 
-/* === 4. Especializações em Grid === */
-.ficha.especializacoes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0.75rem;
+/*botão toggle barra fixa*/
+/* Botão de toggle */
+.toggle-barra {
+  position: absolute;
+  top: -1.8rem;
+  right: 1rem;
+  z-index: 1001;
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+  border-radius: .4rem .4rem 0 0;
+  cursor: pointer;
+  padding: .25rem .5rem;
 }
 
-.ficha.especializacoes label {
-  width: auto;
-  /* libera a largura fixa */
-  margin: 0;
+:root {
+  --handle-h: 1.75rem;
 }
 
-.ficha.especializacoes input {
+.barra-status {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  margin: 0;
+  background: #222;
+  padding: .5rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: .5rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, .4);
+  z-index: 1000;
+  transition: transform .25s ease;
+  /* anima a gaveta */
 }
+
+/* “Aba” (handle) que fica para fora da barra */
+.barra-status .handle {
+  position: absolute;
+  top: calc(-1 * var(--handle-h));
+  /* fica acima da barra */
+  left: 50%;
+  transform: translateX(-50%);
+  height: var(--handle-h);
+  line-height: var(--handle-h);
+  padding: 0 .75rem;
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+  border-bottom: none;
+  border-radius: .5rem .5rem 0 0;
+  cursor: pointer;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, .25);
+  z-index: 1001;
+}
+
+/* Estado recolhido: empurra a barra para baixo deixando só a aba visível */
+.barra-status.colapsada {
+  transform: translateY(calc(100% - var(--handle-h)));
+}
+
+
+
+
+/* ==========================
+ Export button
+========================= */
 
 .dropdown {
   position: relative;
@@ -439,7 +488,7 @@ Informaçoes Basicas do Personagem
   display: block;
 }
 
-/* Responsivo */
+/* Responsividade */
 @media (max-width: 37.5rem) {
   .ficha label {
     display: block;

@@ -37,26 +37,26 @@
         <h2>Informações do Personagem</h2>
         <div class="conteudo">
             <div><label for="nome">Nome:</label>
-            <input type="text" id="nome" placeholder="Digite o nome">
-        </div>
-        <div><label for="idade">Idade:</label>
-            <input type="number" id="idade" min="0" value="0">
-        </div>
-        <div><label for="sexo">Sexo:</label>
-            <input type="text" id="sexo" placeholder="M/F">
-        </div>
-        <div><label for="tamanho">Tamanho:</label>
-            <input type="text" id="tamanho" placeholder="Pequeno / Médio / Grande">
-        </div>
-        <div><label for="raca">Raça:</label>
-            <input type="text" id="raca" placeholder="Ex: Humano, Elfo">
-        </div>
-        <div><label for="cor">Cor:</label>
-            <input type="text" id="cor" placeholder="Descrição de cor/pele">
-        </div>
-        <div> <label for="nivel">Nível:</label>
-            <input type="number" id="nivel" min="1" value="1">
-        </div>
+                <input type="text" id="nome" placeholder="Digite o nome">
+            </div>
+            <div><label for="idade">Idade:</label>
+                <input type="number" id="idade" min="0" value="0">
+            </div>
+            <div><label for="sexo">Sexo:</label>
+                <input type="text" id="sexo" placeholder="M/F">
+            </div>
+            <div><label for="tamanho">Tamanho:</label>
+                <input type="text" id="tamanho" placeholder="Pequeno / Médio / Grande">
+            </div>
+            <div><label for="raca">Raça:</label>
+                <input type="text" id="raca" placeholder="Ex: Humano, Elfo">
+            </div>
+            <div><label for="cor">Cor:</label>
+                <input type="text" id="cor" placeholder="Descrição de cor/pele">
+            </div>
+            <div> <label for="nivel">Nível:</label>
+                <input type="number" id="nivel" min="1" value="1">
+            </div>
 
         </div>
 
@@ -180,17 +180,31 @@
     </section>
 
     <!-- Especializações -->
-    <section class="ficha" class="ficha especializacoes">
+    <section class="ficha" id="especializacoes">
         <h2>Especializações</h2>
-        <label for="forca">Força:</label><input type="number" id="forca" value="0" min="0">
-        <label for="agilidade">Agilidade:</label><input type="number" id="agilidade" value="0" min="0">
-        <label for="destreza">Destreza:</label><input type="number" id="destreza" value="0" min="0">
-        <label for="resistencias">Resistências:</label><input type="number" id="resistencias" value="0" min="0">
-        <label for="vitalidade">Vitalidade:</label><input type="number" id="vitalidade" value="0" min="0">
-        <label for="sabedoria">Sabedoria:</label><input type="number" id="sabedoria" value="0" min="0">
-        <label for="inteligencia">Inteligência:</label><input type="number" id="inteligencia" value="0" min="0">
-        <label for="carisma">Carisma:</label><input type="number" id="carisma" value="0" min="0">
-        <label for="percepcao">Percepção:</label><input type="number" id="percepcao" value="0" min="0">
+        <div class="conteudo">
+            <div><label for="forca">Força:</label><input type="number" id="forca" value="0" min="0"></div>
+            <div> <label for="agilidade">Agilidade:</label><input type="number" id="agilidade" value="0" min="0">
+            </div>
+            <div> <label for="destreza">Destreza:</label><input type="number" id="destreza" value="0" min="0">
+            </div>
+            <div> <label for="resistencias">Resistências:</label><input type="number" id="resistencias" value="0"
+                    min="0">
+            </div>
+            <div> <label for="vitalidade">Vitalidade:</label><input type="number" id="vitalidade" value="0" min="0">
+            </div>
+            <div> <label for="sabedoria">Sabedoria:</label><input type="number" id="sabedoria" value="0" min="0">
+            </div>
+            <div> <label for="inteligencia">Inteligência:</label><input type="number" id="inteligencia" value="0"
+                    min="0">
+            </div>
+            <div> <label for="carisma">Carisma:</label><input type="number" id="carisma" value="0" min="0">
+            </div>
+            <div> <label for="percepcao">Percepção:</label><input type="number" id="percepcao" value="0" min="0">
+            </div>
+        </div>
+
+
     </section>
 
     <!-- Pontos de Ação (texto) -->
@@ -231,6 +245,8 @@
 
     <!-- Barra Fixa de Status (exibe TOTAIS com +/- para dano/gasto) -->
     <footer class="barra-status">
+        <button id="toggleBarra" class="handle" aria-expanded="true" title="Recolher/Expandir">▼</button>
+
         <!-- Vida por parte -->
         <div class="status-area">
             <div class="status-box pv" data-type="pv" data-id="6">Cabeça<br><span>-</span>
