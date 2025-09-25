@@ -53,12 +53,13 @@ body.dark {
 /* Layout base */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
+  margin: auto;
   padding: var(--margem);
   padding-bottom: 7.5rem;
   /* espaço para a barra fixa */
   background: var(--cor-fundo);
   color: var(--cor-texto);
+  max-width: 80%;
 }
 
 .topbar {
@@ -196,7 +197,6 @@ textarea {
   background: var(--cor-ficha);
   border-radius: 0.5rem;
   box-shadow: 0 2px 6px var(--cor-sombra);
-  max-width: 1000px;
 }
 
 .recursos-vitais .recurso {
