@@ -403,9 +403,9 @@ Informaçoes Basicas e especializações
   background: #444;
   color: #fff;
   border: 1px solid #666;
-  border-radius: .4rem .4rem 0 0;
+  border-radius: 0.4rem 0.4rem 0 0;
   cursor: pointer;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
 }
 
 :root {
@@ -418,14 +418,14 @@ Informaçoes Basicas e especializações
   left: 0;
   width: 100%;
   background: #222;
-  padding: .5rem;
+  padding: 0.5rem;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: .5rem;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, .4);
+  gap: 0.5rem;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
   z-index: 1000;
-  transition: transform .25s ease;
+  transition: transform 0.25s ease;
   /* anima a gaveta */
 }
 
@@ -438,14 +438,14 @@ Informaçoes Basicas e especializações
   transform: translateX(-50%);
   height: var(--handle-h);
   line-height: var(--handle-h);
-  padding: 0 .75rem;
+  padding: 0 0.75rem;
   background: #444;
   color: #fff;
   border: 1px solid #666;
   border-bottom: none;
-  border-radius: .5rem .5rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   cursor: pointer;
-  box-shadow: 0 -1px 4px rgba(0, 0, 0, .25);
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.25);
   z-index: 1001;
 }
 
@@ -454,6 +454,30 @@ Informaçoes Basicas e especializações
   transform: translateY(calc(100% - var(--handle-h)));
 }
 
+.abas-barra {
+  position: absolute;
+  top: -1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.25rem;
+  z-index: 2001;
+}
+
+.abas-barra .aba {
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+  border-bottom: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.abas-barra .aba:hover {
+  background: #555;
+}
 
 /*===========================
 Painel De Regras
@@ -467,7 +491,7 @@ Painel De Regras
   height: 70%;
   background: var(--cor-ficha);
   border-top: 2px solid var(--cor-borda);
-  box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
   transform: translateY(100%);
   transition: transform 0.3s ease;
   z-index: 2000;
@@ -492,7 +516,6 @@ Painel De Regras
   align-self: flex-end;
   margin: 0.5rem;
 }
-
 
 /* ==========================
  Export button
