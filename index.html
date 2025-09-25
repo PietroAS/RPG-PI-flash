@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RPG PI FLASH</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon1.ico">
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
 </head>
@@ -27,9 +28,10 @@
                     <label for="importJson" class="btn small">Importar JSON</label>
                     <input type="file" id="importJson" accept=".json" style="display:none;">
                 </div>
-
-
             </div>
+            <button id="btnAbrirRegras" class="btn">📖 Regras</button>
+
+
     </header>
 
     <!-- Informações do Personagem -->
@@ -245,6 +247,18 @@
 
     <!-- Barra Fixa de Status (exibe TOTAIS com +/- para dano/gasto) -->
     <footer class="barra-status">
+
+        <!-- Painel de Regras -->
+        <div id="painelRegras" class="painel-regras">
+            <button id="fecharRegras" class="btn small fechar">✖ Fechar</button>
+            <div class="conteudo-regras">
+                <h2>📖 Regras — RPG PI FLASH</h2>
+                <div id="textoRegras">Carregando regras...</div>
+            </div>
+        </div>
+        </div>
+
+
         <button id="toggleBarra" class="handle" aria-expanded="true" title="Recolher/Expandir">▼</button>
 
         <!-- Vida por parte -->

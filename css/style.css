@@ -391,8 +391,9 @@ Informaçoes Basicas e especializações
   /* impede que a borda aumente o tamanho */
 }
 
-
-/*botão toggle barra fixa*/
+/*==========================
+/*botão toggle barra fixa
+===========================*/
 /* Botão de toggle */
 .toggle-barra {
   position: absolute;
@@ -454,6 +455,43 @@ Informaçoes Basicas e especializações
 }
 
 
+/*===========================
+Painel De Regras
+============================*/
+/* Painel de Regras (oculto por padrão) */
+.painel-regras {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70%;
+  background: var(--cor-ficha);
+  border-top: 2px solid var(--cor-borda);
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estado visível */
+.painel-regras.aberto {
+  transform: translateY(0);
+}
+
+/* Conteúdo interno */
+.painel-regras .conteudo-regras {
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Botão de fechar */
+.painel-regras .fechar {
+  align-self: flex-end;
+  margin: 0.5rem;
+}
 
 
 /* ==========================

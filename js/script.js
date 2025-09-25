@@ -274,6 +274,48 @@ if (btnGaveta && barra) {
   });
 }
 
+//==========================
+// Painel de Regras
+//==========================
+
+// Abrir painel de regras
+byId('btnAbrirRegras')?.addEventListener('click', ()=>{
+  const painel = byId('painelRegras');
+  painel?.classList.add('aberto');
+
+  // Se ainda não carregou, busca o REGRAS.md
+  const container = byId('textoRegras');
+  if (container && !container.dataset.loaded) {
+    fetch("https://raw.githubusercontent.com/PietroAS/RPG-PI-flash/main/REGRAS.md")
+      .then(r => r.text())
+      .then(md => {
+        // Conversor simples de Markdown -> HTML (bem básico)
+        const html = md
+          .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+          .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+          .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+          .replace(/\*\*(.*?)\*\*/gim, '<b>$1</b>')
+          .replace(/\*(.*?)\*/gim, '<i>$1</i>')
+          .replace(/^\- (.*$)/gim, '<li>$1</li>')
+          .replace(/\n/g, '<br>');
+        
+        container.innerHTML = html;
+        container.dataset.loaded = "true"; // marca como já carregado
+      })
+      .catch(err => {
+        container.innerHTML = "❌ Erro ao carregar regras.";
+        console.error(err);
+      });
+  }
+});
+
+// Fechar painel de regras
+byId('fecharRegras')?.addEventListener('click', ()=>{
+  byId('painelRegras')?.classList.remove('aberto');
+});
+
+
+
 
 
 // =========================
