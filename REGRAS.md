@@ -148,7 +148,7 @@ Cada arma tem 3 tipos de ataque:
 ➡️ Dano mínimo: 0.5 (só se superar armadura, exceto ataques penetrantes).  
 
 **(Opcional) Ataques guiados**:  
-O jogador pode tentar acertar uma parte específica. Para isso, rola o d6 de região junto com o ataque. Se errar a região, subtrai a diferença do resultado do ataque.  
+O jogador pode tentar acertar uma parte específica. Para isso declara aonde quer acertar e rola o d6 da Região de Acerto junto com o ataque. Se errar a região (O valor não corresponder), subtrai a diferença do resultado do ataque.  
 
 ---
 
@@ -175,11 +175,11 @@ Escudos pequenos/médios → jogador pode **defender** (bônus do escudo) ou **e
 - Conjurar custa **1 PA + custo de mana**.  
 
 **Custos adicionais de modificadores**:  
-- +1 dano → (1)  
+- +1 dano → (+1)  
 - Poderosa (dano ×2, 1 rodada inteira) → (+2)  
-- Rápida (½ dano, de graça a cada X turnos) → (+2)  
+- Rápida (½ dano, sem custo de PA, a cada X turnos) → (+2)  
 - Alvo adicional → (+1 cada)  
-- Área → (+3 zona)  
+- Área → (+3 por zona)  
 - Alcance extra (por zona) → (+1 cada)  
 - Tipo (dano, cura, controle, utilidade) → (+0 por 1, +1 para extra)  
 
@@ -220,9 +220,9 @@ Adicionam dado na defesa:
 
 ### 📦 PONTOS POR EQUIPAMENTOS
 - Armas simples → 1  
-- Armas mágicas → 3  
-- Armaduras simples → 0.5 por parte  
-- Armaduras mágicas → 3 por parte  
+- Armas mágicas/avançadas → 3  
+- Armaduras simples → 0.5 por parte
+- Armaduras mágicas/avançadas → 3 por parte  
 
 ---
 
