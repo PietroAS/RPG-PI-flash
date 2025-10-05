@@ -506,7 +506,7 @@ Painel De Regras
 
 /* Conteúdo interno */
 .painel-regras .conteudo-regras {
-  padding: 1rem;
+  padding: 1% 5%;
   overflow-y: auto;
   flex: 1;
 }
