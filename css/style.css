@@ -499,6 +499,10 @@ Painel De Regras
   flex-direction: column;
 }
 
+#painelRegras {
+  scroll-behavior: smooth;
+}
+
 /* Estado visível */
 .painel-regras.aberto {
   transform: translateY(0);

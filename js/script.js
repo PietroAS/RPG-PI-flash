@@ -435,16 +435,37 @@ byId("toggleRegras")?.addEventListener("click", () => {
     )
       .then((r) => r.text())
       .then((md) => {
-        const html = md
-          .replace(/^# (.*$)/gim, "<h1>$1</h1>")
-          .replace(/^## (.*$)/gim, "<h2>$1</h2>")
-          .replace(/^### (.*$)/gim, "<h3>$1</h3>")
-          .replace(/\*\*(.*?)\*\*/gim, "<b>$1</b>")
-          .replace(/\*(.*?)\*/gim, "<i>$1</i>")
-          .replace(/^\- (.*$)/gim, "<li>$1</li>")
-          .replace(/\n/g, "<br>");
-        container.innerHTML = html;
+        // ✅ Novo parser Markdown completo (usa o Marked.js)
+        container.innerHTML = marked.parse(md);
         container.dataset.loaded = "true";
+
+        // Gera IDs automáticos para títulos, igual ao GitHub
+        container.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((h) => {
+          const id = h.textContent
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w]+/g, "-"); // troca espaços e acentos por "-"
+          h.id = id;
+        });
+
+        // Faz com que links internos rolem dentro do painel, em vez de recarregar
+        container.querySelectorAll("a").forEach((a) => {
+          const href = a.getAttribute("href");
+
+          // Se for um link interno (#algo)
+          if (href && href.startsWith("#")) {
+            a.addEventListener("click", (e) => {
+              e.preventDefault();
+              const alvo = container.querySelector(href);
+              if (alvo) {
+                alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            });
+          } else {
+            // Links externos abrem em nova aba
+            a.target = "_blank";
+          }
+        });
       })
       .catch(() => {
         container.innerHTML = "❌ Erro ao carregar regras.";
