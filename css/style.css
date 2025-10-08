@@ -600,7 +600,8 @@ Painel De Regras
   .barra-status,
   .dropdown,
   .btn,
-  .toggle {
+  .toggle,
+  #painelRegras {
     display: none !important;
   }
 
