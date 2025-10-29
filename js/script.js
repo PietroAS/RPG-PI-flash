@@ -393,7 +393,7 @@ function salvarLocal() {
   };
   try {
     localStorage.setItem(LS_KEY, JSON.stringify(payload));
-  } catch {}
+  } catch { }
 }
 
 function restaurarLocal() {
@@ -411,7 +411,7 @@ function restaurarLocal() {
     state.dark = !!saved.dark;
     if (byId("toggleDark")) byId("toggleDark").checked = state.dark;
     document.body.classList.toggle("dark", state.dark);
-  } catch {}
+  } catch { }
 }
 
 // ==================================================
@@ -430,52 +430,120 @@ byId("toggleRegras")?.addEventListener("click", () => {
 
   const container = byId("textoRegras");
   if (container && !container.dataset.loaded) {
-    fetch(
-      "https://raw.githubusercontent.com/PietroAS/RPG-PI-flash/main/REGRAS.md"
-    )
-      .then((r) => r.text())
-      .then((md) => {
-        // ✅ Novo parser Markdown completo (usa o Marked.js)
-        container.innerHTML = marked.parse(md);
-        container.dataset.loaded = "true";
+    const CACHE_KEY = "regras_md_cache_v1";
+    const REGRAS_URLS = [
+      // 1) URL relativa (recomendado: coloque REGRAS.md na raiz do site)
+      "REGRAS.md",
+      // 2) GitHub Pages absoluto (caso o site esteja em subpasta)
+      "https://pietroas.github.io/RPG-PI-flash/REGRAS.md",
+      // 3) CDN cacheada (rápida e com menos rate limit)
+      "https://cdn.jsdelivr.net/gh/PietroAS/RPG-PI-flash/REGRAS.md",
+      // 4) Raw (último recurso)
+      "https://raw.githubusercontent.com/PietroAS/RPG-PI-flash/main/REGRAS.md",
+    ];
 
-        // Gera IDs automáticos para títulos, igual ao GitHub
-        container.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((h) => {
-          const id = h.textContent
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w]+/g, "-"); // troca espaços e acentos por "-"
-          h.id = id;
-        });
+    // 0) Se houver cache, renderiza já (e depois tentamos atualizar em bg)
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
+      renderRegras(cached, container);
+      container.dataset.loaded = "true";
+    }
 
-        // Faz com que links internos rolem dentro do painel, em vez de recarregar
-        container.querySelectorAll("a").forEach((a) => {
-          const href = a.getAttribute("href");
-
-          // Se for um link interno (#algo)
-          if (href && href.startsWith("#")) {
-            a.addEventListener("click", (e) => {
-              e.preventDefault();
-              const alvo = container.querySelector(href);
-              if (alvo) {
-                alvo.scrollIntoView({ behavior: "smooth", block: "start" });
-              }
-            });
-          } else {
-            // Links externos abrem em nova aba
-            a.target = "_blank";
+    // 1) Tenta baixar das fontes em cascata
+    (async () => {
+      for (const url of REGRAS_URLS) {
+        try {
+          const resp = await fetch(url, { cache: "no-cache" });
+          if (resp.ok) {
+            const md = await resp.text();
+            // Evita re-renderizar idêntico desnecessariamente
+            if (!cached || cached !== md) {
+              renderRegras(md, container);
+              localStorage.setItem(CACHE_KEY, md);
+              container.dataset.loaded = "true";
+            }
+            return; // sucesso, para aqui
           }
-        });
-      })
-      .catch(() => {
-        container.innerHTML = "❌ Erro ao carregar regras.";
-      });
+        } catch (e) {
+          // tenta próxima URL
+        }
+      }
+      // 2) Se chegou aqui, falhou tudo
+      if (!cached) {
+        container.innerHTML = `
+        <div style="padding:1rem">
+          ❌ Não foi possível carregar as regras agora (limite de requisições).
+          <br><br>
+          <a href="https://github.com/PietroAS/RPG-PI-flash/blob/main/REGRAS.md" target="_blank" rel="noopener">
+            Abrir REGRAS.md no GitHub
+          </a>
+        </div>`;
+      }
+    })();
   }
+
 });
 
 byId("fecharRegras")?.addEventListener("click", () => {
   painelRegras.classList.remove("aberto");
 });
+
+function renderRegras(md, container) {
+  // 1) Converte Markdown → HTML com Marked (já incluído no <head>)
+  container.innerHTML = marked.parse(md);
+
+  // 2) Gera IDs nos títulos (slug estilo GitHub) para o índice funcionar
+  const slugify = (() => {
+    const used = new Map();
+    return (raw) => {
+      let base = (raw || "")
+        .toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove acentos
+        .replace(/[^a-z0-9\s-]/g, '')                    // remove pontuação
+        .trim()
+        .replace(/\s+/g, '-')                            // espaços → hífen
+        .replace(/-+/g, '-');                            // hífens repetidos
+      const count = used.get(base) || 0;
+      used.set(base, count + 1);
+      return count ? `${base}-${count}` : base;
+    };
+  })();
+
+  container.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(h => {
+    if (!h.id || !h.id.trim()) h.id = slugify(h.textContent || '');
+  });
+
+  // 3) Links internos rolam dentro do painel; externos abrem em nova aba
+  container.querySelectorAll('a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (!href) return;
+
+    let hash = null;
+    try {
+      const url = new URL(href, window.location.href);
+      if (url.hash && url.origin === location.origin && url.pathname === location.pathname) {
+        hash = url.hash; // âncora interna via URL absoluta
+      }
+    } catch {
+      // href pode ser só "#algo"
+    }
+    if (!hash && href.startsWith('#')) hash = href;
+
+    if (hash) {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = decodeURIComponent(hash.slice(1));
+        const sel = typeof CSS !== 'undefined' && CSS.escape ? `#${CSS.escape(id)}` : `#${id.replace(/"/g, '\\"')}`;
+        const alvo = container.querySelector(sel);
+        if (alvo) alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    } else {
+      a.target = '_blank';
+      a.rel = 'noopener';
+    }
+  });
+}
+
 
 // ==================================================
 // 🚀 INICIALIZAÇÃO
