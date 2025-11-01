@@ -489,60 +489,92 @@ byId("fecharRegras")?.addEventListener("click", () => {
 });
 
 function renderRegras(md, container) {
-  // 1) Converte Markdown → HTML com Marked (já incluído no <head>)
+  // 1) Markdown -> HTML
   container.innerHTML = marked.parse(md);
 
-  // 2) Gera IDs nos títulos (slug estilo GitHub) para o índice funcionar
+  // 2) Slugify estilo GitHub + IDs únicos nos títulos
   const slugify = (() => {
     const used = new Map();
     return (raw) => {
       let base = (raw || "")
         .toLowerCase()
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove acentos
-        .replace(/[^a-z0-9\s-]/g, '')                    // remove pontuação
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
+        .replace(/[^a-z0-9\s-]/g, "")                    // remove pontuação
         .trim()
-        .replace(/\s+/g, '-')                            // espaços → hífen
-        .replace(/-+/g, '-');                            // hífens repetidos
-      const count = used.get(base) || 0;
-      used.set(base, count + 1);
-      return count ? `${base}-${count}` : base;
+        .replace(/\s+/g, "-")                            // espaços -> hífen
+        .replace(/-+/g, "-");                            // colapsa hífens
+      const n = used.get(base) || 0;
+      used.set(base, n + 1);
+      return n ? `${base}-${n}` : base;
     };
   })();
 
-  container.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(h => {
-    if (!h.id || !h.id.trim()) h.id = slugify(h.textContent || '');
+  container.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(h => {
+    if (!h.id || !h.id.trim()) h.id = slugify(h.textContent || "");
   });
 
-  // 3) Links internos rolam dentro do painel; externos abrem em nova aba
-  container.querySelectorAll('a').forEach(a => {
-    const href = a.getAttribute('href');
+  // 3) Helpers de âncora
+  const normalizeSlug = (s) => (s || "")
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+
+  const queryByIdSafe = (root, id) => {
+    const sel = (typeof CSS !== "undefined" && CSS.escape)
+      ? `#${CSS.escape(id)}`
+      : `#${id.replace(/"/g, '\\"')}`;
+    return root.querySelector(sel);
+  };
+
+  const findAnchorIn = (root, rawHash) => {
+    if (!rawHash) return null;
+    const decoded = decodeURIComponent(rawHash.replace(/^#/, ""));
+    // tenta direto
+    let el = queryByIdSafe(root, decoded);
+    if (el) return el;
+    // tenta normalizado
+    el = queryByIdSafe(root, normalizeSlug(decoded));
+    return el || null;
+  };
+
+  // 4) Intercepta links com hash e rola dentro do painel
+  container.querySelectorAll("a").forEach(a => {
+    const href = a.getAttribute("href");
     if (!href) return;
 
-    let hash = null;
+    // Resolve URL/hashes de forma robusta
+    let url;
     try {
-      const url = new URL(href, window.location.href);
-      if (url.hash && url.origin === location.origin && url.pathname === location.pathname) {
-        hash = url.hash; // âncora interna via URL absoluta
-      }
+      url = new URL(href, window.location.href); // resolve relativo/absoluto
     } catch {
-      // href pode ser só "#algo"
+      // href malformado; deixa como está
+      return;
     }
-    if (!hash && href.startsWith('#')) hash = href;
 
-    if (hash) {
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = decodeURIComponent(hash.slice(1));
-        const sel = typeof CSS !== 'undefined' && CSS.escape ? `#${CSS.escape(id)}` : `#${id.replace(/"/g, '\\"')}`;
-        const alvo = container.querySelector(sel);
-        if (alvo) alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (url.hash) {
+      // É um link com âncora. Tentamos rolar no painel.
+      a.addEventListener("click", (e) => {
+        const alvo = findAnchorIn(container, url.hash);
+        if (alvo) {
+          e.preventDefault();
+          alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          // Se não achou âncora interna, trata como externo
+          a.target = "_blank";
+          a.rel = "noopener";
+        }
       });
     } else {
-      a.target = '_blank';
-      a.rel = 'noopener';
+      // Sem hash: trata como externo
+      a.target = "_blank";
+      a.rel = "noopener";
     }
   });
 }
+
 
 
 // ==================================================
