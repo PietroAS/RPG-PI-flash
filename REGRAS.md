@@ -1,4 +1,4 @@
-# 🎲 SISTEMA RPG PI FLASH (ver. 2.3.0)
+# 🎲 SISTEMA RPG PI FLASH (ver. 2.3.1)
 
 ## 📚 Índice
 
@@ -44,7 +44,7 @@
 
 </details>
 
-Esse sistema é para ser um sistema **resumido e divertido**, perfeito para jogadores experientes introduzirem novos jogadores, (sem assustar com vários livros enormes), que corta tudo o que é desnecessário e mantém apenas o básico.
+Esse sistema é para ser um sistema **resumido e divertido**, perfeito para jogadores experientes introduzirem novos jogadores, (sem assustar com vários livros enormes), que corta tudo o que é desnecessário e mantém apenas o básico, com uma pitada de variação.
 O objetivo é que ele seja **simples e adaptável.** Quem desejar experimentar o sistema, é livre para criar e implementar novas regras, além de adaptar o sistema para as suas campanhas. O importante é se divertir.
 
 ## 📖 REGRAS
@@ -96,7 +96,7 @@ O jogador pode escolher habilidades que o ajudem no jogo, gastando pontos (**de 
 - Movimento
 - Sobrevivência
 - Profissão
-- Sociais
+- Sociail
 
 ### ⚠️ DESVANTAGENS / DEFEITOS
 
@@ -117,10 +117,10 @@ Da mesma forma que as habilidades, os defeitos adicionam mais profundidade ao jo
 **Niveis de Desafio de Mundo**
 Fatores extra: x (combate, chuva, vento, noite, estresse, cansaço, etc.)
 
-- Fácil: 2 + x
-- Médio: 4 + x
-- Difícil: 6 + x
-- Muito difícil: 10 + x
+- Fácil: 0 a 2 + x
+- Médio: 3 a 5 + x
+- Difícil: 6 a 10 + x
+- Muito difícil: 11 a 15 + x
 
 ### ❤️ VIDA
 
@@ -131,11 +131,11 @@ Membros 2
 
 ### 💀 MORTE
 
-Ao ter os pontos de vida de uma parte do corpo reduzidos a zero, o jogador deve fazer uma rolagem de Salvamento,(Espírito + Resistência ou Vitalidade) para ver se não vai ser nocauteado ou entrar em estado de choque.
-O sucesso é definido pela metade de sua rolagem máxima, no atributo de Espírito (Ex: Espírito = 1, precisa de 3 no d4).
+Ao ter os pontos de vida de uma parte do corpo **reduzidos a zero**, o jogador deve fazer uma **rolagem de Salvamento**,(Espírito + Resistência ou Vitalidade) para ver se não vai ser nocauteado ou entrar em estado de choque.
+O sucesso é definido pela **metade de sua rolagem máxima**, no atributo de Espírito (Ex: Espírito = 1, precisa de 3 no d4).
 Caso resista, ele ainda pode continuar consciente.
-No entanto, caso a parte do corpo seja a Cabeça ou Tronco, o jogador tem desvantagem no teste, a não ser que receba socorro médico ou cura.
-Caso falhe no primeiro teste, o personagem entra em coma e, para estabilizar, o jogador precisa de 3 rolagens bem sucedidas em uma melhor de 5. Se falhar, o personagem morre.
+No entanto, caso a parte do corpo seja a **Cabeça ou Tronco**, o jogador tem **desvantagem no teste**, a não ser que receba socorro médico ou cura.
+Caso falhe no primeiro teste, o personagem entra em coma e, para estabilizar, o jogador precisa de **3** rolagens bem sucedidas em uma melhor de **5**. Se falhar, o personagem **morre**.
 
 ### 🔮 MANA
 
@@ -307,7 +307,7 @@ Cada jogador recebe 2 pontos extras exclusivos para escolher um conjunto inicial
 
 Se os jogadores não escolherem nenhuma vantagem ou desvantagem que altere seu status social, todos os jogadores começam com 3 Au.
 
-Os Valores e Economia aqui, são apenas sugestões, e podem ser alterados para caber em qualquer tipo de campanha
+Os Valores e Economia aqui, são apenas sugestões, e podem ser alterados para caberem em qualquer tipo de campanha
 
 **Moedas:**
 
@@ -345,7 +345,7 @@ Aventuras pagam melhor do que trabalhos normais, o que pode ser um estímulo par
 
 ### 📌 OBSERVAÇÕES
 
-**Vantagens e desvantagens:** Ao realizar um ataque ou ação com vantagem ou desvantagem, o jogador faz a rolagem duas vezes e seleciona a de maior valor, no caso de vantagem, ou de menor valor, no caso de desvantagem.
+**Vantagens e desvantagens:** Ao realizar um ataque ou ação **em situação** de vantagem ou desvantagem (não é igual a utilizar uma vantagem!), o jogador faz a rolagem duas vezes e seleciona a de maior valor, no caso de vantagem, ou de menor valor, no caso de desvantagem.
 **Valores fracionados** (ex.: 0.5) não devem ser arredondados
 **Campanhas Heroicas:** Para esse tipo de campanhas, é recomendado dobrar os valores de vida e aumentar em 1 o dano base dos jogadores, bem como dobrar as recompensas das missões.
 
@@ -354,6 +354,22 @@ Aventuras pagam melhor do que trabalhos normais, o que pode ser um estímulo par
 - +3 a +5 pontos extras na criação de ficha.
 - +1 ação extra por turno (para dar mais dinamismo).
 - +1 dado bônus em testes de sobrevivência/exploração.
+
+## Criando um Personagem
+
+Para criar um personagem, o jogador pode seguir os topicos e ir ajeitando a ficha conforme avança. Mas caso ja tenha lido tudo, aqui fica um resumo dos dados que devem ser colocados na ficha, numa campanha padrão, com 10 pontos iniciais + até 3 pontos com desvantagens + 2 pontos exclusivos de equipamentos.
+
+- Informações de personagem
+  -(Nome, Raça, Idade, Cor, etc)
+- Atributos
+  -(Corpo, Mente, Espirito)
+- Especializações
+  -(Força, Agilidade, Destreza, Resistencioa, Vitalidade, Sabedoria, Inteligencia, Carisma e Percepção)
+- Habilidades / Vantagens
+- Defeitos / Desvantagens
+- Magias
+- Equipamentos/ Inventario
+- Dinheiro / Propriedades
 
 ## 📋 Tabelas
 

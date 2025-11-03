@@ -278,7 +278,7 @@ function coletarFicha() {
       defeitos: byId("defeitos").value,
       magias: byId("magias").value,
       equipamentos: byId("equipamentos").value,
-      kits: byId("kits").value,
+      dinheiro: byId("dinheiro").value,
     },
     camposCru: { ...camposNum, ...camposTxt },
   };
@@ -312,7 +312,7 @@ function aplicarFicha(data) {
   if (byId("paExtra")) byId("paExtra").value = state.extras.pa;
 
   state.gasto = data.gasto || state.gasto;
-  ["habilidades", "defeitos", "magias", "equipamentos", "kits"].forEach(
+  ["habilidades", "defeitos", "magias", "equipamentos", "Dinheiro"].forEach(
     (id) => {
       if (byId(id)) byId(id).value = data.textos?.[id] || "";
     }
@@ -393,7 +393,7 @@ function salvarLocal() {
   };
   try {
     localStorage.setItem(LS_KEY, JSON.stringify(payload));
-  } catch { }
+  } catch {}
 }
 
 function restaurarLocal() {
@@ -411,7 +411,7 @@ function restaurarLocal() {
     state.dark = !!saved.dark;
     if (byId("toggleDark")) byId("toggleDark").checked = state.dark;
     document.body.classList.toggle("dark", state.dark);
-  } catch { }
+  } catch {}
 }
 
 // ==================================================
@@ -481,7 +481,6 @@ byId("toggleRegras")?.addEventListener("click", () => {
       }
     })();
   }
-
 });
 
 byId("fecharRegras")?.addEventListener("click", () => {
@@ -498,34 +497,38 @@ function renderRegras(md, container) {
     return (raw) => {
       let base = (raw || "")
         .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
-        .replace(/[^a-z0-9\s-]/g, "")                    // remove pontuação
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // remove acentos
+        .replace(/[^a-z0-9\s-]/g, "") // remove pontuação
         .trim()
-        .replace(/\s+/g, "-")                            // espaços -> hífen
-        .replace(/-+/g, "-");                            // colapsa hífens
+        .replace(/\s+/g, "-") // espaços -> hífen
+        .replace(/-+/g, "-"); // colapsa hífens
       const n = used.get(base) || 0;
       used.set(base, n + 1);
       return n ? `${base}-${n}` : base;
     };
   })();
 
-  container.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(h => {
+  container.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach((h) => {
     if (!h.id || !h.id.trim()) h.id = slugify(h.textContent || "");
   });
 
   // 3) Helpers de âncora
-  const normalizeSlug = (s) => (s || "")
-    .toLowerCase()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
+  const normalizeSlug = (s) =>
+    (s || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\s-]/g, "")
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
 
   const queryByIdSafe = (root, id) => {
-    const sel = (typeof CSS !== "undefined" && CSS.escape)
-      ? `#${CSS.escape(id)}`
-      : `#${id.replace(/"/g, '\\"')}`;
+    const sel =
+      typeof CSS !== "undefined" && CSS.escape
+        ? `#${CSS.escape(id)}`
+        : `#${id.replace(/"/g, '\\"')}`;
     return root.querySelector(sel);
   };
 
@@ -541,7 +544,7 @@ function renderRegras(md, container) {
   };
 
   // 4) Intercepta links com hash e rola dentro do painel
-  container.querySelectorAll("a").forEach(a => {
+  container.querySelectorAll("a").forEach((a) => {
     const href = a.getAttribute("href");
     if (!href) return;
 
@@ -574,8 +577,6 @@ function renderRegras(md, container) {
     }
   });
 }
-
-
 
 // ==================================================
 // 🚀 INICIALIZAÇÃO
