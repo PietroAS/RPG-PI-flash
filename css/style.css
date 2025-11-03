@@ -500,7 +500,8 @@ Painel De Regras
 }
 
 #painelRegras {
-  scroll-behavior: smooth;
+  overflow-y: auto; /* <- importante */
+  scroll-behavior: smooth; /* ajuda na maioria dos browsers */
 }
 
 /* Estado visível */

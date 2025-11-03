@@ -7,40 +7,44 @@
 
 ### 📖 Regras
 
-- [🧮 Pontos](#-pontos)
-- [💪 Atributos](#-atributos)
-- [🎲 Dados](#-dados)
-- [🎯 Especialização](#-especialização)
-- [⚡ Pontos de Ação](#-pontos-de-ação)
-- [🌟 Vantagens / Habilidades](#-vantagens--habilidades)
-- [⚠️ Desvantagens / Defeitos](#️-desvantagens--defeitos)
-- [🧩 Desafios](#-desafios)
-- [❤️ Vida](#️-vida)
-- [💀 Morte](#-morte)
-- [🔮 Mana](#-mana)
-- [🏃 Movimento](#-movimento)
-- [🎯 Acertos](#-acertos)
-- [⚔️ Armas e Dano](#️-armas-e-dano)
-- [🗡️ Ataques](#️-ataques)
-- [⚔️ Ataques Especiais](#️-ataques-especiais)
-- [🛡️ Defesa](#️-defesa)
-- [💥 Crítico](#-crítico)
-- [✨ Magias](#-magias)
-- [🛡️ Armaduras](#️-armaduras)
-- [🛡️ Escudos](#️-escudos)
-- [🎒 Equipamentos](#-equipamentos)
-- [📦 Pontos por Equipamentos](#-pontos-por-equipamentos)
-- [⚔️ Conjuntos](#️-conjuntos)
-- [🎒 Kits](#-kits)
-- [💰 Economia](#-economia)
-- [📌 Observações](#-observações)
+- [🧮 Pontos](#pontos)
+- [💪 Atributos](#atributos)
+- [🎲 Dados](#dados)
+- [🎯 Especialização](#especialização)
+- [⚡ Pontos de Ação](#pontos-de-ação)
+- [🌟 Vantagens / Habilidades](#vantagens--habilidades)
+- [⚠️ Desvantagens / Defeitos](#desvantagens--defeitos)
+- [🧩 Desafios](#desafios)
+- [❤️ Vida](#vida)
+- [💀 Morte](#morte)
+- [🔮 Mana](#mana)
+- [🏃 Movimento](#movimento)
+- [🎯 Acertos](#acertos)
+- [⚔️ Armas e Dano](#armas-e-dano)
+- [🗡️ Ataques](#ataques)
+- [⚔️ Ataques Especiais](#ataques-especiais)
+- [🛡️ Defesa](#defesa)
+- [💥 Crítico](#crítico)
+- [✨ Magias](#magias)
+- [🛡️ Armaduras](#armaduras)
+- [🛡️ Escudos](#escudos)
+- [🎒 Equipamentos](#equipamentos)
+- [📦 Pontos por Equipamentos](#pontos-por-equipamentos)
+- [⚔️ Conjuntos](#conjuntos)
+- [🎒 Kits](#kits)
+- [💰 Economia](#economia)
+- [📌 Observações](#observações)
+
+### 👤 Personagem
+
+- [Criando um Personagem](#criando-um-personagem)
 
 ### 📋 Tabelas
 
-- [🌟 Vantagens (1–2 Pontos)](###-vantagens-1–2-pontos)
-- [💎 Vantagens Maiores (3–5 Pontos)](#-vantagens-maiores-3–5-pontos)
-- [🧩 Desvantagens Menores](#-desvantagens-menores)
-- [⚠️ Desvantagens Maiores (3–4 Pontos)](#️-desvantagens-maiores-3–4-pontos)
+- [🌟 Vantagens (1–2 Pontos)](#vantagens-12-pontos)
+- [💎 Vantagens Maiores (3–5 Pontos)](#vantagens-maiores-35-pontos)
+- [🧩 Desvantagens Menores](#desvantagens-menores)
+- [⚠️ Desvantagens Maiores (3–4 Pontos)](#desvantagens-maiores-34-pontos)
 
 </details>
 
@@ -82,7 +86,7 @@ Cada especialização **custa 2** pontos e **concede +1 fixo** em todas as rolag
 - Sabedoria (Espírito)
 - Inteligência (Mente)
 - Carisma (Mente)
-- Percepção(Mente)
+- Percepção (Mente)
 
 ### ⚡ PONTOS DE AÇÃO
 
@@ -96,7 +100,7 @@ O jogador pode escolher habilidades que o ajudem no jogo, gastando pontos (**de 
 - Movimento
 - Sobrevivência
 - Profissão
-- Sociail
+- Social
 
 ### ⚠️ DESVANTAGENS / DEFEITOS
 
@@ -114,7 +118,7 @@ Da mesma forma que as habilidades, os defeitos adicionam mais profundidade ao jo
 - **Social**: ATR x ATR
 - **Mundo**: ATR x Nível desafio
 
-**Niveis de Desafio de Mundo**
+**Níveis de Desafio de Mundo**
 Fatores extra: x (combate, chuva, vento, noite, estresse, cansaço, etc.)
 
 - Fácil: 0 a 2 + x
@@ -124,10 +128,13 @@ Fatores extra: x (combate, chuva, vento, noite, estresse, cansaço, etc.)
 
 ### ❤️ VIDA
 
-Cada parte do corpo tem um valor de vida separado. Cada ponto em **Vitalidade** aumenta em +1 esses valores. A cada **3 pontos em Corpo**, cada região do corpo recebe +1 de vida
-Cabeça 2
-Tronco 3
-Membros 2
+Cada parte do corpo tem um valor de vida separado. Cada ponto em **Vitalidade** aumenta em +1 esses valores. A cada **3 pontos em Corpo**, cada região do corpo recebe +1 de vida.
+
+| Parte do corpo | Vida base |
+| -------------- | --------- |
+| Cabeça         | 2         |
+| Tronco         | 3         |
+| Membros        | 2         |
 
 ### 💀 MORTE
 
@@ -135,7 +142,7 @@ Ao ter os pontos de vida de uma parte do corpo **reduzidos a zero**, o jogador d
 O sucesso é definido pela **metade de sua rolagem máxima**, no atributo de Espírito (Ex: Espírito = 1, precisa de 3 no d4).
 Caso resista, ele ainda pode continuar consciente.
 No entanto, caso a parte do corpo seja a **Cabeça ou Tronco**, o jogador tem **desvantagem no teste**, a não ser que receba socorro médico ou cura.
-Caso falhe no primeiro teste, o personagem entra em coma e, para estabilizar, o jogador precisa de **3** rolagens bem sucedidas em uma melhor de **5**. Se falhar, o personagem **morre**.
+Caso falhe no primeiro teste, o personagem entra em coma e, para estabilizar, o jogador precisa de **3** rolagens bem-sucedidas em uma melhor de **5**. Se falhar, o personagem **morre**.
 
 ### 🔮 MANA
 
@@ -151,23 +158,27 @@ Quando não tem mapas ou quadrados para medir, pode ser utilizado o sistema de *
 - Média Distância: 4 a 10
 - Longa: 11 a 25
 - Muito Longa: 26+
-  A distância de **movimento padrão** em 1 turno, é a **Média Distância**.
-  **(Opcional)**Corrida Livre: Usa todas as suas ações em seu deslocamento máximo, mas pode deixar o jogador, ou criatura, vulnerável
+
+A distância de **movimento padrão** em 1 turno é a **Média Distância**.  
+**(Opcional)** Corrida Livre: usa todas as suas ações em seu deslocamento máximo, mas pode deixar o jogador, ou criatura, vulnerável.
 
 ### 🎯 ACERTOS
 
-- Ataque: **ATR + Especialização do atacante x ATR do defensor**.
-  Ao acertar é rolado o dado da **Região do Acerto(RdA)** d6 (Valor reflete a parte do corpo atingida)
-  6 - cabeça
-  5 - tronco
-  4 - perna dominante
-  3 - perna
-  2 - braço dominante
-  1 - braço
+- Ataque: **ATR + Especialização do atacante x ATR do defensor**.  
+  Ao acertar, é rolado o dado da **Região de Acerto (RdA)** d6 (valor reflete a parte do corpo atingida).
+
+  - **RdA (d6)**:
+    - 6: cabeça
+    - 5: tronco
+    - 4: perna dominante
+    - 3: perna
+    - 2: braço dominante
+    - 1: braço
+
 - O dano causado é relativo à arma.
 - Apenas um bônus de Especialização pode ser aplicado por vez.
-- Ataques com armas desconhecidas, tem -1 de penalidade
-- Ataques com a mão secundária tem -1 de penalidade
+- Ataques com armas desconhecidas, têm -1 de penalidade
+- Ataques com a mão secundária têm -1 de penalidade
 
 ### ⚔️ ARMAS E DANO
 
@@ -186,12 +197,12 @@ Cada arma tem 3 tipos de ataque:
 ➡ ️ Dano mínimo: o mínimo que um golpe pode causar é 0.5 de dano (e somente se superar armadura, exceto ataques penetrantes que ignoram a armadura).
 
 (Opcional) Ataques guiados:
-O jogador pode tentar acertar uma parte específica. Para isso declara aonde quer acertar e rola o d6 da **Região de Acerto(RdA)** junto com o ataque. Se errar a região (O valor não corresponder), subtrai a diferença do resultado do ataque
+O jogador pode tentar acertar uma parte específica. Para isso declara onde quer acertar e rola o d6 da **Região de Acerto(RdA)** junto com o ataque. Se errar a região (O valor não corresponder), subtrai a diferença do resultado do ataque
 
 ### ⚔️ ATAQUES ESPECIAIS
 
 Podem ser pegos apenas **pagando pontos**, e são classificados como vantagens.
-São ataques especiais com modificadores extras, e custos diferenciados, para deixar atacantes físicos mais variados. Estes ataques **não tem custo de Mana**, mas adicionam custo de Pontos de Ação (PA) e podem ser combinados com Ataques normais.
+São ataques especiais com modificadores extras e custos diferenciados, para deixar atacantes físicos mais variados. Estes ataques **não têm** custo de Mana, mas adicionam custo de Pontos de Ação (PA) e podem ser combinados com ataques normais.
 Seu custo de pontos é igual ao custo de PA final.
 
 - Dano extra: +1. (+1)
@@ -199,18 +210,18 @@ Seu custo de pontos é igual ao custo de PA final.
 - Mirado: Adiciona um d6 à chance de acerto (+1)
 - Alvos múltiplos (+1 por alvo)
 - Ataque em área: acerta todos os alvos na zona de ataque (+1)
-- Alcance estendido: adiciona uma zona a categoria da arma (+1)
+- Alcance estendido: adiciona uma zona à categoria da arma (+1)
 - Efeito extra: controle, desarme, ou utilidade ( + 1 para cada efeito extra).
 
-para reduzir os custos de PA, pode-se adicionar efeitos negativos ao ataque
+Para reduzir os custos de PA, pode-se adicionar efeitos negativos ao ataque.
 
 - Fraco: -1 de dano (-1)
 - Difícil: -1 de chance de acerto (-1)
 - Lento: Demora um turno inteiro (consome todas as ações para performar)(-2)
-- Vulnerável: Deixa o usuário vulnerável a contra ataques (-1)
-- Curto: reduz o alcance do ataque(-0/-1)
+- Vulnerável: deixa o usuário vulnerável a contra-ataques (-1)
+- Curto: reduz o alcance do ataque (-0/-1)
 - Cansativo: reduz a quantidade de ações no próximo turno (-1 por cada)
-- Dolorido: recebe metade do dano se errar(-1)
+- Dolorido: recebe metade do dano se errar (-1)
 - Suicida: recebe o mesmo dano que o alvo (-2)
 
 Os jogadores e o mestre podem criar outros modificadores, se acharem válido.
@@ -273,10 +284,11 @@ Adicionam um dado na defesa, dependendo do tamanho do escudo:
 
 ### 🎒 EQUIPAMENTOS
 
-- Cada personagem pode ter 3 equipamentos.
-- Cada 3 peças de Armadura Pesada ocupam 1 espaço.
-- Cada 2 pontos em Corpo, adiciona +1 e Cada ponto em Força +2.
-- Uma mochila adiciona espaço para +15 itens pequenos, cada item médio ocupa 2 espaços na mochila.
+- Cada personagem pode ter **3** equipamentos.
+- Cada **3 peças** de Armadura Pesada ocupam 1 espaço.
+- Cada **2 pontos em Corpo**: +1 espaço.
+- Cada **ponto em Força**: +2 espaços.
+- Uma mochila normal adiciona espaço para **+15 itens pequenos**, cada item médio ocupa 2 espaços na mochila.
 - Uma mochila melhor ou mágica, pode ter mais espaço.
 
 ### 📦 PONTOS POR EQUIPAMENTOS
@@ -357,18 +369,18 @@ Aventuras pagam melhor do que trabalhos normais, o que pode ser um estímulo par
 
 ## Criando um Personagem
 
-Para criar um personagem, o jogador pode seguir os topicos e ir ajeitando a ficha conforme avança. Mas caso ja tenha lido tudo, aqui fica um resumo dos dados que devem ser colocados na ficha, numa campanha padrão, com 10 pontos iniciais + até 3 pontos com desvantagens + 2 pontos exclusivos de equipamentos.
+Para criar um personagem, o jogador pode seguir os tópicos e ir ajustando a ficha conforme avança. Mas, caso já tenha lido tudo, aqui fica um resumo do que deve ser colocado na ficha, numa campanha padrão (10 pontos iniciais + até 3 pontos com desvantagens + 2 pontos exclusivos de equipamentos).
 
-- Informações de personagem
-  -(Nome, Raça, Idade, Cor, etc)
+- Informações do personagem
+  - (Nome, Raça, Idade, Cor, etc.)
 - Atributos
-  -(Corpo, Mente, Espirito)
+  - (Corpo, Mente, Espírito)
 - Especializações
-  -(Força, Agilidade, Destreza, Resistencioa, Vitalidade, Sabedoria, Inteligencia, Carisma e Percepção)
+  - (Força, Agilidade, Destreza, Resistência, Vitalidade, Sabedoria, Inteligência, Carisma e Percepção)
 - Habilidades / Vantagens
 - Defeitos / Desvantagens
 - Magias
-- Equipamentos/ Inventario
+- Equipamentos / Inventário
 - Dinheiro / Propriedades
 
 ## 📋 Tabelas
@@ -478,7 +490,7 @@ Para criar um personagem, o jogador pode seguir os topicos e ir ajeitando a fich
 | 29  | Surdo Parcial             |  +1   | Penalidade -2 em testes auditivos. Pode falhar em perceber perigo.                                                          |
 | 30  | Toque Amaldiçoado         |  +2   | O toque do personagem causa pequenos efeitos negativos (murchar plantas, falhar aparelhos, etc.).                           |
 
-### ⚠️ Desvantagens Maiores (3–4 Pontos) — RPG PI FLASH
+### ⚠️ Desvantagens Maiores (3–4 Pontos)
 
 | Nº  | Nome                  | Custo | Descrição                                                                                                                                       |
 | :-: | :-------------------- | :---: | :---------------------------------------------------------------------------------------------------------------------------------------------- |

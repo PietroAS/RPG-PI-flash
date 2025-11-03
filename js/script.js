@@ -543,7 +543,8 @@ function renderRegras(md, container) {
     return el || null;
   };
 
-  // 4) Intercepta links com hash e rola dentro do painel (sempre previne navegação)
+  // 4) Intercepta links com hash e rola DENTRO do painel de regras
+  const scroller = document.getElementById("painelRegras"); // <- é ele quem rola
   container.querySelectorAll("a").forEach((a) => {
     const href = a.getAttribute("href");
     if (!href) return;
@@ -553,28 +554,31 @@ function renderRegras(md, container) {
       url = new URL(href, window.location.href);
     } catch {}
 
-    // Link tem âncora? (ex: "#secao" ou "REGRAS.md#secao" ou URL absoluta com hash)
     const hasHash = href.startsWith("#") || (url && url.hash);
-
-    if (hasHash) {
-      a.addEventListener("click", (e) => {
-        e.preventDefault(); // 👈 sempre impedir navegação
-        const hash = href.startsWith("#") ? href : url.hash;
-
-        // tenta achar dentro do painel (decodifica e normaliza se preciso)
-        const alvo = findAnchorIn(container, hash);
-        if (alvo) {
-          alvo.scrollIntoView({ behavior: "smooth", block: "start" });
-        } else {
-          // se não achou, apenas não navega (mantém usuário na ficha)
-          // opcional: container.scrollTo({top:0, behavior:'smooth'});
-        }
-      });
-    } else {
+    if (!hasHash) {
       // Sem hash: trata como externo
       a.target = "_blank";
       a.rel = "noopener";
+      return;
     }
+
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const hash = href.startsWith("#") ? href : url.hash;
+      const alvo = findAnchorIn(container, hash); // usa sua função já definida
+      if (!alvo || !scroller) return;
+
+      // posição do alvo relativa ao container com overflow (painelRegras)
+      // percorre até achar o scroller para somar os offsets corretamente
+      let top = 0,
+        el = alvo;
+      while (el && el !== scroller) {
+        top += el.offsetTop;
+        el = el.offsetParent;
+      }
+      // margem opcional para não colar no topo
+      scroller.scrollTo({ top: Math.max(0, top - 12), behavior: "smooth" });
+    });
   });
 }
 
