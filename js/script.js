@@ -543,31 +543,31 @@ function renderRegras(md, container) {
     return el || null;
   };
 
-  // 4) Intercepta links com hash e rola dentro do painel
+  // 4) Intercepta links com hash e rola dentro do painel (sempre previne navegação)
   container.querySelectorAll("a").forEach((a) => {
     const href = a.getAttribute("href");
     if (!href) return;
 
-    // Resolve URL/hashes de forma robusta
-    let url;
+    let url = null;
     try {
-      url = new URL(href, window.location.href); // resolve relativo/absoluto
-    } catch {
-      // href malformado; deixa como está
-      return;
-    }
+      url = new URL(href, window.location.href);
+    } catch {}
 
-    if (url.hash) {
-      // É um link com âncora. Tentamos rolar no painel.
+    // Link tem âncora? (ex: "#secao" ou "REGRAS.md#secao" ou URL absoluta com hash)
+    const hasHash = href.startsWith("#") || (url && url.hash);
+
+    if (hasHash) {
       a.addEventListener("click", (e) => {
-        const alvo = findAnchorIn(container, url.hash);
+        e.preventDefault(); // 👈 sempre impedir navegação
+        const hash = href.startsWith("#") ? href : url.hash;
+
+        // tenta achar dentro do painel (decodifica e normaliza se preciso)
+        const alvo = findAnchorIn(container, hash);
         if (alvo) {
-          e.preventDefault();
           alvo.scrollIntoView({ behavior: "smooth", block: "start" });
         } else {
-          // Se não achou âncora interna, trata como externo
-          a.target = "_blank";
-          a.rel = "noopener";
+          // se não achou, apenas não navega (mantém usuário na ficha)
+          // opcional: container.scrollTo({top:0, behavior:'smooth'});
         }
       });
     } else {
