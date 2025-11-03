@@ -1,4 +1,4 @@
-# 🎲 SISTEMA RPG PI FLASH (ver. 2.3.1)
+# 🎲 SISTEMA RPG PI FLASH (ver. 2.3.2)
 
 ## 📚 Índice
 
@@ -138,11 +138,11 @@ Cada parte do corpo tem um valor de vida separado. Cada ponto em **Vitalidade** 
 
 ### 💀 MORTE
 
-Ao ter os pontos de vida de uma parte do corpo **reduzidos a zero**, o jogador deve fazer uma **rolagem de Salvamento**,(Espírito + Resistência ou Vitalidade) para ver se não vai ser nocauteado ou entrar em estado de choque.
+Ao ter os pontos de vida de uma parte do corpo **reduzidos a zero**, o jogador deve fazer uma **Rolagem de Salvamento**, (Espírito + Resistência ou Vitalidade) para ver se não vai ser nocauteado ou entrar em estado de choque.
 O sucesso é definido pela **metade de sua rolagem máxima**, no atributo de Espírito (Ex: Espírito = 1, precisa de 3 no d4).
 Caso resista, ele ainda pode continuar consciente.
 No entanto, caso a parte do corpo seja a **Cabeça ou Tronco**, o jogador tem **desvantagem no teste**, a não ser que receba socorro médico ou cura.
-Caso falhe no primeiro teste, o personagem entra em coma e, para estabilizar, o jogador precisa de **3** rolagens bem-sucedidas em uma melhor de **5**. Se falhar, o personagem **morre**.
+Caso falhe no primeiro teste, o personagem entra em coma e o jogador precisa fazer as Rolagens de Salvamento (uma vez por turno). Para sobreviver ele deve conseguir **3** rolagens bem-sucedidas em uma melhor de **5**. Se falhar, o personagem **morre**.
 
 ### 🔮 MANA
 
@@ -197,7 +197,7 @@ Cada arma tem 3 tipos de ataque:
 ➡ ️ Dano mínimo: o mínimo que um golpe pode causar é 0.5 de dano (e somente se superar armadura, exceto ataques penetrantes que ignoram a armadura).
 
 (Opcional) Ataques guiados:
-O jogador pode tentar acertar uma parte específica. Para isso declara onde quer acertar e rola o d6 da **Região de Acerto(RdA)** junto com o ataque. Se errar a região (O valor não corresponder), subtrai a diferença do resultado do ataque
+O jogador pode tentar acertar uma parte específica. Para isso declara onde quer acertar e rola o d6 da **Região de Acerto (RdA)** junto com o ataque. Se errar a região (O valor não corresponder), subtrai a diferença do resultado do ataque
 
 ### ⚔️ ATAQUES ESPECIAIS
 
@@ -211,13 +211,13 @@ Seu custo de pontos é igual ao custo de PA final.
 - Alvos múltiplos (+1 por alvo)
 - Ataque em área: acerta todos os alvos na zona de ataque (+1)
 - Alcance estendido: adiciona uma zona à categoria da arma (+1)
-- Efeito extra: controle, desarme, ou utilidade ( + 1 para cada efeito extra).
+- Efeito extra: controle, desarme ou utilidade (+1 para cada efeito extra).
 
 Para reduzir os custos de PA, pode-se adicionar efeitos negativos ao ataque.
 
 - Fraco: -1 de dano (-1)
 - Difícil: -1 de chance de acerto (-1)
-- Lento: Demora um turno inteiro (consome todas as ações para performar)(-2)
+- Lento: demora um turno inteiro (consome todas as ações para performar)(-2)
 - Vulnerável: deixa o usuário vulnerável a contra-ataques (-1)
 - Curto: reduz o alcance do ataque (-0/-1)
 - Cansativo: reduz a quantidade de ações no próximo turno (-1 por cada)
@@ -334,7 +334,7 @@ Salário "mínimo" mensal: 150 Cu
 - Roupas: 3 a 20 Cu
 - Armas: 50 a 300 Cu
 - Armaduras: 100 a 1000 Cu
-- Ferramentas/ utensílios: 1 a 200 Cu
+- Ferramentas/utensílios: 1 a 200 Cu
 
 Custo de Vida: Valor diário
 
