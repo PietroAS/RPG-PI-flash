@@ -500,9 +500,11 @@ Painel De Regras
 }
 
 #painelRegras {
-  overflow-y: auto; /* <- importante */
-  scroll-behavior: smooth; /* ajuda na maioria dos browsers */
+  max-height: 80vh;
+  overflow-y: auto;         /* <- importante: quem rola é o painel */
+  scroll-behavior: smooth;  /* rolagem suave por CSS */
 }
+
 
 /* Estado visível */
 .painel-regras.aberto {

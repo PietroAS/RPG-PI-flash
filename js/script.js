@@ -497,38 +497,34 @@ function renderRegras(md, container) {
     return (raw) => {
       let base = (raw || "")
         .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "") // remove acentos
-        .replace(/[^a-z0-9\s-]/g, "") // remove pontuação
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
+        .replace(/[^a-z0-9\s-]/g, "")                    // remove pontuação
         .trim()
-        .replace(/\s+/g, "-") // espaços -> hífen
-        .replace(/-+/g, "-"); // colapsa hífens
+        .replace(/\s+/g, "-")                            // espaços -> hífen
+        .replace(/-+/g, "-");                            // colapsa hífens
       const n = used.get(base) || 0;
       used.set(base, n + 1);
       return n ? `${base}-${n}` : base;
     };
   })();
 
-  container.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach((h) => {
+  container.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(h => {
     if (!h.id || !h.id.trim()) h.id = slugify(h.textContent || "");
   });
 
-  // 3) Helpers de âncora
-  const normalizeSlug = (s) =>
-    (s || "")
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-z0-9\s-]/g, "")
-      .trim()
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-");
+  // 3) Helpers
+  const normalizeSlug = (s) => (s || "")
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
 
   const queryByIdSafe = (root, id) => {
-    const sel =
-      typeof CSS !== "undefined" && CSS.escape
-        ? `#${CSS.escape(id)}`
-        : `#${id.replace(/"/g, '\\"')}`;
+    const sel = (typeof CSS !== "undefined" && CSS.escape)
+      ? `#${CSS.escape(id)}`
+      : `#${id.replace(/"/g, '\\"')}`;
     return root.querySelector(sel);
   };
 
@@ -544,15 +540,14 @@ function renderRegras(md, container) {
   };
 
   // 4) Intercepta links com hash e rola DENTRO do painel de regras
-  const scroller = document.getElementById("painelRegras"); // <- é ele quem rola
-  container.querySelectorAll("a").forEach((a) => {
+  const scroller = document.getElementById("painelRegras"); // <- é ELE quem rola
+  container.querySelectorAll("a").forEach(a => {
     const href = a.getAttribute("href");
     if (!href) return;
 
+    // resolve relativo/absoluto para extrair hash de forma robusta
     let url = null;
-    try {
-      url = new URL(href, window.location.href);
-    } catch {}
+    try { url = new URL(href, window.location.href); } catch {}
 
     const hasHash = href.startsWith("#") || (url && url.hash);
     if (!hasHash) {
@@ -563,24 +558,24 @@ function renderRegras(md, container) {
     }
 
     a.addEventListener("click", (e) => {
-      e.preventDefault();
-      const hash = href.startsWith("#") ? href : url.hash;
-      const alvo = findAnchorIn(container, hash); // usa sua função já definida
+      e.preventDefault(); // nunca navega
+      const hash = href.startsWith("#") ? href : (url ? url.hash : "");
+      const alvo = findAnchorIn(container, hash);
       if (!alvo || !scroller) return;
 
-      // posição do alvo relativa ao container com overflow (painelRegras)
-      // percorre até achar o scroller para somar os offsets corretamente
-      let top = 0,
-        el = alvo;
-      while (el && el !== scroller) {
-        top += el.offsetTop;
-        el = el.offsetParent;
-      }
-      // margem opcional para não colar no topo
-      scroller.scrollTo({ top: Math.max(0, top - 12), behavior: "smooth" });
+      // Posição do alvo relativa ao scroller (preciso e à prova de layout)
+      const scrollerRect = scroller.getBoundingClientRect();
+      const alvoRect = alvo.getBoundingClientRect();
+      const offsetTop = alvoRect.top - scrollerRect.top + scroller.scrollTop;
+
+      scroller.scrollTo({
+        top: Math.max(0, offsetTop - 12), // margem de respiro
+        behavior: "smooth"
+      });
     });
   });
 }
+
 
 // ==================================================
 // 🚀 INICIALIZAÇÃO
