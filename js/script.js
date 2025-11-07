@@ -312,7 +312,7 @@ function aplicarFicha(data) {
   if (byId("paExtra")) byId("paExtra").value = state.extras.pa;
 
   state.gasto = data.gasto || state.gasto;
-  ["habilidades", "defeitos", "magias", "equipamentos", "Dinheiro"].forEach(
+  ["habilidades", "defeitos", "magias", "equipamentos", "dinheiro"].forEach(
     (id) => {
       if (byId(id)) byId(id).value = data.textos?.[id] || "";
     }
@@ -497,34 +497,38 @@ function renderRegras(md, container) {
     return (raw) => {
       let base = (raw || "")
         .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
-        .replace(/[^a-z0-9\s-]/g, "")                    // remove pontuação
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // remove acentos
+        .replace(/[^a-z0-9\s-]/g, "") // remove pontuação
         .trim()
-        .replace(/\s+/g, "-")                            // espaços -> hífen
-        .replace(/-+/g, "-");                            // colapsa hífens
+        .replace(/\s+/g, "-") // espaços -> hífen
+        .replace(/-+/g, "-"); // colapsa hífens
       const n = used.get(base) || 0;
       used.set(base, n + 1);
       return n ? `${base}-${n}` : base;
     };
   })();
 
-  container.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(h => {
+  container.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach((h) => {
     if (!h.id || !h.id.trim()) h.id = slugify(h.textContent || "");
   });
 
   // 3) Helpers
-  const normalizeSlug = (s) => (s || "")
-    .toLowerCase()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
+  const normalizeSlug = (s) =>
+    (s || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\s-]/g, "")
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
 
   const queryByIdSafe = (root, id) => {
-    const sel = (typeof CSS !== "undefined" && CSS.escape)
-      ? `#${CSS.escape(id)}`
-      : `#${id.replace(/"/g, '\\"')}`;
+    const sel =
+      typeof CSS !== "undefined" && CSS.escape
+        ? `#${CSS.escape(id)}`
+        : `#${id.replace(/"/g, '\\"')}`;
     return root.querySelector(sel);
   };
 
@@ -541,13 +545,15 @@ function renderRegras(md, container) {
 
   // 4) Intercepta links com hash e rola DENTRO do painel de regras
   const scroller = document.getElementById("painelRegras"); // <- é ELE quem rola
-  container.querySelectorAll("a").forEach(a => {
+  container.querySelectorAll("a").forEach((a) => {
     const href = a.getAttribute("href");
     if (!href) return;
 
     // resolve relativo/absoluto para extrair hash de forma robusta
     let url = null;
-    try { url = new URL(href, window.location.href); } catch {}
+    try {
+      url = new URL(href, window.location.href);
+    } catch {}
 
     const hasHash = href.startsWith("#") || (url && url.hash);
     if (!hasHash) {
@@ -559,7 +565,7 @@ function renderRegras(md, container) {
 
     a.addEventListener("click", (e) => {
       e.preventDefault(); // nunca navega
-      const hash = href.startsWith("#") ? href : (url ? url.hash : "");
+      const hash = href.startsWith("#") ? href : url ? url.hash : "";
       const alvo = findAnchorIn(container, hash);
       if (!alvo || !scroller) return;
 
@@ -570,12 +576,11 @@ function renderRegras(md, container) {
 
       scroller.scrollTo({
         top: Math.max(0, offsetTop - 12), // margem de respiro
-        behavior: "smooth"
+        behavior: "smooth",
       });
     });
   });
 }
-
 
 // ==================================================
 // 🚀 INICIALIZAÇÃO

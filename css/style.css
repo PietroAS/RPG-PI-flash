@@ -31,6 +31,19 @@ html {
   --gap: 0.5rem;
 }
 
+.btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #7aa2ff;
+  outline-offset: 2px;
+}
+
+body.dark .btn:focus-visible,
+body.dark input:focus-visible,
+body.dark textarea:focus-visible {
+  outline: 2px solid #90caf9;
+}
+
 /* DARK MODE */
 body.dark {
   --cor-fundo: #121212;
@@ -268,6 +281,10 @@ textarea {
 /* ==========================
    BARRA FIXA (TOTAIS + controles)
 ========================== */
+:root {
+  --handle-h: 1.75rem;
+}
+
 .barra-status {
   position: fixed;
   bottom: 0;
@@ -281,6 +298,11 @@ textarea {
   gap: 0.5rem;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
   z-index: 1000;
+  transition: transform 0.25s ease;
+}
+
+.barra-status.colapsada {
+  transform: translateY(calc(100% - var(--handle-h)));
 }
 
 .status-area {
@@ -360,7 +382,6 @@ textarea {
 /*===========================
 Informaçoes Basicas e especializações
 ===========================*/
-
 #basicos .conteudo,
 #especializacoes .conteudo {
   margin: 0 auto;
@@ -369,7 +390,6 @@ Informaçoes Basicas e especializações
   gap: 1rem;
   width: 100%;
   box-sizing: border-box;
-  /* evita overflow */
 }
 
 #basicos div,
@@ -379,16 +399,14 @@ Informaçoes Basicas e especializações
 }
 
 #basicos input,
-#especializaçoes input {
+#especializacoes input {
   width: 100%;
-  /* ocupa toda a coluna */
   padding: 0.3rem;
   border: 1px solid var(--cor-borda);
   border-radius: var(--radius);
   background: transparent;
   color: inherit;
   box-sizing: border-box;
-  /* impede que a borda aumente o tamanho */
 }
 
 /*==========================
@@ -412,23 +430,6 @@ Informaçoes Basicas e especializações
   --handle-h: 1.75rem;
 }
 
-.barra-status {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #222;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
-  z-index: 1000;
-  transition: transform 0.25s ease;
-  /* anima a gaveta */
-}
-
 /* “Aba” (handle) que fica para fora da barra */
 .barra-status .handle {
   position: absolute;
@@ -447,11 +448,6 @@ Informaçoes Basicas e especializações
   cursor: pointer;
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.25);
   z-index: 1001;
-}
-
-/* Estado recolhido: empurra a barra para baixo deixando só a aba visível */
-.barra-status.colapsada {
-  transform: translateY(calc(100% - var(--handle-h)));
 }
 
 .abas-barra {
@@ -501,10 +497,9 @@ Painel De Regras
 
 #painelRegras {
   max-height: 80vh;
-  overflow-y: auto;         /* <- importante: quem rola é o painel */
-  scroll-behavior: smooth;  /* rolagem suave por CSS */
+  overflow-y: auto; /* <- importante: quem rola é o painel */
+  scroll-behavior: smooth; /* rolagem suave por CSS */
 }
-
 
 /* Estado visível */
 .painel-regras.aberto {
@@ -514,7 +509,6 @@ Painel De Regras
 /* Conteúdo interno */
 .painel-regras .conteudo-regras {
   padding: 1% 5%;
-  overflow-y: auto;
   flex: 1;
 }
 
