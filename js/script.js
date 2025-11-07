@@ -491,6 +491,14 @@ function renderRegras(md, container) {
   // 1) Markdown -> HTML
   container.innerHTML = marked.parse(md);
 
+  // Corrige prefixos dos links internos (GitHub -> local)
+  container.querySelectorAll("a[href]").forEach((a) => {
+    const href = a.getAttribute("href");
+    if (!href) return;
+    const match = href.match(/(?:REGRAS\.md)?(#.+)$/i);
+    if (match) a.setAttribute("href", match[1]);
+  });
+
   // 2) Slugify estilo GitHub + IDs únicos nos títulos
   const slugify = (() => {
     const used = new Map();
