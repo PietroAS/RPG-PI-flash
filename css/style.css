@@ -493,12 +493,12 @@ Painel De Regras
   z-index: 2000;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* painel em si NÃO rola */
 }
 
-#painelRegras {
-  max-height: 80vh; /* pode manter a altura limite */
+/*#painelRegras {
+  max-height: 80vh; /* pode manter a altura limite 
 }
+*/
 
 /* Estado visível */
 .painel-regras.aberto {
@@ -520,6 +520,26 @@ Painel De Regras
   top: 0.5rem;
   right: 0.75rem;
   z-index: 10;
+}
+
+/* Botão voltar ao topo, fixo no canto inferior direito do painel de regras */
+/* Botão voltar ao topo preso no painel */
+.voltar-topo {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2100;
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.voltar-topo:hover {
+  background: #555;
 }
 
 /* ==========================

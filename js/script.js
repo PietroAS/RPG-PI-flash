@@ -598,4 +598,15 @@ document.addEventListener("DOMContentLoaded", () => {
   restaurarLocal();
   bindInputs();
   atualizarTudo();
+
+  // 🔼 Botão Voltar ao Topo (Regras)
+  const painel = document.getElementById("painelRegras");
+  const conteudoRegras = painel?.querySelector(".conteudo-regras");
+  const btnTopo = document.getElementById("voltarTopoRegras");
+
+  if (conteudoRegras && btnTopo) {
+    btnTopo.addEventListener("click", () => {
+      conteudoRegras.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 });
