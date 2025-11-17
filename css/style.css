@@ -493,12 +493,11 @@ Painel De Regras
   z-index: 2000;
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* painel em si NÃO rola */
 }
 
 #painelRegras {
-  max-height: 80vh;
-  overflow-y: auto; /* <- importante: quem rola é o painel */
-  scroll-behavior: smooth; /* rolagem suave por CSS */
+  max-height: 80vh; /* pode manter a altura limite */
 }
 
 /* Estado visível */
@@ -506,16 +505,21 @@ Painel De Regras
   transform: translateY(0);
 }
 
-/* Conteúdo interno */
+/* Conteúdo interno com rolagem */
 .painel-regras .conteudo-regras {
   padding: 1% 5%;
+  overflow-y: auto;
   flex: 1;
+  scroll-behavior: smooth;
+  position: relative;
 }
 
-/* Botão de fechar */
+/* Botão de fechar sempre no canto, fixo dentro do painel */
 .painel-regras .fechar {
-  align-self: flex-end;
-  margin: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  z-index: 10;
 }
 
 /* ==========================

@@ -552,7 +552,8 @@ function renderRegras(md, container) {
   };
 
   // 4) Intercepta links com hash e rola DENTRO do painel de regras
-  const scroller = document.getElementById("painelRegras"); // <- é ELE quem rola
+  const scroller = document.querySelector("#painelRegras .conteudo-regras");
+
   container.querySelectorAll("a").forEach((a) => {
     const href = a.getAttribute("href");
     if (!href) return;
