@@ -610,6 +610,18 @@ Painel De Regras
   }
 }
 
+/*Negativo em vermelho*/
+.status-box span.negativo {
+  color: #ff6b6b; /* vermelho suave */
+  font-weight: bold;
+}
+
+/* Vida acima do máximo */
+.overmax {
+  color: #37b1f8 !important;
+  font-weight: bold;
+}
+
 /* ==========================
    IMPRESSÃO EM PDF
 ========================== */
