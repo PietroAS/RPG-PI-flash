@@ -1,4 +1,4 @@
-# 🎲 SISTEMA RPG PI FLASH (ver. 2.3.2)
+# 🎲 SISTEMA RPG PI FLASH (ver. 2.3.3)
 
 ## 📚 Índice
 
@@ -14,26 +14,27 @@
 - [⚡ Pontos de Ação](#pontos-de-ação)
 - [🌟 Vantagens / Habilidades](#vantagens--habilidades)
 - [⚠️ Desvantagens / Defeitos](#desvantagens--defeitos)
-- [🧩 Desafios](#desafios)
-- [❤️ Vida](#vida)
-- [💀 Morte](#morte)
-- [🔮 Mana](#mana)
-- [🏃 Movimento](#movimento)
-- [🎯 Acertos](#acertos)
-- [⚔️ Armas e Dano](#armas-e-dano)
-- [🗡️ Ataques](#ataques)
-- [⚔️ Ataques Especiais](#ataques-especiais)
-- [🛡️ Defesa](#defesa)
-- [💥 Crítico](#crítico)
-- [✨ Magias](#magias)
-- [🛡️ Armaduras](#armaduras)
-- [🛡️ Escudos](#escudos)
-- [🎒 Equipamentos](#equipamentos)
-- [📦 Pontos por Equipamentos](#pontos-por-equipamentos)
-- [⚔️ Conjuntos](#conjuntos)
-- [🎒 Kits](#kits)
-- [💰 Economia](#economia)
-- [📌 Observações](#observações)
+- [🧬 Raças](#🧬-raças)
+- [🧩 Desafios](#🧩-desafios)
+- [❤️ Vida](#️-vida)
+- [💀 Morte](#-morte)
+- [🔮 Mana](#-mana)
+- [🏃 Movimento](#-movimento)
+- [🎯 Acertos](#-acertos)
+- [⚔️ Armas e Dano](#-armas-e-dano)
+- [🗡️ Ataques](#-ataques)
+- [⚔️ Ataques Especiais](#-ataques-especiais)
+- [🛡️ Defesa](#-defesa)
+- [💥 Crítico](#-crítico)
+- [✨ Magias](#-magias)
+- [🛡️ Armaduras](#-armaduras)
+- [🛡️ Escudos](#-escudos)
+- [🎒 Equipamentos](#-equipamentos)
+- [📦 Pontos por Equipamentos](#-pontos-por-equipamentos)
+- [⚔️ Conjuntos](#-conjuntos)
+- [🎒 Kits](#-kits)
+- [💰 Economia](#-economia)
+- [📌 Observações](#-observações)
 
 ### 👤 Personagem
 
@@ -41,40 +42,43 @@
 
 ### 📋 Tabelas
 
-- [🌟 Vantagens (1–2 Pontos)](#vantagens-12-pontos)
-- [💎 Vantagens Maiores (3–5 Pontos)](#vantagens-maiores-35-pontos)
-- [🧩 Desvantagens Menores](#desvantagens-menores)
-- [⚠️ Desvantagens Maiores (3–4 Pontos)](#desvantagens-maiores-34-pontos)
+- 🌟 Vantagens (1–2 Pontos)
+- 💎 Vantagens Maiores (3–5 Pontos)
+- 🧩 Desvantagens Menores
+- ⚠️ Desvantagens Maiores (3–4 Pontos)
 
 </details>
 
-Esse sistema é para ser um sistema **resumido e divertido**, perfeito para jogadores experientes introduzirem novos jogadores, (sem assustar com vários livros enormes), que corta tudo o que é desnecessário e mantém apenas o básico, com uma pitada de variação.
-O objetivo é que ele seja **simples e adaptável.** Quem desejar experimentar o sistema, é livre para criar e implementar novas regras, além de adaptar o sistema para as suas campanhas. O importante é se divertir.
+Esse sistema é para ser um sistema **resumido e divertido**, perfeito para jogadores experientes introduzirem novos jogadores (sem assustar com vários livros enormes), que corta tudo o que é desnecessário e mantém apenas o básico, com uma pitada de variação.  
+O objetivo é que ele seja **simples e adaptável.** Quem desejar experimentar o sistema é livre para criar e implementar novas regras, além de adaptar o sistema para as suas campanhas. O importante é se divertir.
+
+---
 
 ## 📖 REGRAS
 
-### 🧮 PONTOS
+### 🧮 Pontos
 
-Cada jogador **começa com 10 pontos** para distribuir em sua ficha, e pode pegar até **+ 3 pontos**, através de desvantagens. A cada X Níveis (definido pelo mestre, dependendo da dificuldade e outras recompensas que ele deseje dar aos jogadores) recebe Y pontos extras.
+Cada jogador **começa com 10 pontos** para distribuir em sua ficha, e pode pegar até **+ 3 pontos**, através de desvantagens. A cada X Níveis (definido pelo mestre, dependendo da dificuldade e outras recompensas que ele deseje dar aos jogadores) recebe Y pontos extras.  
 Lembrando que ao criar um personagem, as **armas e equipamentos também custam pontos**. E nenhum atributo pode começar **acima de 4**.
 
-### 💪 ATRIBUTOS
+### 💪 Atributos
 
 - Corpo
 - Mente
 - Espírito
 
-### 🎲 DADOS
+### 🎲 Dados
 
-Cada ponto em um atributo, evolui o dado, iniciando no d4 e terminando no d12, seguindo a seguinte ordem `d4 → d6 → d8 → d10 → d12`.
-Após 5 pontos, o atributo ganha um novo dado e reinicia a progressão.
-Ex:
+Cada ponto em um atributo evolui o dado, iniciando no d4 e terminando no d12, seguindo a seguinte ordem:  
+`d4 → d6 → d8 → d10 → d12`.
+
+Após 5 pontos, o atributo ganha um novo dado e reinicia a progressão. Ex:
 
 - Corpo 5 = 1d12
 - Mente 6 = 1d12 + 1d4
 - Espírito 7 = 1d12 + 1d6
 
-### 🎯 ESPECIALIZAÇÃO
+### 🎯 Especialização
 
 Cada especialização **custa 2** pontos e **concede +1 fixo** em todas as rolagens relacionadas.
 
@@ -88,11 +92,12 @@ Cada especialização **custa 2** pontos e **concede +1 fixo** em todas as rolag
 - Carisma (Mente)
 - Percepção (Mente)
 
-### ⚡ PONTOS DE AÇÃO
+### ⚡ Pontos de Ação
 
-Cada jogador tem, por padrão, **2 ações livres** podendo usar elas para movimento, ataques, etc. A cada **2 pontos em Agilidade**, o personagem ganha **+1 ação**.
+Cada jogador tem, por padrão, **2 ações livres**, podendo usar elas para movimento, ataques, etc.  
+A cada **2 pontos em Agilidade**, o personagem ganha **+1 ação**.
 
-### 🌟 VANTAGENS / HABILIDADES
+### 🌟 Vantagens / Habilidades
 
 O jogador pode escolher habilidades que o ajudem no jogo, gastando pontos (**de 1 a 5**). As Habilidades podem se encaixar nas seguintes categorias (sugestões):
 
@@ -102,7 +107,7 @@ O jogador pode escolher habilidades que o ajudem no jogo, gastando pontos (**de 
 - Profissão
 - Social
 
-### ⚠️ DESVANTAGENS / DEFEITOS
+### ⚠️ Desvantagens / Defeitos
 
 Da mesma forma que as habilidades, os defeitos adicionam mais profundidade ao jogo. Ao pegar um defeito o jogador ganha **mais pontos (0 a 4)**. Pode-se utilizar as mesmas categorias das habilidades:
 
@@ -112,13 +117,217 @@ Da mesma forma que as habilidades, os defeitos adicionam mais profundidade ao jo
 - Profissão
 - Social
 
-### 🧩 DESAFIOS
+---
+
+### 🧬 Raças
+
+Raças devem ser construídas da seguinte forma:
+
+#### 1️⃣ Bônus da Raça
+
++1 ponto em **UMA Especialização**:
+
+> Agilidade, Destreza, Força, Resistência, Vitalidade, Sabedoria, Inteligência, Carisma ou Percepção.
+
+➡️ Nenhum bônus em **Corpo, Mente ou Espírito.**
+
+#### 2️⃣ Vantagens Raciais
+
+Cada raça recebe **1 a 3 vantagens**, retiradas da tabela oficial.  
+Essas vantagens somam pontos, e isso ajuda a definir o custo da raça.
+
+#### 3️⃣ Desvantagens Raciais
+
+Para equilibrar, algumas raças recebem **1 a 3 desvantagens menores.**
+
+#### 4️⃣ Habilidade Única
+
+Uma habilidade temática equivalente a **1 ponto** (algo simples, mas marcante da raça).
+
+#### 5️⃣ Cálculo de Custo
+
+> **Custo Final = (Soma das vantagens) – (soma das desvantagens)**
+
+O custo pode ser **positivo, zero ou negativo**.
+
+---
+
+#### 🧑 Humano
+
+**Custo:** 0 pontos — Humanos são a raça base do sistema.
+
+**Especialização:**
+
+- +1 em qualquer Especialização (escolha do jogador)
+
+**Vantagens raciais:**
+
+- Rápido Aprendizado (-2)
+
+**Desvantagens raciais:**
+
+- Raça Sem Magia (+2)
+  > Precisa pagar 2 pontos para poder ser de uma classe mágica ou aprender magias.
+
+**Habilidade única:**
+
+- **Versátil** — Escolha 1 vantagem de até 1 ponto gratuitamente.
+
+---
+
+#### 🧝 Elfo
+
+**Custo:** 2 pontos
+
+**Especialização:**
+
+- +1 Destreza
+
+**Vantagens raciais:**
+
+- Visão Aguçada (-1)
+- Olhos Noturnos (-1)
+- Ligação Elemental (Natureza ou Ar) (-2)
+
+**Desvantagens raciais:**
+
+- Orgulhoso (+1)
+- Vaidoso (+1)
+
+**Habilidade única:**
+
+- **Passos Leves** — Elfos não fazem ruído ao se mover devagar.
+
+---
+
+#### 🧔 Anão
+
+**Custo:** 2 pontos
+
+**Especialização:**
+
+- +1 Resistência
+
+**Vantagens raciais:**
+
+- Pele Grossa (-2)
+- Resistência Física (-2)
+
+**Desvantagens raciais:**
+
+- Lento (+1)
+
+**Habilidade única:**
+
+- **Determinação Anã** — Pode ignorar penalidade por dor uma vez por combate.
+
+---
+
+#### 🧌 Orc
+
+**Custo:** 1 ponto
+
+**Especialização:**
+
+- +1 Força
+
+**Vantagens raciais:**
+
+- Força de Vontade (-2)
+- Determinado (-2)
+
+**Desvantagens raciais:**
+
+- Má Fama (+1)
+- Débil Mental (+2)
+
+**Habilidade única:**
+
+- **Fúria Menor** — 1 vez por combate, +1 no ataque físico por 2 turnos.
+
+---
+
+#### 🧙‍♂️ Pequenino (Halfling)
+
+**Custo:** 1 ponto
+
+**Especialização:**
+
+- +1 Agilidade
+
+**Vantagens raciais:**
+
+- Furtivo (-2)
+- Sorte (-1)
+
+**Desvantagens raciais:**
+
+- Fraco (+1)
+
+**Habilidade única:**
+
+- **Pequeno e Esperto** — Ataques pesados contra você têm -1 de dano.
+
+---
+
+#### 🟢 Goblin
+
+**Custo:** -2 pontos (raça fraca)
+
+**Especialização:**
+
+- +1 Destreza
+
+**Vantagens raciais:**
+
+- Audição Apurada (-1)
+- Olhos Noturnos (-1)
+- Furtivo (-2)
+- Instinto de Perigo (-2)
+
+**Desvantagens raciais:**
+
+- Corpo Frágil (+2)
+- Odiado Universalmente (+4)
+- Fraco (+1)
+
+**Habilidade única:**
+
+- **Improviso Goblin** — Armas improvisadas causam +0.5 de dano.
+
+---
+
+#### 🌪️ Saci
+
+**Custo:** -1 ponto (raça fraca)
+
+**Especialização:**
+
+- +1 Percepção
+
+**Vantagens raciais:**
+
+- Instinto de Perigo (-2)
+
+**Desvantagens raciais:**
+
+- Fraco (+1)
+- Curioso (+1)
+- Perneta (+1) — Tem apenas uma perna.
+
+**Habilidade única:**
+
+- **Redemoinho** — 1x por combate, pode se mover 2 zonas ignorando obstáculos e inimigos.
+
+---
+
+### 🧩 Desafios
 
 - **Combate**: ATR x ATR
 - **Social**: ATR x ATR
-- **Mundo**: ATR x Nível desafio
+- **Mundo**: ATR x Nível de desafio
 
-**Níveis de Desafio de Mundo**
+**Níveis de Desafio de Mundo**  
 Fatores extra: x (combate, chuva, vento, noite, estresse, cansaço, etc.)
 
 - Fácil: 0 a 2 + x
@@ -126,7 +335,7 @@ Fatores extra: x (combate, chuva, vento, noite, estresse, cansaço, etc.)
 - Difícil: 6 a 10 + x
 - Muito difícil: 11 a 15 + x
 
-### ❤️ VIDA
+### ❤️ Vida
 
 Cada parte do corpo tem um valor de vida separado. Cada ponto em **Vitalidade** aumenta em +1 esses valores. A cada **3 pontos em Corpo**, cada região do corpo recebe +1 de vida.
 
@@ -136,57 +345,64 @@ Cada parte do corpo tem um valor de vida separado. Cada ponto em **Vitalidade** 
 | Tronco         | 3         |
 | Membros        | 2         |
 
-### 💀 MORTE
+### 💀 Morte
 
-Ao ter os pontos de vida de uma parte do corpo **reduzidos a zero**, o jogador deve fazer uma **Rolagem de Salvamento**, (Espírito + Resistência ou Vitalidade) para ver se não vai ser nocauteado ou entrar em estado de choque.
+Ao ter os pontos de vida de uma parte do corpo **reduzidos a zero**, o jogador deve fazer uma **Rolagem de Salvamento** (Espírito + Resistência ou Vitalidade) para ver se não vai ser nocauteado ou entrar em estado de choque.  
 O sucesso é definido pela **metade de sua rolagem máxima**, no atributo de Espírito (Ex: Espírito = 1, precisa de 3 no d4).
-Caso resista, ele ainda pode continuar consciente.
+
+Caso resista, ele ainda pode continuar consciente.  
 No entanto, caso a parte do corpo seja a **Cabeça ou Tronco**, o jogador tem **desvantagem no teste**, a não ser que receba socorro médico ou cura.
-Caso falhe no primeiro teste, o personagem entra em coma e o jogador precisa fazer as Rolagens de Salvamento (uma vez por turno). Para sobreviver ele deve conseguir **3** rolagens bem-sucedidas em uma melhor de **5**. Se falhar, o personagem **morre**.
 
-### 🔮 MANA
+Caso falhe no primeiro teste, o personagem entra em coma e o jogador precisa fazer novas Rolagens de Salvamento (uma vez por turno). Para sobreviver, ele deve conseguir **3** rolagens bem-sucedidas em uma melhor de **5**. Se falhar, o personagem **morre**.
 
-A mana total é igual a **Espírito \* 2 + 1**
-Recupera um valor igual ao Espírito a cada rodada
+### 🔮 Mana
 
-### 🏃 MOVIMENTO
+A mana total é igual a:
 
-Base de raça + bônus - penalidades
-Quando não tem mapas ou quadrados para medir, pode ser utilizado o sistema de **zonas** (distâncias de exemplo em metros):
+> **Mana = Espírito × 2 + 1**
+
+Recupera um valor igual ao **Espírito** a cada rodada.
+
+### 🏃 Movimento
+
+Base de raça + bônus - penalidades.  
+Quando não há mapas ou quadrados para medir, pode ser utilizado o sistema de **zonas** (distâncias de exemplo em metros):
 
 - Curta Distância: 0 a 3
 - Média Distância: 4 a 10
 - Longa: 11 a 25
 - Muito Longa: 26+
 
-A distância de **movimento padrão** em 1 turno é a **Média Distância**.  
-**(Opcional)** Corrida Livre: usa todas as suas ações em seu deslocamento máximo, mas pode deixar o jogador, ou criatura, vulnerável.
+A distância de **movimento padrão** em 1 turno é a **Média Distância**.
 
-### 🎯 ACERTOS
+**(Opcional)** Corrida Livre: usa todas as suas ações em seu deslocamento máximo, mas pode deixar o jogador ou criatura vulnerável.
+
+### 🎯 Acertos
 
 - Ataque: **ATR + Especialização do atacante x ATR do defensor**.  
   Ao acertar, é rolado o dado da **Região de Acerto (RdA)** d6 (valor reflete a parte do corpo atingida).
 
-  - **RdA (d6)**:
-    - 6: cabeça
-    - 5: tronco
-    - 4: perna dominante
-    - 3: perna
-    - 2: braço dominante
-    - 1: braço
+  **RdA (d6):**
+
+  - 6: cabeça
+  - 5: tronco
+  - 4: perna dominante
+  - 3: perna
+  - 2: braço dominante
+  - 1: braço
 
 - O dano causado é relativo à arma.
 - Apenas um bônus de Especialização pode ser aplicado por vez.
-- Ataques com armas desconhecidas, têm -1 de penalidade
-- Ataques com a mão secundária têm -1 de penalidade
+- Ataques com armas desconhecidas têm -1 de penalidade.
+- Ataques com a mão secundária têm -1 de penalidade.
 
-### ⚔️ ARMAS E DANO
+### ⚔️ Armas e Dano
 
-Golpes desarmados causam 0.5 de dano.
-Armas simples e improvisadas causam 1.
-Armas avançadas e complexas causam 2.
+- Golpes desarmados causam **0.5** de dano.
+- Armas simples e improvisadas causam **1**.
+- Armas avançadas e complexas causam **2**.
 
-### 🗡️ ATAQUES
+### 🗡️ Ataques
 
 Cada arma tem 3 tipos de ataque:
 
@@ -194,59 +410,65 @@ Cada arma tem 3 tipos de ataque:
 - **Normal** → dano × 1
 - **Pesado** → dano × 2, desvantagem no acerto, custa 2 ações
 
-➡ ️ Dano mínimo: o mínimo que um golpe pode causar é 0.5 de dano (e somente se superar armadura, exceto ataques penetrantes que ignoram a armadura).
+➡️ **Dano mínimo**: o mínimo que um golpe pode causar é **0.5 de dano** (e somente se superar armadura, exceto ataques penetrantes, que ignoram a armadura).
 
-(Opcional) Ataques guiados:
-O jogador pode tentar acertar uma parte específica. Para isso declara onde quer acertar e rola o d6 da **Região de Acerto (RdA)** junto com o ataque. Se errar a região (O valor não corresponder), subtrai a diferença do resultado do ataque
+**(Opcional) Ataques guiados:**  
+O jogador pode tentar acertar uma parte específica. Para isso, declara onde quer acertar e rola o d6 da **Região de Acerto (RdA)** junto com o ataque. Se errar a região (o valor não corresponder), subtrai a diferença do resultado do ataque.
 
-### ⚔️ ATAQUES ESPECIAIS
+### ⚔️ Ataques Especiais
 
-Podem ser pegos apenas **pagando pontos**, e são classificados como vantagens.
+Podem ser pegos apenas **pagando pontos**, e são classificados como vantagens.  
 São ataques especiais com modificadores extras e custos diferenciados, para deixar atacantes físicos mais variados. Estes ataques **não têm** custo de Mana, mas adicionam custo de Pontos de Ação (PA) e podem ser combinados com ataques normais.
-Seu custo de pontos é igual ao custo de PA final.
 
-- Dano extra: +1. (+1)
-- Golpe rápido: causa metade do dano, mas pode ser usado 2 vezes.(+1)
-- Mirado: Adiciona um d6 à chance de acerto (+1)
-- Alvos múltiplos (+1 por alvo)
-- Ataque em área: acerta todos os alvos na zona de ataque (+1)
-- Alcance estendido: adiciona uma zona à categoria da arma (+1)
-- Efeito extra: controle, desarme ou utilidade (+1 para cada efeito extra).
+> Seu custo de pontos é igual ao custo de PA final.
 
-Para reduzir os custos de PA, pode-se adicionar efeitos negativos ao ataque.
+**Modificadores positivos:**
 
-- Fraco: -1 de dano (-1)
-- Difícil: -1 de chance de acerto (-1)
-- Lento: demora um turno inteiro (consome todas as ações para performar)(-2)
-- Vulnerável: deixa o usuário vulnerável a contra-ataques (-1)
-- Curto: reduz o alcance do ataque (-0/-1)
-- Cansativo: reduz a quantidade de ações no próximo turno (-1 por cada)
-- Dolorido: recebe metade do dano se errar (-1)
-- Suicida: recebe o mesmo dano que o alvo (-2)
+- Dano extra: +1 → (+1)
+- Golpe rápido: causa metade do dano, mas pode ser usado 2 vezes → (+1)
+- Mirado: adiciona um d6 à chance de acerto → (+1)
+- Alvos múltiplos → (+1 por alvo)
+- Ataque em área: acerta todos os alvos na zona de ataque → (+1)
+- Alcance estendido: adiciona uma zona à categoria da arma → (+1)
+- Efeito extra: controle, desarme ou utilidade → (+1 para cada efeito extra)
+
+**Para reduzir os custos de PA, pode-se adicionar efeitos negativos ao ataque:**
+
+- Fraco: -1 de dano → (-1)
+- Difícil: -1 de chance de acerto → (-1)
+- Lento: demora um turno inteiro (consome todas as ações para performar) → (-2)
+- Vulnerável: deixa o usuário vulnerável a contra-ataques → (-1)
+- Curto: reduz o alcance do ataque → (-0/-1)
+- Cansativo: reduz a quantidade de ações no próximo turno → (-1 por cada)
+- Dolorido: recebe metade do dano se errar → (-1)
+- Suicida: recebe o mesmo dano que o alvo → (-2)
 
 Os jogadores e o mestre podem criar outros modificadores, se acharem válido.
 
-### 🛡️ DEFESA
+### 🛡️ Defesa
 
-A defesa é definida por **Dado de Corpo + FOR ou DES, + escudo** (se houver)
+A defesa é definida por:
 
-Ao usar escudos pequenos ou médios, o jogador pode optar por defender (usando o bônus do escudo) ou esquivar (gastando ponto de ação), nunca ambos, exceto se o mestre permitir ou em Campanhas Heroicas.
+> **Defesa = Dado de Corpo + FOR ou DES + escudo (se houver)**
 
-**Esquiva**: Um jogador pode gastar um Ponto de Ação, fora de seu turno, para desviar de um ataque. Não pode ser usado com Escudos Grandes.
+Ao usar escudos pequenos ou médios, o jogador pode optar por defender (usando o bônus do escudo) **ou** esquivar (gastando ponto de ação), nunca ambos, exceto se o mestre permitir ou em **Campanhas Heroicas**.
 
-### 💥 CRÍTICO
+**Esquiva:**  
+Um jogador pode gastar um Ponto de Ação, fora de seu turno, para desviar de um ataque. Não pode ser usado com Escudos Grandes.
 
-- Se ataque > dobro da defesa = **Crítico**.
-- Efeito: dano dobrado + ignora metade da armadura.
+### 💥 Crítico
 
-### ✨ MAGIAS
+- Se **Ataque > dobro da Defesa** ⇒ **Crítico**.
+- Efeito: **dano dobrado + ignora metade da armadura.**
+
+### ✨ Magias
 
 - Base: **Mente + Especialização x ATR do defensor**.
-- Cada ponto em Mente → +1 magia conhecida.
-- Cada ponto em Inteligência → +2 magias conhecidas.
+- Cada ponto em **Mente** → +1 magia conhecida.
+- Cada ponto em **Inteligência** → +2 magias conhecidas.
 - Conjurar custa **1 PA + custo de mana**.
 
-**Custos adicionais de modificadores**:
+**Custos adicionais de modificadores:**
 
 - +1 dano → (+1)
 - Poderosa (dano ×2, 1 rodada inteira) → (+2)
@@ -256,132 +478,136 @@ Ao usar escudos pequenos ou médios, o jogador pode optar por defender (usando o
 - Alcance extra (por zona) → (+1 cada)
 - Tipo (dano, cura, controle, utilidade) → (+0 por 1, +1 para extra)
 
-Críticos funcionam como no físico: **dano dobrado, ignora metade da armadura**.
+Críticos funcionam como no físico: **dano dobrado, ignora metade da armadura**.  
 Ataques mágicos seguem as mesmas regras de ataque e defesa que ataques físicos, a menos que a magia descreva outra forma de resolução.
 
-### 🛡️ ARMADURAS
+### 🛡️ Armaduras
 
-Adicionam Pontos de Armadura em cima da vida, dos locais cobertos, aplicada contra todos os golpes recebidos.
-Sugestão de Armaduras iniciais:
+Adicionam **Pontos de Armadura** em cima da vida dos locais cobertos, aplicada contra todos os golpes recebidos.
 
-- Armaduras improvisadas 0.5
-- Armaduras simples e normais 1
-- Armaduras pesadas e complexas 2
+Sugestão de armaduras iniciais:
 
-**(Opcional) Durabilidade** (para mais realismo): armadura aguenta ~30x sua defesa.
+- Armaduras improvisadas → 0.5
+- Armaduras simples e normais → 1
+- Armaduras pesadas e complexas → 2
+
+**(Opcional) Durabilidade** (para mais realismo): a armadura aguenta ~30x sua defesa.
 
 - Improvisada → 15
 - Simples → 30
 - Pesada → 60
 
-### 🛡️ ESCUDOS
+### 🛡️ Escudos
 
 Adicionam um dado na defesa, dependendo do tamanho do escudo:
 
-- Pequeno 1d4
-- Médio 1d6
-- Grande 1d8 (ocupa dois espaços de equipamento)
+- Pequeno → 1d4
+- Médio → 1d6
+- Grande → 1d8 (ocupa dois espaços de equipamento)
 
-### 🎒 EQUIPAMENTOS
+### 🎒 Equipamentos
 
 - Cada personagem pode ter **3** equipamentos.
 - Cada **3 peças** de Armadura Pesada ocupam 1 espaço.
-- Cada **2 pontos em Corpo**: +1 espaço.
-- Cada **ponto em Força**: +2 espaços.
-- Uma mochila normal adiciona espaço para **+15 itens pequenos**, cada item médio ocupa 2 espaços na mochila.
-- Uma mochila melhor ou mágica, pode ter mais espaço.
+- Cada **2 pontos em Corpo** → +1 espaço.
+- Cada **ponto em Força** → +2 espaços.
+- Uma mochila normal adiciona espaço para **+15 itens pequenos**; cada item médio ocupa 2 espaços na mochila.
+- Uma mochila melhor ou mágica pode ter mais espaço.
 
-### 📦 PONTOS POR EQUIPAMENTOS
+### 📦 Pontos por Equipamentos
 
 - Armas simples → 1
 - Armas mágicas/avançadas → 3
 - Armaduras simples → 0.5 por parte
 - Armaduras mágicas/avançadas → 3 por parte
 
-### ⚔️ CONJUNTOS
+### ⚔️ Conjuntos
 
-Cada jogador recebe 2 pontos extras exclusivos para escolher um conjunto inicial ou montar o seu próprio. Algumas sugestões de Conjuntos são:
+Cada jogador recebe **2 pontos extras exclusivos** para escolher um conjunto inicial ou montar o seu próprio. Algumas sugestões de Conjuntos:
 
 - **Guerreiro (3)** → Capacete, peitoral, arma branca, escudo, 2x armadura de braço.
 - **Ladino (3)** → Capuz, peitoral, 2x adagas, arma de tiro curto.
 - **Mago (3)** → Foco mágico, livro de magias, arma branca, manto, chapéu.
 - **Paladino (4)** → Capacete, peitoral, 2x armadura de braço, 2x armadura de pernas, arma branca, escudo.
 - **Patrulheiro (3)** → Peitoral, capacete, 2x armadura de pernas, arma de tiro longo, arma branca.
-- Todas as armaduras dos Conjuntos iniciais são da categoria de **armaduras simples**
-- Os Conjuntos devem oferecer 1 ou 2 pontos de desconto para seus itens.
 
-### 🎒 KITS
+- Todas as armaduras dos Conjuntos iniciais são da categoria de **armaduras simples**.
+- Os Conjuntos devem oferecer **1 ou 2 pontos de desconto** para seus itens.
 
-- **Explorador:** mochila pequena(+10), facão, kit barraca, tocha, corda, equipamentos de escalada, líquido inflamável
+### 🎒 Kits
+
+- **Explorador:** mochila pequena (+10), facão, kit barraca, tocha, corda, equipamentos de escalada, líquido inflamável.
 - **Viajante:** mochila (+15), machado, kit barraca, lampião, líquido inflamável, roupa extra, comida de viagem.
 
-### 💰 ECONOMIA
+### 💰 Economia
 
-Se os jogadores não escolherem nenhuma vantagem ou desvantagem que altere seu status social, todos os jogadores começam com 3 Au.
+Se os jogadores não escolherem nenhuma vantagem ou desvantagem que altere seu status social, todos os jogadores começam com **10 Ag**.
 
-Os Valores e Economia aqui, são apenas sugestões, e podem ser alterados para caberem em qualquer tipo de campanha
+Os valores e Economia aqui são apenas sugestões, e podem ser alterados para caberem em qualquer tipo de campanha.
 
 **Moedas:**
 
-- COBRE: 1 (Cu)
-- PRATA: 10 (Ag)
-- OURO: 100 (Au)
+|   Moeda    | Valor |
+| :--------: | :---: |
+| COBRE (Cu) |   1   |
+| PRATA (Ag) |  100  |
+| OURO (Au)  | 5000  |
 
-Salário "mínimo" mensal: 150 Cu
+**Salário "mínimo" mensal:** 15 Ag
+
 (Referência: simples a bom)
 
-- Refeição: 1 a 20 Cu
-- Roupas: 3 a 20 Cu
-- Armas: 50 a 300 Cu
-- Armaduras: 100 a 1000 Cu
-- Ferramentas/utensílios: 1 a 200 Cu
+- Refeição: 1 a 50 Cu
+- Roupas: 5 Cu a 1 Ag
+- Armas: 50 Cu a 3 Ag
+- Armaduras: 5 Ag a 1 Au
+- Ferramentas / utensílios: 1 Cu a 2 Ag
 
-Custo de Vida: Valor diário
+**Custo de Vida (valor diário):**
 
-- Miserável / Mendigo: 1 Cu
-- Pobre / Aldeão: 5 Cu
-- Médio / Aventureiro / Trabalhador: 3 Ag
-- Abastado / Mercador / Burguês: 1 Au
-- Rico / Nobre / Aristocrata: 10 Au ou mais
+- Miserável / Mendigo: 0 a 1 Cu
+- Pobre / Aldeão: 5 a 10 Cu
+- Médio / Aventureiro / Trabalhador: 30 a 50 Cu
+- Abastado / Mercador / Burguês: 1 a 5 Ag
+- Rico / Nobre / Aristocrata: 1 Au ou mais
 
-Recompensas de aventuras
-Aventuras pagam melhor do que trabalhos normais, o que pode ser um estímulo para as pessoas escolherem esse estilo de vida. Alguns valores iniciais (sugestão), podem ser:
+**Recompensas de aventuras**  
+Aventuras pagam melhor do que trabalhos normais, o que pode ser um estímulo para as pessoas escolherem esse estilo de vida. Alguns valores iniciais (sugestão) podem ser:
 
 - Missões pequenas (1 sessão, objetivo simples) → 30 a 80 Cu por jogador.
-
-- Missões médias (2–3 sessões, várias lutas/desafios) → 100 a 200 Cu por jogador.
-
-- Missões grandes (arco inteiro, chefão, viagem) → 250 a 500 Cu por jogador.
-
+- Missões médias (2–3 sessões, várias lutas/desafios) → 1 a 2 Ag por jogador.
+- Missões grandes (arco inteiro, chefão, viagem) → 10 Ag a 1 Au ou mais por jogador.
 - Campanhas heroicas → pode multiplicar por 1.5x ou 2x.
 
-### 📌 OBSERVAÇÕES
+### 📌 Observações
 
-**Vantagens e desvantagens:** Ao realizar um ataque ou ação **em situação** de vantagem ou desvantagem (não é igual a utilizar uma vantagem!), o jogador faz a rolagem duas vezes e seleciona a de maior valor, no caso de vantagem, ou de menor valor, no caso de desvantagem.
-**Valores fracionados** (ex.: 0.5) não devem ser arredondados
-**Campanhas Heroicas:** Para esse tipo de campanhas, é recomendado dobrar os valores de vida e aumentar em 1 o dano base dos jogadores, bem como dobrar as recompensas das missões.
+- **Vantagens e desvantagens:** Ao realizar um ataque ou ação **em situação** de vantagem ou desvantagem (não é igual a utilizar uma vantagem!), o jogador faz a rolagem duas vezes e seleciona a de maior valor, no caso de vantagem, ou de menor valor, no caso de desvantagem.
+- **Valores fracionados** (ex.: 0.5) não devem ser arredondados.
+- **Campanhas Heroicas:** para esse tipo de campanhas, é recomendado dobrar os valores de vida e aumentar em 1 o dano base dos jogadores, bem como dobrar as recompensas das missões.
 
-**(Opcional) Campanha solo:** Para manter o jogo mais divertido e compensar a falta de outros jogadores podem ser concedidos alguns bônus ao jogador, ex:
+**(Opcional) Campanha solo:** para manter o jogo mais divertido e compensar a falta de outros jogadores, podem ser concedidos alguns bônus ao jogador, ex:
 
 - +3 a +5 pontos extras na criação de ficha.
 - +1 ação extra por turno (para dar mais dinamismo).
 - +1 dado bônus em testes de sobrevivência/exploração.
 
+---
+
 ## Criando um Personagem
 
-Para criar um personagem, o jogador pode seguir os tópicos e ir ajustando a ficha conforme avança. Mas, caso já tenha lido tudo, aqui fica um resumo do que deve ser colocado na ficha, numa campanha padrão (10 pontos iniciais + até 3 pontos com desvantagens + 2 pontos exclusivos de equipamentos).
+Para criar um personagem, o jogador pode seguir os tópicos e ir ajustando a ficha conforme avança. Mas, caso já tenha lido tudo, aqui fica um resumo do que deve ser colocado na ficha, numa campanha padrão (**10 pontos iniciais + até 3 pontos com desvantagens + 2 pontos exclusivos de equipamentos**):
 
-- Informações do personagem
-  - (Nome, Raça, Idade, Cor, etc.)
-- Atributos
-  - (Corpo, Mente, Espírito)
-- Especializações
-  - (Força, Agilidade, Destreza, Resistência, Vitalidade, Sabedoria, Inteligência, Carisma e Percepção)
-- Habilidades / Vantagens
-- Defeitos / Desvantagens
-- Magias
-- Equipamentos / Inventário
-- Dinheiro / Propriedades
+- **Informações do personagem**
+  - Nome, Raça, Idade, Cor, etc.
+- **Atributos**
+  - Corpo, Mente, Espírito
+- **Especializações**
+  - Força, Agilidade, Destreza, Resistência, Vitalidade, Sabedoria, Inteligência, Carisma e Percepção
+- **Habilidades / Vantagens**
+- **Defeitos / Desvantagens**
+- **Magias**
+- **Equipamentos / Inventário**
+- **Dinheiro / Propriedades**
 
 ## 📋 Tabelas
 
