@@ -61,11 +61,15 @@ O objetivo é que ele seja **simples e adaptável.** Quem desejar experimentar o
 Cada jogador **começa com 10 pontos** para distribuir em sua ficha, e pode pegar até **+ 3 pontos**, através de desvantagens. A cada X Níveis (definido pelo mestre, dependendo da dificuldade e outras recompensas que ele deseje dar aos jogadores) recebe Y pontos extras.  
 Lembrando que ao criar um personagem, as **armas e equipamentos também custam pontos**. E nenhum atributo pode começar **acima de 4**.
 
+---
+
 ### 💪 Atributos
 
 - Corpo
 - Mente
 - Espírito
+
+---
 
 ### 🎲 Dados
 
@@ -77,6 +81,8 @@ Após 5 pontos, o atributo ganha um novo dado e reinicia a progressão. Ex:
 - Corpo 5 = 1d12
 - Mente 6 = 1d12 + 1d4
 - Espírito 7 = 1d12 + 1d6
+
+---
 
 ### 🎯 Especialização
 
@@ -92,10 +98,14 @@ Cada especialização **custa 2** pontos e **concede +1 fixo** em todas as rolag
 - Carisma (Mente)
 - Percepção (Mente)
 
+---
+
 ### ⚡ Pontos de Ação
 
 Cada jogador tem, por padrão, **2 ações livres**, podendo usar elas para movimento, ataques, etc.  
 A cada **2 pontos em Agilidade**, o personagem ganha **+1 ação**.
+
+---
 
 ### 🌟 Vantagens / Habilidades
 
@@ -106,6 +116,8 @@ O jogador pode escolher habilidades que o ajudem no jogo, gastando pontos (**de 
 - Sobrevivência
 - Profissão
 - Social
+
+---
 
 ### ⚠️ Desvantagens / Defeitos
 
@@ -335,6 +347,8 @@ Fatores extra: x (combate, chuva, vento, noite, estresse, cansaço, etc.)
 - Difícil: 6 a 10 + x
 - Muito difícil: 11 a 15 + x
 
+---
+
 ### ❤️ Vida
 
 Cada parte do corpo tem um valor de vida separado. Cada ponto em **Vitalidade** aumenta em +1 esses valores. A cada **3 pontos em Corpo**, cada região do corpo recebe +1 de vida.
@@ -344,6 +358,8 @@ Cada parte do corpo tem um valor de vida separado. Cada ponto em **Vitalidade** 
 | Cabeça         | 2         |
 | Tronco         | 3         |
 | Membros        | 2         |
+
+---
 
 ### 💀 Morte
 
@@ -355,6 +371,8 @@ No entanto, caso a parte do corpo seja a **Cabeça ou Tronco**, o jogador tem **
 
 Caso falhe no primeiro teste, o personagem entra em coma e o jogador precisa fazer novas Rolagens de Salvamento (uma vez por turno). Para sobreviver, ele deve conseguir **3** rolagens bem-sucedidas em uma melhor de **5**. Se falhar, o personagem **morre**.
 
+---
+
 ### 🔮 Mana
 
 A mana total é igual a:
@@ -362,6 +380,8 @@ A mana total é igual a:
 > **Mana = Espírito × 2 + 1**
 
 Recupera um valor igual ao **Espírito** a cada rodada.
+
+---
 
 ### 🏃 Movimento
 
@@ -376,6 +396,8 @@ Quando não há mapas ou quadrados para medir, pode ser utilizado o sistema de *
 A distância de **movimento padrão** em 1 turno é a **Média Distância**.
 
 **(Opcional)** Corrida Livre: usa todas as suas ações em seu deslocamento máximo, mas pode deixar o jogador ou criatura vulnerável.
+
+---
 
 ### 🎯 Acertos
 
@@ -396,11 +418,15 @@ A distância de **movimento padrão** em 1 turno é a **Média Distância**.
 - Ataques com armas desconhecidas têm -1 de penalidade.
 - Ataques com a mão secundária têm -1 de penalidade.
 
+---
+
 ### ⚔️ Armas e Dano
 
 - Golpes desarmados causam **0.5** de dano.
 - Armas simples e improvisadas causam **1**.
 - Armas avançadas e complexas causam **2**.
+
+---
 
 ### 🗡️ Ataques
 
@@ -414,6 +440,8 @@ Cada arma tem 3 tipos de ataque:
 
 **(Opcional) Ataques guiados:**  
 O jogador pode tentar acertar uma parte específica. Para isso, declara onde quer acertar e rola o d6 da **Região de Acerto (RdA)** junto com o ataque. Se errar a região (o valor não corresponder), subtrai a diferença do resultado do ataque.
+
+---
 
 ### ⚔️ Ataques Especiais
 
@@ -445,6 +473,8 @@ São ataques especiais com modificadores extras e custos diferenciados, para dei
 
 Os jogadores e o mestre podem criar outros modificadores, se acharem válido.
 
+---
+
 ### 🛡️ Defesa
 
 A defesa é definida por:
@@ -456,10 +486,14 @@ Ao usar escudos pequenos ou médios, o jogador pode optar por defender (usando o
 **Esquiva:**  
 Um jogador pode gastar um Ponto de Ação, fora de seu turno, para desviar de um ataque. Não pode ser usado com Escudos Grandes.
 
+---
+
 ### 💥 Crítico
 
 - Se **Ataque > dobro da Defesa** ⇒ **Crítico**.
 - Efeito: **dano dobrado + ignora metade da armadura.**
+
+---
 
 ### ✨ Magias
 
@@ -481,6 +515,8 @@ Um jogador pode gastar um Ponto de Ação, fora de seu turno, para desviar de um
 Críticos funcionam como no físico: **dano dobrado, ignora metade da armadura**.  
 Ataques mágicos seguem as mesmas regras de ataque e defesa que ataques físicos, a menos que a magia descreva outra forma de resolução.
 
+---
+
 ### 🛡️ Armaduras
 
 Adicionam **Pontos de Armadura** em cima da vida dos locais cobertos, aplicada contra todos os golpes recebidos.
@@ -497,6 +533,8 @@ Sugestão de armaduras iniciais:
 - Simples → 30
 - Pesada → 60
 
+---
+
 ### 🛡️ Escudos
 
 Adicionam um dado na defesa, dependendo do tamanho do escudo:
@@ -504,6 +542,8 @@ Adicionam um dado na defesa, dependendo do tamanho do escudo:
 - Pequeno → 1d4
 - Médio → 1d6
 - Grande → 1d8 (ocupa dois espaços de equipamento)
+
+---
 
 ### 🎒 Equipamentos
 
@@ -514,12 +554,16 @@ Adicionam um dado na defesa, dependendo do tamanho do escudo:
 - Uma mochila normal adiciona espaço para **+15 itens pequenos**; cada item médio ocupa 2 espaços na mochila.
 - Uma mochila melhor ou mágica pode ter mais espaço.
 
+---
+
 ### 📦 Pontos por Equipamentos
 
 - Armas simples → 1
 - Armas mágicas/avançadas → 3
 - Armaduras simples → 0.5 por parte
 - Armaduras mágicas/avançadas → 3 por parte
+
+---
 
 ### ⚔️ Conjuntos
 
@@ -534,10 +578,14 @@ Cada jogador recebe **2 pontos extras exclusivos** para escolher um conjunto ini
 - Todas as armaduras dos Conjuntos iniciais são da categoria de **armaduras simples**.
 - Os Conjuntos devem oferecer **1 ou 2 pontos de desconto** para seus itens.
 
+---
+
 ### 🎒 Kits
 
 - **Explorador:** mochila pequena (+10), facão, kit barraca, tocha, corda, equipamentos de escalada, líquido inflamável.
 - **Viajante:** mochila (+15), machado, kit barraca, lampião, líquido inflamável, roupa extra, comida de viagem.
+
+---
 
 ### 💰 Economia
 
@@ -579,6 +627,8 @@ Aventuras pagam melhor do que trabalhos normais, o que pode ser um estímulo par
 - Missões grandes (arco inteiro, chefão, viagem) → 10 Ag a 1 Au ou mais por jogador.
 - Campanhas heroicas → pode multiplicar por 1.5x ou 2x.
 
+---
+
 ### 📌 Observações
 
 - **Vantagens e desvantagens:** Ao realizar um ataque ou ação **em situação** de vantagem ou desvantagem (não é igual a utilizar uma vantagem!), o jogador faz a rolagem duas vezes e seleciona a de maior valor, no caso de vantagem, ou de menor valor, no caso de desvantagem.
@@ -608,6 +658,8 @@ Para criar um personagem, o jogador pode seguir os tópicos e ir ajustando a fic
 - **Magias**
 - **Equipamentos / Inventário**
 - **Dinheiro / Propriedades**
+
+---
 
 ## 📋 Tabelas
 
@@ -680,6 +732,8 @@ Para criar um personagem, o jogador pode seguir os tópicos e ir ajustando a fic
 | 58  | Mestre das Sombras           |  -4   | Pode se fundir a sombras por até 3 turnos, tornando-se invisível em áreas escuras.                         |
 | 59  | Passo Dimensional            |  -4   | Pode se teleportar a até 10 metros como ação bônus, 1x por combate.                                        |
 | 60  | Olhar Intimidador            |  -3   | Inimigos devem passar em teste de coragem (Espírito) ao enfrentá-lo pela primeira vez.                     |
+
+---
 
 ### 🧩 Desvantagens Menores
 
