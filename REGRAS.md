@@ -14,27 +14,27 @@
 - [⚡ Pontos de Ação](#pontos-de-ação)
 - [🌟 Vantagens / Habilidades](#vantagens--habilidades)
 - [⚠️ Desvantagens / Defeitos](#desvantagens--defeitos)
-- [🧬 Raças](#🧬-raças)
-- [🧩 Desafios](#🧩-desafios)
-- [❤️ Vida](#️-vida)
-- [💀 Morte](#-morte)
-- [🔮 Mana](#-mana)
-- [🏃 Movimento](#-movimento)
-- [🎯 Acertos](#-acertos)
-- [⚔️ Armas e Dano](#-armas-e-dano)
-- [🗡️ Ataques](#-ataques)
-- [⚔️ Ataques Especiais](#-ataques-especiais)
-- [🛡️ Defesa](#-defesa)
-- [💥 Crítico](#-crítico)
-- [✨ Magias](#-magias)
-- [🛡️ Armaduras](#-armaduras)
-- [🛡️ Escudos](#-escudos)
-- [🎒 Equipamentos](#-equipamentos)
-- [📦 Pontos por Equipamentos](#-pontos-por-equipamentos)
-- [⚔️ Conjuntos](#-conjuntos)
-- [🎒 Kits](#-kits)
-- [💰 Economia](#-economia)
-- [📌 Observações](#-observações)
+- [🧬 Raças](#🧬raças)
+- [🧩 Desafios](#🧩desafios)
+- [❤️ Vida](#️vida)
+- [💀 Morte](#morte)
+- [🔮 Mana](#mana)
+- [🏃 Movimento](#movimento)
+- [🎯 Acertos](#acertos)
+- [⚔️ Armas e Dano](#armas-e-dano)
+- [🗡️ Ataques](#ataques)
+- [⚔️ Ataques Especiais](#ataques-especiais)
+- [🛡️ Defesa](#defesa)
+- [💥 Crítico](#crítico)
+- [✨ Magias](#magias)
+- [🛡️ Armaduras](#armaduras)
+- [🛡️ Escudos](#escudos)
+- [🎒 Equipamentos](#equipamentos)
+- [📦 Pontos por Equipamentos](#pontos-por-equipamentos)
+- [⚔️ Conjuntos](#conjuntos)
+- [🎒 Kits](#kits)
+- [💰 Economia](#economia)
+- [📌 Observações](#observações)
 
 ### 👤 Personagem
 
@@ -42,10 +42,10 @@
 
 ### 📋 Tabelas
 
-- 🌟 Vantagens (1–2 Pontos)
-- 💎 Vantagens Maiores (3–5 Pontos)
-- 🧩 Desvantagens Menores
-- ⚠️ Desvantagens Maiores (3–4 Pontos)
+- [🌟 Vantagens (1–2 Pontos)](#vantagens-12-pontos)
+- [💎 Vantagens Maiores (3–5 Pontos)](#vantagens-maiores-35-pontos)
+- [🧩 Desvantagens Menores](#desvantagens-menores)
+- [⚠️ Desvantagens Maiores (3–4 Pontos)](#desvantagens-maiores-34-pontos)
 
 </details>
 
