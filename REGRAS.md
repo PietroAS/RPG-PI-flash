@@ -235,7 +235,7 @@ O custo pode ser **positivo, zero ou negativo**.
 
 ---
 
-#### 🧌 Orc
+#### 🩸 Orc
 
 **Custo:** 1 ponto
 
@@ -259,7 +259,7 @@ O custo pode ser **positivo, zero ou negativo**.
 
 ---
 
-#### 🧙‍♂️ Pequenino (Halfling)
+#### 🧒 Pequenino (Halfling)
 
 **Custo:** 1 ponto
 
