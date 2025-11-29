@@ -164,175 +164,6 @@ O custo pode ser **positivo, zero ou negativo**.
 
 ---
 
-#### 🧑 Humano
-
-**Custo:** 0 pontos — Humanos são a raça base do sistema.
-
-**Especialização:**
-
-- +1 em qualquer Especialização (escolha do jogador)
-
-**Vantagens raciais:**
-
-- Rápido Aprendizado (-2)
-
-**Desvantagens raciais:**
-
-- Raça Sem Magia (+2)
-  > Precisa pagar 2 pontos para poder ser de uma classe mágica ou aprender magias.
-
-**Habilidade única:**
-
-- **Versátil** — Escolha 1 vantagem de até 1 ponto gratuitamente.
-
----
-
-#### 🧝 Elfo
-
-**Custo:** 2 pontos
-
-**Especialização:**
-
-- +1 Destreza
-
-**Vantagens raciais:**
-
-- Visão Aguçada (-1)
-- Olhos Noturnos (-1)
-- Ligação Elemental (Natureza ou Ar) (-2)
-
-**Desvantagens raciais:**
-
-- Orgulhoso (+1)
-- Vaidoso (+1)
-
-**Habilidade única:**
-
-- **Passos Leves** — Elfos não fazem ruído ao se mover devagar.
-
----
-
-#### 🧔 Anão
-
-**Custo:** 2 pontos
-
-**Especialização:**
-
-- +1 Resistência
-
-**Vantagens raciais:**
-
-- Pele Grossa (-2)
-- Resistência Física (-2)
-
-**Desvantagens raciais:**
-
-- Lento (+1)
-
-**Habilidade única:**
-
-- **Determinação Anã** — Pode ignorar penalidade por dor uma vez por combate.
-
----
-
-#### 🩸 Orc
-
-**Custo:** 1 ponto
-
-**Especialização:**
-
-- +1 Força
-
-**Vantagens raciais:**
-
-- Força de Vontade (-2)
-- Determinado (-2)
-
-**Desvantagens raciais:**
-
-- Má Fama (+1)
-- Débil Mental (+2)
-
-**Habilidade única:**
-
-- **Fúria Menor** — 1 vez por combate, +1 no ataque físico por 2 turnos.
-
----
-
-#### 🧒 Pequenino (Halfling)
-
-**Custo:** 1 ponto
-
-**Especialização:**
-
-- +1 Agilidade
-
-**Vantagens raciais:**
-
-- Furtivo (-2)
-- Sorte (-1)
-
-**Desvantagens raciais:**
-
-- Fraco (+1)
-
-**Habilidade única:**
-
-- **Pequeno e Esperto** — Ataques pesados contra você têm -1 de dano.
-
----
-
-#### 🟢 Goblin
-
-**Custo:** -2 pontos (raça fraca)
-
-**Especialização:**
-
-- +1 Destreza
-
-**Vantagens raciais:**
-
-- Audição Apurada (-1)
-- Olhos Noturnos (-1)
-- Furtivo (-2)
-- Instinto de Perigo (-2)
-
-**Desvantagens raciais:**
-
-- Corpo Frágil (+2)
-- Odiado Universalmente (+4)
-- Fraco (+1)
-
-**Habilidade única:**
-
-- **Improviso Goblin** — Armas improvisadas causam +0.5 de dano.
-
----
-
-#### 🌪️ Saci
-
-**Custo:** -1 ponto (raça fraca)
-
-**Especialização:**
-
-- +1 Percepção
-
-**Vantagens raciais:**
-
-- Instinto de Perigo (-2)
-
-**Desvantagens raciais:**
-
-- Fraco (+1)
-- Curioso (+1)
-- Perneta (+1) — Tem apenas uma perna.
-
-**Habilidade única:**
-
-- **Redemoinho** — 1x por combate, pode se mover 2 zonas ignorando obstáculos e inimigos.
-
----
-
 ### 🧩 Desafios
 
 - **Combate**: ATR x ATR
@@ -661,7 +492,182 @@ Para criar um personagem, o jogador pode seguir os tópicos e ir ajustando a fic
 
 ---
 
-## 📋 Tabelas
+## 📋 Tabelas Listas
+
+---
+
+### Listas de Raças
+
+Aqui ficam algumas sugestões de raças para um RPG, que servem também como referencia na hora de criar outras.
+
+#### 🧑 Humano
+
+**Custo:** 0 pontos — Humanos são a raça base do sistema.
+
+**Especialização:**
+
+- +1 em qualquer Especialização (escolha do jogador)
+
+**Vantagens raciais:**
+
+- Rápido Aprendizado (-2)
+
+**Desvantagens raciais:**
+
+- Raça Sem Magia (+2)
+  > Precisa pagar 2 pontos para poder ser de uma classe mágica ou aprender magias.
+
+**Habilidade única:**
+
+- **Versátil** — Escolha 1 vantagem de até 1 ponto gratuitamente.
+
+---
+
+#### 🧝 Elfo
+
+**Custo:** 2 pontos
+
+**Especialização:**
+
+- +1 Destreza
+
+**Vantagens raciais:**
+
+- Visão Aguçada (-1)
+- Olhos Noturnos (-1)
+- Ligação Elemental (Natureza ou Ar) (-2)
+
+**Desvantagens raciais:**
+
+- Orgulhoso (+1)
+- Vaidoso (+1)
+
+**Habilidade única:**
+
+- **Passos Leves** — Elfos não fazem ruído ao se mover devagar.
+
+---
+
+#### 🧔 Anão
+
+**Custo:** 2 pontos
+
+**Especialização:**
+
+- +1 Resistência
+
+**Vantagens raciais:**
+
+- Pele Grossa (-2)
+- Resistência Física (-2)
+
+**Desvantagens raciais:**
+
+- Lento (+1)
+
+**Habilidade única:**
+
+- **Determinação Anã** — Pode ignorar penalidade por dor uma vez por combate.
+
+---
+
+#### 🩸 Orc
+
+**Custo:** 1 ponto
+
+**Especialização:**
+
+- +1 Força
+
+**Vantagens raciais:**
+
+- Força de Vontade (-2)
+- Determinado (-2)
+
+**Desvantagens raciais:**
+
+- Má Fama (+1)
+- Débil Mental (+2)
+
+**Habilidade única:**
+
+- **Fúria Menor** — 1 vez por combate, +1 no ataque físico por 2 turnos.
+
+---
+
+#### 🧒 Pequenino (Halfling)
+
+**Custo:** 1 ponto
+
+**Especialização:**
+
+- +1 Agilidade
+
+**Vantagens raciais:**
+
+- Furtivo (-2)
+- Sorte (-1)
+
+**Desvantagens raciais:**
+
+- Fraco (+1)
+
+**Habilidade única:**
+
+- **Pequeno e Esperto** — Ataques pesados contra você têm -1 de dano.
+
+---
+
+#### 🟢 Goblin
+
+**Custo:** -2 pontos (raça fraca)
+
+**Especialização:**
+
+- +1 Destreza
+
+**Vantagens raciais:**
+
+- Audição Apurada (-1)
+- Olhos Noturnos (-1)
+- Furtivo (-2)
+- Instinto de Perigo (-2)
+
+**Desvantagens raciais:**
+
+- Corpo Frágil (+2)
+- Odiado Universalmente (+4)
+- Fraco (+1)
+
+**Habilidade única:**
+
+- **Improviso Goblin** — Armas improvisadas causam +0.5 de dano.
+
+---
+
+#### 🌪️ Saci
+
+**Custo:** -1 ponto (raça fraca)
+
+**Especialização:**
+
+- +1 Percepção
+
+**Vantagens raciais:**
+
+- Instinto de Perigo (-2)
+
+**Desvantagens raciais:**
+
+- Fraco (+1)
+- Curioso (+1)
+- Perneta (+1) — Tem apenas uma perna.
+
+**Habilidade única:**
+
+- **Redemoinho** — 1x por combate, pode se mover 2 zonas ignorando obstáculos e inimigos.
+
+---
 
 ### 🌟 Vantagens (1–2 Pontos)
 
