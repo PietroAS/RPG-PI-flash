@@ -40,8 +40,9 @@
 
 - [Criando um Personagem](#criando-um-personagem)
 
-### 📋 Tabelas
+### 📋 Tabelas e Listas
 
+- [📖 Listas de Raças](#Listas-de-Raças)
 - [🌟 Vantagens (1–2 Pontos)](#vantagens-12-pontos)
 - [💎 Vantagens Maiores (3–5 Pontos)](#vantagens-maiores-35-pontos)
 - [🧩 Desvantagens Menores](#desvantagens-menores)
@@ -492,11 +493,9 @@ Para criar um personagem, o jogador pode seguir os tópicos e ir ajustando a fic
 
 ---
 
-## 📋 Tabelas Listas
+## 📋 Tabelas e Listas
 
----
-
-### Listas de Raças
+### 📖 Listas de Raças
 
 Aqui ficam algumas sugestões de raças para um RPG, que servem também como referencia na hora de criar outras.
 
