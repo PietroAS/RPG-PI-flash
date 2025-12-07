@@ -737,6 +737,7 @@ Aqui ficam algumas sugestões de raças para um RPG, que servem também como ref
 | 58  | Mestre das Sombras           |  -4   | Pode se fundir a sombras por até 3 turnos, tornando-se invisível em áreas escuras.                         |
 | 59  | Passo Dimensional            |  -4   | Pode se teleportar a até 10 metros como ação bônus, 1x por combate.                                        |
 | 60  | Olhar Intimidador            |  -3   | Inimigos devem passar em teste de coragem (Espírito) ao enfrentá-lo pela primeira vez.                     |
+| 61  | Voar                         |  -3   | voce é capaz de voar, sua movimentação é triplicada                                                        |
 
 ---
 
