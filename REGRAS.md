@@ -14,9 +14,9 @@
 - [⚡ Pontos de Ação](#pontos-de-ação)
 - [🌟 Vantagens / Habilidades](#vantagens--habilidades)
 - [⚠️ Desvantagens / Defeitos](#desvantagens--defeitos)
-- [🧬 Raças](#🧬raças)
-- [🧩 Desafios](#🧩desafios)
-- [❤️ Vida](#️vida)
+- [🧬 Raças](#raças)
+- [🧩 Desafios](#desafios)
+- [❤️ Vida](#vida)
 - [💀 Morte](#morte)
 - [🔮 Mana](#mana)
 - [🏃 Movimento](#movimento)
@@ -42,7 +42,7 @@
 
 ### 📋 Tabelas e Listas
 
-- [📖 Listas de Raças](#Listas-de-Raças)
+- [📖 Listas de Raças](#listas-de-raças)
 - [🌟 Vantagens (1–2 Pontos)](#vantagens-12-pontos)
 - [💎 Vantagens Maiores (3–5 Pontos)](#vantagens-maiores-35-pontos)
 - [🧩 Desvantagens Menores](#desvantagens-menores)
