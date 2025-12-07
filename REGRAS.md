@@ -1,4 +1,4 @@
-# 🎲 SISTEMA RPG PI FLASH (ver. 2.3.3)
+# 🎲 SISTEMA RPG PI FLASH (ver. 2.3.4)
 
 ## 📚 Índice
 
