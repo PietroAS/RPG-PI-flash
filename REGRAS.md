@@ -497,7 +497,7 @@ Para criar um personagem, o jogador pode seguir os tópicos e ir ajustando a fic
 
 ### 📖 Listas de Raças
 
-Aqui ficam algumas sugestões de raças para um RPG, que servem também como referencia na hora de criar outras.
+Aqui ficam algumas sugestões de raças para um RPG, que servem também como referência na hora de criar outras.
 
 #### 🧑 Humano
 
@@ -737,7 +737,7 @@ Aqui ficam algumas sugestões de raças para um RPG, que servem também como ref
 | 58  | Mestre das Sombras           |  -4   | Pode se fundir a sombras por até 3 turnos, tornando-se invisível em áreas escuras.                         |
 | 59  | Passo Dimensional            |  -4   | Pode se teleportar a até 10 metros como ação bônus, 1x por combate.                                        |
 | 60  | Olhar Intimidador            |  -3   | Inimigos devem passar em teste de coragem (Espírito) ao enfrentá-lo pela primeira vez.                     |
-| 61  | Voar                         |  -3   | voce é capaz de voar, sua movimentação é triplicada                                                        |
+| 61  | Voar                         |  -3   | Ganha a capacidade de voar, a movimentação é triplicada                                                    |
 
 ---
 
@@ -811,6 +811,6 @@ Aqui ficam algumas sugestões de raças para um RPG, que servem também como ref
 | 59  | Sem Sorte             |  +3   | Não pode rolar críticos positivos. Crítico é tratado como sucesso normal.                                                                       |
 | 60  | Conexão Infernal      |  +4   | Um demônio o observa. Pode oferecer poder, mas interfere nas decisões e atrai inimigos.                                                         |
 
-### ⚡ Essas são as regras basicas
+### ⚡ Essas são as regras básicas
 
 A proposta do sistema é que os jogadores e mestres criem juntos novos conteúdos (magias, raças, classes, vantagens e desvantagens), mantendo a base simples e divertida.
