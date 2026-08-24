@@ -237,7 +237,6 @@ A distância de **movimento padrão** em 1 turno é a **Média Distância**.
   Ao acertar, é rolado o dado da **Região de Acerto (RdA)** d6 (valor reflete a parte do corpo atingida).
 
   **RdA (d6):**
-
   - 6: cabeça
   - 5: tronco
   - 4: perna dominante
@@ -811,6 +810,6 @@ Aqui ficam algumas sugestões de raças para um RPG, que servem também como ref
 | 59  | Sem Sorte             |  +3   | Não pode rolar críticos positivos. Crítico é tratado como sucesso normal.                                                                       |
 | 60  | Conexão Infernal      |  +4   | Um demônio o observa. Pode oferecer poder, mas interfere nas decisões e atrai inimigos.                                                         |
 
-### ⚡ Essas são as regras básicas
+### ⚡ Essas são as regras basicas
 
 A proposta do sistema é que os jogadores e mestres criem juntos novos conteúdos (magias, raças, classes, vantagens e desvantagens), mantendo a base simples e divertida.
