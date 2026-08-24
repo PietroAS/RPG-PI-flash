@@ -146,7 +146,7 @@ function atualizarTudo() {
   PARTES.forEach((p) => {
     // VIDA
     const spanPV = document.querySelector(
-      `.status-box.pv[data-id="${p.id}"] span`
+      `.status-box.pv[data-id="${p.id}"] span`,
     );
     const valPV = atualPV(p.id);
     const maxPV = totalPV(p.id);
@@ -167,7 +167,7 @@ function atualizarTudo() {
 
     // ARMADURA
     const spanAR = document.querySelector(
-      `.status-box.ar[data-id="${p.id}"] span`
+      `.status-box.ar[data-id="${p.id}"] span`,
     );
     const valAR = atualAR(p.id);
     const maxAR = totalAR(p.id);
@@ -219,17 +219,19 @@ function atualizarTudo() {
 // ==================================================
 function bindInputs() {
   // Atualiza automaticamente ao alterar inputs
-  document.querySelectorAll('input[type="number"], textarea').forEach((el) => {
-    el.addEventListener("input", () => {
-      if (el.id.startsWith("vidaExtra-"))
-        state.extras.pv[el.id.split("-")[1]] = num(el.value);
-      else if (el.id.startsWith("armExtra-"))
-        state.extras.ar[el.id.split("-")[1]] = num(el.value);
-      else if (el.id === "manaExtra") state.extras.mana = num(el.value);
-      else if (el.id === "paExtra") state.extras.pa = num(el.value);
-      atualizarTudo();
+  document
+    .querySelectorAll('input[type="number"],input[type="text"], textarea')
+    .forEach((el) => {
+      el.addEventListener("input", () => {
+        if (el.id.startsWith("vidaExtra-"))
+          state.extras.pv[el.id.split("-")[1]] = num(el.value);
+        else if (el.id.startsWith("armExtra-"))
+          state.extras.ar[el.id.split("-")[1]] = num(el.value);
+        else if (el.id === "manaExtra") state.extras.mana = num(el.value);
+        else if (el.id === "paExtra") state.extras.pa = num(el.value);
+        atualizarTudo();
+      });
     });
-  });
 
   // Botões + e − da barra fixa
   document.addEventListener("click", (ev) => {
@@ -300,7 +302,7 @@ function bindInputs() {
 // ==================================================
 function coletarFicha() {
   const camposNum = Array.from(
-    document.querySelectorAll('input[type="number"]')
+    document.querySelectorAll('input[type="number"]'),
   ).reduce((acc, el) => {
     acc[el.id] = num(el.value);
     return acc;
@@ -310,7 +312,7 @@ function coletarFicha() {
       acc[el.id] = el.value || "";
       return acc;
     },
-    {}
+    {},
   );
 
   return {
@@ -358,7 +360,7 @@ function aplicarFicha(data) {
     ["nome", "idade", "sexo", "tamanho", "raca", "cor", "nivel"].forEach(
       (id) => {
         if (byId(id)) byId(id).value = data.basicos[id] || "";
-      }
+      },
     );
   }
   Object.entries(data.atributos || {}).forEach(([k, v]) => {
@@ -384,7 +386,7 @@ function aplicarFicha(data) {
   ["habilidades", "defeitos", "magias", "equipamentos", "dinheiro"].forEach(
     (id) => {
       if (byId(id)) byId(id).value = data.textos?.[id] || "";
-    }
+    },
   );
 
   if (typeof data.dark !== "undefined") {
@@ -403,7 +405,7 @@ byId("exportJson").addEventListener("click", () => {
   downloadFile(
     (data.nome || "ficha") + ".json",
     JSON.stringify(data, null, 2),
-    "application/json"
+    "application/json",
   );
 });
 
@@ -422,7 +424,7 @@ byId("exportHtml").addEventListener("click", async () => {
   downloadFile(
     "ficha.html",
     "<!DOCTYPE html>\n" + conteudo.outerHTML,
-    "text/html"
+    "text/html",
   );
 });
 
@@ -449,10 +451,9 @@ const LS_KEY = "rpg_pi_flash_ficha";
 
 function salvarLocal() {
   const payload = {
-    inputs: Array.from(document.querySelectorAll("input[type=number]")).map(
-      (el) => ({ id: el.id, value: el.value })
-    ),
-    textareas: Array.from(document.querySelectorAll("textarea")).map((el) => ({
+    inputs: Array.from(
+      document.querySelectorAll('input[type="number"], input[type="text"]'),
+    ).map((el) => ({
       id: el.id,
       value: el.value,
     })),
