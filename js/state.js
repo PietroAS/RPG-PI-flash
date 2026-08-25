@@ -3,7 +3,7 @@
 // ==================================================
 
 // Define partes do corpo com base e ID
-const PARTES = [
+export const PARTES = [
   { id: 6, nome: "Cabeça", vida: 2, ar: 0 },
   { id: 5, nome: "Tronco", vida: 3, ar: 0 },
   { id: 4, nome: "Perna 1", vida: 2, ar: 0 },
@@ -13,7 +13,7 @@ const PARTES = [
 ];
 
 // Estado da ficha (extras, gasto e dark mode)
-const state = {
+export const state = {
   extras: { pv: {}, ar: {}, mana: 0, pa: 0 },
   gasto: { pv: {}, ar: {}, mana: 0, pa: 0 },
   dark: false,
