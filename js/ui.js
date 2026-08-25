@@ -1,4 +1,25 @@
 // ==================================================
+// 📦 IMPORTAÇÕES
+// ==================================================
+
+import { PARTES, state } from "./state.js";
+
+import {
+  getAtributo,
+  totalPV,
+  totalAR,
+  totalMana,
+  totalPA,
+  atualPV,
+  atualAR,
+  atualMana,
+  atualPA,
+  calcularDados,
+} from "./calculations.js";
+
+import { salvarLocal } from "./storage.js";
+
+// ==================================================
 // 🖥️ ATUALIZAÇÃO DE INTERFACE
 // ==================================================
 export function atualizarTudo() {
@@ -151,6 +172,9 @@ export function bindInputs() {
     document
       .querySelectorAll("input[type=number]")
       .forEach((el) => (el.value = 0));
+    if (byId("nivel")) {
+      byId("nivel").value = 1;
+    }
 
     // Zera todos os textos
     document
