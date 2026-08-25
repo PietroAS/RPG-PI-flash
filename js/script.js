@@ -409,25 +409,6 @@ byId("exportJson").addEventListener("click", () => {
   );
 });
 
-byId("exportHtml").addEventListener("click", async () => {
-  const css = await (await fetch("css/style.css")).text();
-  const js = await (await fetch("js/script.js")).text();
-  const conteudo = document.querySelector("html").cloneNode(true);
-  conteudo.querySelectorAll("link[rel=stylesheet]").forEach((l) => l.remove());
-  conteudo.querySelectorAll("script[src]").forEach((s) => s.remove());
-  const style = document.createElement("style");
-  style.textContent = css;
-  conteudo.querySelector("head").appendChild(style);
-  const script = document.createElement("script");
-  script.textContent = js;
-  conteudo.querySelector("head").appendChild(script);
-  downloadFile(
-    "ficha.html",
-    "<!DOCTYPE html>\n" + conteudo.outerHTML,
-    "text/html",
-  );
-});
-
 byId("exportPdf").addEventListener("click", () => window.print());
 
 // Importação JSON
