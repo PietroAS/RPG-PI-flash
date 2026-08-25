@@ -1,4 +1,35 @@
 // ==================================================
+// 📦 IMPORTAÇÕES
+// ==================================================
+
+import { state } from "./state.js";
+import { getAtributo } from "./calculations.js";
+import { atualizarTudo } from "./ui.js";
+import { num, byId } from "./utils.js";
+
+// ==================================================
+// 🔧 UTILITÁRIOS DE ARQUIVO
+// ==================================================
+
+function downloadFile(name, content, type = "text/plain") {
+  const blob = new Blob([content], { type });
+  const a = document.createElement("a");
+
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+
+  URL.revokeObjectURL(a.href);
+}
+
+function readFile(file, callback) {
+  const reader = new FileReader();
+
+  reader.onload = (e) => callback(e.target.result);
+  reader.readAsText(file);
+}
+
+// ==================================================
 // 💾 EXPORTAR / IMPORTAR FICHA
 // ==================================================
 function coletarFicha() {
@@ -45,6 +76,7 @@ function coletarFicha() {
     },
     extras: JSON.parse(JSON.stringify(state.extras)),
     gasto: JSON.parse(JSON.stringify(state.gasto)),
+    dark: state.dark,
     textos: {
       habilidades: byId("habilidades").value,
       defeitos: byId("defeitos").value,
@@ -101,27 +133,33 @@ function aplicarFicha(data) {
 // ==================================================
 // 🌐 EXPORTAÇÕES
 // ==================================================
-byId("exportJson").addEventListener("click", () => {
-  const data = coletarFicha();
-  downloadFile(
-    (data.nome || "ficha") + ".json",
-    JSON.stringify(data, null, 2),
-    "application/json",
-  );
-});
+export function iniciarArquivos() {
+  byId("exportJson").addEventListener("click", () => {
+    const data = coletarFicha();
 
-byId("exportPdf").addEventListener("click", () => window.print());
-
-// Importação JSON
-byId("importJson").addEventListener("change", (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
-  readFile(file, (text) => {
-    try {
-      aplicarFicha(JSON.parse(text));
-      alert("Ficha importada com sucesso!");
-    } catch {
-      alert("Arquivo inválido ou corrompido.");
-    }
+    downloadFile(
+      (data.basicos.nome || "ficha") + ".json",
+      JSON.stringify(data, null, 2),
+      "application/json",
+    );
   });
-});
+
+  byId("exportPdf").addEventListener("click", () => {
+    window.print();
+  });
+
+  byId("importJson").addEventListener("change", (e) => {
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    readFile(file, (text) => {
+      try {
+        aplicarFicha(JSON.parse(text));
+        alert("Ficha importada com sucesso!");
+      } catch {
+        alert("Arquivo inválido ou corrompido.");
+      }
+    });
+  });
+}
