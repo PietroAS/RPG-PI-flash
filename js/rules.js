@@ -11,6 +11,8 @@ import { byId } from "./utils.js";
 export function iniciarRegras() {
   const barra = document.querySelector(".barra-status");
   const painelRegras = byId("painelRegras");
+  const conteudoRegras = painelRegras?.querySelector(".conteudo-regras");
+  const btnTopo = byId("voltarTopoRegras");
 
   byId("toggleBarra")?.addEventListener("click", () => {
     barra.classList.toggle("colapsada");
@@ -30,6 +32,15 @@ export function iniciarRegras() {
   byId("fecharRegras")?.addEventListener("click", () => {
     painelRegras.classList.remove("aberto");
   });
+
+  if (conteudoRegras && btnTopo) {
+    btnTopo.addEventListener("click", () => {
+      conteudoRegras.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
 }
 
 async function carregarRegras(container) {
