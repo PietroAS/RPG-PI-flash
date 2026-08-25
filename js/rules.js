@@ -2,7 +2,7 @@
 // 📦 IMPORTAÇÕES
 // ==================================================
 
-import { num, byId } from "./utils.js";
+import { byId } from "./utils.js";
 
 // ==================================================
 // 📜 PAINÉIS: BARRA FIXA E REGRAS
