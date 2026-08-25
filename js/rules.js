@@ -53,27 +53,27 @@ async function carregarRegras(container) {
   }
 
   // 1) Tenta baixar das fontes em cascata
-  (async () => {
-    for (const url of REGRAS_URLS) {
-      try {
-        const resp = await fetch(url, { cache: "no-cache" });
-        if (resp.ok) {
-          const md = await resp.text();
-          // Evita re-renderizar idêntico desnecessariamente
-          if (!cached || cached !== md) {
-            renderRegras(md, container);
-            localStorage.setItem(CACHE_KEY, md);
-            container.dataset.loaded = "true";
-          }
-          return; // sucesso, para aqui
+
+  for (const url of REGRAS_URLS) {
+    try {
+      const resp = await fetch(url, { cache: "no-cache" });
+      if (resp.ok) {
+        const md = await resp.text();
+        // Evita re-renderizar idêntico desnecessariamente
+        if (!cached || cached !== md) {
+          renderRegras(md, container);
+          localStorage.setItem(CACHE_KEY, md);
+          container.dataset.loaded = "true";
         }
-      } catch (e) {
-        // tenta próxima URL
+        return; // sucesso, para aqui
       }
+    } catch (e) {
+      // tenta próxima URL
     }
-    // 2) Se chegou aqui, falhou tudo
-    if (!cached) {
-      container.innerHTML = `
+  }
+  // 2) Se chegou aqui, falhou tudo
+  if (!cached) {
+    container.innerHTML = `
         <div style="padding:1rem">
           ❌ Não foi possível carregar as regras agora (limite de requisições).
           <br><br>
@@ -81,8 +81,7 @@ async function carregarRegras(container) {
             Abrir REGRAS.md no GitHub
           </a>
         </div>`;
-    }
-  })();
+  }
 }
 
 function renderRegras(md, container) {
