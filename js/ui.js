@@ -19,6 +19,8 @@ import {
 
 import { salvarLocal } from "./storage.js";
 
+import { num, byId } from "./utils.js";
+
 // ==================================================
 // 🖥️ ATUALIZAÇÃO DE INTERFACE
 // ==================================================

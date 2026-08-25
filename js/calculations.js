@@ -3,17 +3,7 @@
 // ==================================================
 
 import { PARTES, state } from "./state.js";
-
-// ==================================================
-// 🔧 UTILITÁRIOS
-// ==================================================
-
-const num = (v) => {
-  const n = parseFloat(v);
-  return isNaN(n) || n < 0 ? 0 : n;
-};
-
-const byId = (id) => document.getElementById(id);
+import { num, byId } from "./utils.js";
 
 // ==================================================
 // 🧮 CÁLCULOS BASE E TOTAIS
