@@ -14,6 +14,10 @@ export const advantages = [
         contexto: ["medo", "intimidacao"],
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
 
   {
@@ -32,6 +36,10 @@ export const advantages = [
         contexto: ["lembranca", "conhecimento"],
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
 
   {
@@ -50,6 +58,10 @@ export const advantages = [
         condicao: "falha",
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
 
   {
@@ -66,6 +78,10 @@ export const advantages = [
         penalidade: "mao_secundaria",
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
 
   {
@@ -84,6 +100,10 @@ export const advantages = [
         contexto: ["esquiva", "reacao"],
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
   {
     numero: 6,
@@ -101,6 +121,10 @@ export const advantages = [
         contexto: ["convencer", "seduzir"],
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
 
   {
@@ -118,6 +142,10 @@ export const advantages = [
         contexto: ["percepcao_visual", "mira"],
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
 
   {
@@ -135,6 +163,10 @@ export const advantages = [
         contexto: ["percepcao_auditiva", "localizacao_sons"],
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
 
   {
@@ -154,6 +186,10 @@ export const advantages = [
         contexto: ["equilibrio", "superficie_estreita"],
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
 
   {
@@ -172,5 +208,118 @@ export const advantages = [
         contexto: ["medo", "controle_mental", "dor"],
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+  {
+    numero: 11,
+    id: "pele-grossa",
+    nome: "Pele Grossa",
+    custo: 2,
+    categoria: "Combate",
+
+    descricao:
+      "Reduz em 1 ponto todo dano físico recebido. exceto de golpes penetrantes",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "reducao_dano",
+        valor: 1,
+        dano: "fisico",
+        excecao: "golpes_penetrantes",
+      },
+    ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 12,
+    id: "instinto-de-perigo",
+    nome: "Instinto de Perigo",
+    custo: 2,
+    categoria: "Sobrevivência",
+    descricao: "Sempre percebe emboscadas ou armadilhas a tempo de reagir.",
+    parametros: [],
+    efeitos: [
+      {
+        tipo: "percepcao_automatica",
+        contexto: ["emboscada", "armadilha"],
+      },
+    ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 13,
+    id: "rapido-aprendizado",
+    nome: "Rápido Aprendizado",
+    custo: 2,
+    categoria: "Profissão",
+    descricao: "Aprende novas perícias ou magias 50% mais rápido.",
+    parametros: [],
+    efeitos: [
+      {
+        tipo: "multiplicador_aprendizado",
+        valor: 1.5,
+        contexto: ["pericia", "magia"],
+      },
+    ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 14,
+    id: "sangue-frio",
+    nome: "Sangue Frio",
+    custo: 1,
+    categoria: "Sobrevivência",
+    descricao:
+      "Mantém a calma sob pressão. Nunca sofre penalidades por pânico.",
+    parametros: [],
+    efeitos: [
+      {
+        tipo: "ignorar_penalidade",
+        penalidade: "panico",
+      },
+    ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 15,
+    id: "aparencia-agradavel",
+    nome: "Aparência Agradável",
+    custo: 1,
+    categoria: "Social",
+    descricao:
+      "+2 em interações sociais amigáveis. Pode facilitar negociações.",
+    parametros: [],
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        valor: 2,
+        contexto: ["interacao_social_amigavel"],
+      },
+    ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
   },
 ];
