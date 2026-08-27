@@ -598,4 +598,153 @@ export const advantages = [
       maximo: 1,
     },
   },
+  {
+    numero: 26,
+    id: "ligacao-elemental",
+    nome: "Ligação Elemental",
+    custo: 2,
+    categoria: "Magia",
+
+    descricao:
+      "Escolha um elemento (fogo, água, terra ou ar). Recebe +2 em magias desse tipo.",
+
+    parametros: [
+      {
+        id: "elemento",
+        nome: "Elemento",
+        tipo: "selecao",
+        obrigatorio: true,
+        opcoes: ["fogo", "agua", "terra", "ar"],
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        valor: 2,
+        contexto: ["magia_elemental"],
+        alvoParametro: "elemento",
+      },
+    ],
+
+    repeticoes: {
+      permitido: true,
+      maximo: null,
+    },
+  },
+
+  {
+    numero: 27,
+    id: "treinamento-militar",
+    nome: "Treinamento Militar",
+    custo: 2,
+    categoria: "Combate",
+
+    descricao: "+2 em testes de estratégia, armas e disciplina.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        valor: 2,
+        contexto: ["estrategia", "armas", "disciplina"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 28,
+    id: "sorte-em-combate",
+    nome: "Sorte em Combate",
+    custo: 2,
+    categoria: "Combate",
+
+    descricao:
+      "Uma vez por combate, pode ignorar um ataque que teria acertado.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "ignorar_ataque",
+        quantidade: 1,
+        periodo: "combate",
+        condicoes: [
+          {
+            tipo: "ataque_acertaria",
+            valor: true,
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 29,
+    id: "sentido-mistico",
+    nome: "Sentido Místico",
+    custo: 1,
+    categoria: "Sobrevivência",
+
+    descricao: "Percebe presenças mágicas e energias ocultas próximas.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "percepcao_especial",
+        contexto: ["presenca_magica", "energia_oculta"],
+        alcance: "proximo",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 30,
+    id: "espirito-de-equipe",
+    nome: "Espírito de Equipe",
+    custo: 1,
+    categoria: "Social",
+
+    descricao:
+      "Aliados próximos recebem +1 em rolagens quando trabalham junto com você.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "bonus_aliados",
+        valor: 1,
+        contexto: ["trabalho_em_equipe"],
+        alcance: "proximo",
+        condicoes: [
+          {
+            tipo: "cooperacao",
+            valor: true,
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
 ];
