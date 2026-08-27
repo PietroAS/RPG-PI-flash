@@ -80,4 +80,87 @@ export const advantages = [
       },
     ],
   },
+  {
+    id: "voz-encantadora",
+    nome: "Voz Encantadora",
+    custo: 1,
+    categoria: "Social",
+    descricao: "+2 em testes de Carisma para convencer ou seduzir.",
+    parametros: [],
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        atributo: "carisma",
+        valor: 2,
+        contexto: ["convencer", "seduzir"],
+      },
+    ],
+  },
+
+  {
+    id: "visao-aguçada",
+    nome: "Visão Aguçada",
+    custo: 1,
+    categoria: "Sobrevivência",
+    descricao: "+2 em testes de percepção visual e mira.",
+    parametros: [],
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        valor: 2,
+        contexto: ["percepcao_visual", "mira"],
+      },
+    ],
+  },
+
+  {
+    id: "audicao-apurada",
+    nome: "Audição Apurada",
+    custo: 1,
+    categoria: "Sobrevivência",
+    descricao: "+2 em testes de percepção auditiva e localização de sons.",
+    parametros: [],
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        valor: 2,
+        contexto: ["percepcao_auditiva", "localizacao_sons"],
+      },
+    ],
+  },
+
+  {
+    id: "equilibrio-perfeito",
+    nome: "Equilíbrio Perfeito",
+    custo: 1,
+    categoria: "Movimento",
+    descricao:
+      "+2 em testes de Agilidade para manter-se de pé ou se mover em superfícies estreitas.",
+    parametros: [],
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        atributo: "agilidade",
+        valor: 2,
+        contexto: ["equilibrio", "superficie_estreita"],
+      },
+    ],
+  },
+
+  {
+    id: "forca-de-vontade",
+    nome: "Força de Vontade",
+    custo: 2,
+    categoria: "Sobrevivência",
+    descricao:
+      "+2 em testes de resistência mental contra medo, controle ou dor.",
+    parametros: [],
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        valor: 2,
+        contexto: ["medo", "controle_mental", "dor"],
+      },
+    ],
+  },
 ];
