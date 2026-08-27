@@ -752,4 +752,193 @@ export const advantages = [
       maximo: 1,
     },
   },
+
+  //--------------------------------
+  //--------------------------------
+  //VANTAGENS MAIORES
+  //--------------------------------
+  //--------------------------------
+
+  {
+    numero: 31,
+    id: "regeneracao",
+    nome: "Regeneração",
+    custo: 4,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Recupera 1 PV por turno fora de combate, ou 2 PV com descanso. Imune a sangramento.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "recuperacao_pv",
+        valor: 1,
+        periodo: "turno",
+        condicoes: [
+          {
+            tipo: "fora_de_combate",
+            valor: true,
+          },
+        ],
+      },
+      {
+        tipo: "recuperacao_pv",
+        valor: 2,
+        periodo: "turno",
+        condicoes: [
+          {
+            tipo: "descansando",
+            valor: true,
+          },
+        ],
+      },
+      {
+        tipo: "imunidade",
+        alvo: "efeito",
+        contexto: ["sangramento"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 32,
+    id: "mestre-das-armas",
+    nome: "Mestre das Armas",
+    custo: 3,
+    categoria: "Combate",
+
+    descricao:
+      "Escolha uma categoria de armas (leve, média ou pesada). +1 em ataque e dano com ela.",
+
+    parametros: [
+      {
+        id: "categoriaArma",
+        nome: "Categoria de arma",
+        tipo: "selecao",
+        obrigatorio: true,
+        opcoes: ["leve", "media", "pesada"],
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "bonus_ataque",
+        valor: 1,
+        alvoParametro: "categoriaArma",
+      },
+      {
+        tipo: "bonus_dano",
+        valor: 1,
+        alvoParametro: "categoriaArma",
+      },
+    ],
+
+    repeticoes: {
+      permitido: true,
+      maximo: 3,
+    },
+  },
+
+  {
+    numero: 33,
+    id: "instinto-de-combate",
+    nome: "Instinto de Combate",
+    custo: 3,
+    categoria: "Combate",
+
+    descricao:
+      "Sempre age no primeiro turno do combate, independentemente da iniciativa.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "prioridade_iniciativa",
+        prioridade: "primeiro",
+        automatizavel: true,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 34,
+    id: "reflexo-sobrenatural",
+    nome: "Reflexo Sobrenatural",
+    custo: 3,
+    categoria: "Combate",
+
+    descricao: "Pode esquivar de ataques mágicos e físicos mesmo surpreendido.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "permitir_acao",
+        acao: "esquiva",
+        contexto: ["ataque_fisico", "ataque_magico"],
+        condicoes: [
+          {
+            tipo: "surpreendido",
+            valor: true,
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 35,
+    id: "furia-controlada",
+    nome: "Fúria Controlada",
+    custo: 3,
+    categoria: "Combate",
+
+    descricao:
+      "Pode entrar em estado de fúria (Força +2, Defesa -2) por 3 turnos. Uma vez por combate.",
+
+    parametros: [],
+
+    usos: {
+      quantidade: 1,
+      periodo: "combate",
+    },
+
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        atributo: "forca",
+        valor: 2,
+        duracao: 3,
+        unidade: "turno",
+      },
+      {
+        tipo: "modificador_defesa",
+        valor: -2,
+        duracao: 3,
+        unidade: "turno",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
 ];
