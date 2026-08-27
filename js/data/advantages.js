@@ -465,4 +465,137 @@ export const advantages = [
       maximo: 1,
     },
   },
+  {
+    numero: 21,
+    id: "furtivo",
+    nome: "Furtivo",
+    custo: 2,
+    categoria: "Movimento",
+
+    descricao: "+2 em testes de furtividade e camuflagem.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        valor: 2,
+        contexto: ["furtividade", "camuflagem"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 22,
+    id: "perito-em-armas",
+    nome: "Perito em Armas",
+    custo: 2,
+    categoria: "Combate",
+
+    descricao: "Escolha um tipo de arma. Recebe +1 em ataques com ela.",
+
+    parametros: [
+      {
+        id: "tipoArma",
+        nome: "Tipo de arma",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "bonus_ataque",
+        valor: 1,
+        alvoParametro: "tipoArma",
+      },
+    ],
+
+    repeticoes: {
+      permitido: true,
+      maximo: null,
+    },
+  },
+
+  {
+    numero: 23,
+    id: "aura-de-confianca",
+    nome: "Aura de Confiança",
+    custo: 1,
+    categoria: "Social",
+
+    descricao: "Pessoas tendem a acreditar e seguir suas palavras.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "influencia_social",
+        contexto: ["confianca", "lideranca"],
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 24,
+    id: "resistencia-magica",
+    nome: "Resistência Mágica",
+    custo: 2,
+    categoria: "Sobrevivência",
+
+    descricao: "Reduz em 2 o dano mágico recebido.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "reducao_dano",
+        valor: 2,
+        dano: "magico",
+        excecoes: [],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 25,
+    id: "espirito-calmo",
+    nome: "Espírito Calmo",
+    custo: 1,
+    categoria: "Sobrevivência",
+
+    descricao: "Não pode ser afetado por magias de pânico ou confusão.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "imunidade",
+        alvo: "efeito",
+        contexto: ["panico", "confusao"],
+        origem: "magia",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
 ];
