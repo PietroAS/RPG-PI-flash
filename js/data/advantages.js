@@ -55,7 +55,12 @@ export const advantages = [
         tipo: "rerrolagem",
         quantidade: 1,
         periodo: "sessao",
-        condicao: "falha",
+        condicoes: [
+          {
+            tipo: "resultado",
+            valor: "falha",
+          },
+        ],
       },
     ],
     repeticoes: {
@@ -221,7 +226,7 @@ export const advantages = [
     categoria: "Combate",
 
     descricao:
-      "Reduz em 1 ponto todo dano físico recebido. exceto de golpes penetrantes",
+      "Reduz em 1 ponto todo dano físico recebido, exceto de golpes penetrantes.",
 
     parametros: [],
 
@@ -230,9 +235,10 @@ export const advantages = [
         tipo: "reducao_dano",
         valor: 1,
         dano: "fisico",
-        excecao: "golpes_penetrantes",
+        excecoes: ["golpe_penetrante"],
       },
     ],
+
     repeticoes: {
       permitido: false,
       maximo: 1,
@@ -317,6 +323,143 @@ export const advantages = [
         contexto: ["interacao_social_amigavel"],
       },
     ],
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+  {
+    numero: 16,
+    id: "resistencia-fisica",
+    nome: "Resistência Física",
+    custo: 2,
+    categoria: "Sobrevivência",
+
+    descricao: "+2 em testes de resistência a venenos e doenças.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        valor: 2,
+        contexto: ["veneno", "doenca"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 17,
+    id: "mente-analitica",
+    nome: "Mente Analítica",
+    custo: 1,
+    categoria: "Profissão",
+
+    descricao:
+      "+2 em testes de Inteligência para resolver enigmas ou planejar.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "bonus_teste",
+        atributo: "inteligencia",
+        valor: 2,
+        contexto: ["enigma", "planejamento"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 18,
+    id: "inspiracao-natural",
+    nome: "Inspiração Natural",
+    custo: 1,
+    categoria: "Social",
+
+    descricao:
+      "Companheiros próximos recebem +1 em testes sociais quando ele lidera.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "bonus_aliados",
+        valor: 1,
+        contexto: ["teste_social"],
+        condicao: "liderando",
+        alcance: "proximo",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 19,
+    id: "determinado",
+    nome: "Determinado",
+    custo: 2,
+    categoria: "Combate",
+
+    descricao: "Pode continuar lutando com 0 PV por 1 turno antes de cair.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "adiar_incapacitacao",
+        condicoes: [
+          {
+            tipo: "pv_igual",
+            valor: 0,
+          },
+        ],
+        duracao: 1,
+        unidade: "turno",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 20,
+    id: "olhos-noturnos",
+    nome: "Olhos Noturnos",
+    custo: 1,
+    categoria: "Sobrevivência",
+
+    descricao: "Enxerga parcialmente no escuro (até 10 metros).",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "visao_especial",
+        ambiente: "escuro",
+        qualidade: "parcial",
+        alcance: 10,
+        unidade: "metros",
+      },
+    ],
+
     repeticoes: {
       permitido: false,
       maximo: 1,
