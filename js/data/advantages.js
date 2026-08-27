@@ -1,5 +1,6 @@
 export const advantages = [
   {
+    numero: 1,
     id: "corajoso",
     nome: "Corajoso",
     custo: 1,
@@ -16,6 +17,7 @@ export const advantages = [
   },
 
   {
+    numero: 2,
     id: "boa-memoria",
     nome: "Boa Memória",
     custo: 1,
@@ -33,6 +35,7 @@ export const advantages = [
   },
 
   {
+    numero: 3,
     id: "sorte",
     nome: "Sorte",
     custo: 1,
@@ -50,6 +53,7 @@ export const advantages = [
   },
 
   {
+    numero: 4,
     id: "ambidestro",
     nome: "Ambidestro",
     custo: 2,
@@ -65,6 +69,7 @@ export const advantages = [
   },
 
   {
+    numero: 5,
     id: "reflexos-rapidos",
     nome: "Reflexos Rápidos",
     custo: 2,
@@ -81,6 +86,7 @@ export const advantages = [
     ],
   },
   {
+    numero: 6,
     id: "voz-encantadora",
     nome: "Voz Encantadora",
     custo: 1,
@@ -98,6 +104,7 @@ export const advantages = [
   },
 
   {
+    numero: 7,
     id: "visao-aguçada",
     nome: "Visão Aguçada",
     custo: 1,
@@ -114,6 +121,7 @@ export const advantages = [
   },
 
   {
+    numero: 8,
     id: "audicao-apurada",
     nome: "Audição Apurada",
     custo: 1,
@@ -130,6 +138,7 @@ export const advantages = [
   },
 
   {
+    numero: 9,
     id: "equilibrio-perfeito",
     nome: "Equilíbrio Perfeito",
     custo: 1,
@@ -148,6 +157,7 @@ export const advantages = [
   },
 
   {
+    numero: 10,
     id: "forca-de-vontade",
     nome: "Força de Vontade",
     custo: 2,
