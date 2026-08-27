@@ -397,8 +397,13 @@ export const advantages = [
         tipo: "bonus_aliados",
         valor: 1,
         contexto: ["teste_social"],
-        condicao: "liderando",
         alcance: "proximo",
+        condicoes: [
+          {
+            tipo: "liderando",
+            valor: true,
+          },
+        ],
       },
     ],
 
