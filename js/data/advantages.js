@@ -941,4 +941,156 @@ export const advantages = [
       maximo: 1,
     },
   },
+  {
+    numero: 36,
+    id: "aura-curativa",
+    nome: "Aura Curativa",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao: "Cura aliados próximos em 1 PV por turno enquanto concentrado.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "recuperacao_pv_aliados",
+        valor: 1,
+        periodo: "turno",
+        alcance: "proximo",
+        condicoes: [
+          {
+            tipo: "concentrando",
+            valor: true,
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 37,
+    id: "pele-de-aco",
+    nome: "Pele de Aço",
+    custo: 5,
+    categoria: "Combate",
+
+    descricao: "Reduz todo dano recebido em 2 pontos.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "reducao_dano",
+        valor: 2,
+        dano: "todos",
+        excecoes: [],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 38,
+    id: "resistencia-elemental",
+    nome: "Resistência Elemental",
+    custo: 3,
+    categoria: "Sobrevivência",
+
+    descricao: "Escolha um elemento. Recebe metade do dano desse tipo.",
+
+    parametros: [
+      {
+        id: "elemento",
+        nome: "Elemento",
+        tipo: "selecao",
+        obrigatorio: true,
+        opcoes: ["fogo", "agua", "terra", "ar"],
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "multiplicador_dano_recebido",
+        valor: 0.5,
+        alvoParametro: "elemento",
+      },
+    ],
+
+    repeticoes: {
+      permitido: true,
+      maximo: 4,
+    },
+  },
+
+  {
+    numero: 39,
+    id: "sorte-extraordinaria",
+    nome: "Sorte Extraordinária",
+    custo: 3,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Uma vez por sessão, pode transformar uma falha ou falha crítica em sucesso crítico.",
+
+    parametros: [],
+
+    usos: {
+      quantidade: 1,
+      periodo: "sessao",
+    },
+
+    efeitos: [
+      {
+        tipo: "alterar_resultado",
+        resultadoFinal: "sucesso_critico",
+        condicoes: [
+          {
+            tipo: "resultado",
+            valores: ["falha", "falha_critica"],
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 40,
+    id: "espirito-indomavel",
+    nome: "Espírito Indomável",
+    custo: 4,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Não pode ser dominado mentalmente ou possuído. Imune a controle mental.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "imunidade",
+        alvo: "efeito",
+        contexto: ["controle_mental", "possessao"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
 ];
