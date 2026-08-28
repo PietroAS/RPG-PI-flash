@@ -1383,4 +1383,350 @@ export const advantages = [
       maximo: 1,
     },
   },
+  {
+    numero: 51,
+    id: "espirito-protetor",
+    nome: "Espírito Protetor",
+    custo: 3,
+    categoria: "Magia",
+
+    descricao:
+      "Uma entidade invisível o guarda; uma vez por sessão, bloqueia um ataque fatal.",
+
+    parametros: [],
+
+    usos: {
+      quantidade: 1,
+      periodo: "sessao",
+    },
+
+    efeitos: [
+      {
+        tipo: "bloquear_ataque",
+        condicoes: [
+          {
+            tipo: "ataque_fatal",
+            valor: true,
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 52,
+    id: "imunidade-natural",
+    nome: "Imunidade Natural",
+    custo: 3,
+    categoria: "Sobrevivência",
+
+    descricao: "Imune a doenças e venenos naturais.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "imunidade",
+        alvo: "efeito",
+        contexto: ["doenca", "veneno"],
+        origem: "natural",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 53,
+    id: "corpo-etereo",
+    nome: "Corpo Etéreo",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Pode se tornar intangível por 1 turno, evitando qualquer ataque físico. 3 vezes por dia.",
+
+    parametros: [],
+
+    usos: {
+      quantidade: 3,
+      periodo: "dia",
+    },
+
+    efeitos: [
+      {
+        tipo: "intangibilidade",
+        duracao: 1,
+        unidade: "turno",
+        contexto: ["ataque_fisico"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 54,
+    id: "afinidade-elemental-avancada",
+    nome: "Afinidade Elemental Avançada",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Dobra o efeito de magias de seu elemento (ex: fogo causa o dobro de dano).",
+
+    parametros: [
+      {
+        id: "elemento",
+        nome: "Elemento",
+        tipo: "selecao",
+        obrigatorio: true,
+        opcoes: ["fogo", "agua", "terra", "ar"],
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "multiplicador_efeito",
+        valor: 2,
+        contexto: ["magia_elemental"],
+        alvoParametro: "elemento",
+      },
+    ],
+
+    repeticoes: {
+      permitido: true,
+      maximo: 4,
+    },
+  },
+
+  {
+    numero: 55,
+    id: "vontade-dos-deuses",
+    nome: "Vontade dos Deuses",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Uma vez por campanha, pode pedir uma intervenção divina — o Mestre decide o efeito.",
+
+    parametros: [],
+
+    usos: {
+      quantidade: 1,
+      periodo: "campanha",
+    },
+
+    efeitos: [
+      {
+        tipo: "habilidade_especial",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 56,
+    id: "dom-empatico",
+    nome: "Dom Empático",
+    custo: 3,
+    categoria: "Social",
+
+    descricao:
+      "Sente emoções e intenções de pessoas próximas. Recebe +2 em testes sociais relacionados a isso.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "percepcao_especial",
+        contexto: ["emocao", "intencao"],
+        alcance: "proximo",
+      },
+      {
+        tipo: "bonus_teste",
+        valor: 2,
+        contexto: ["interacao_social", "empatia"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 57,
+    id: "regeneracao-de-energia",
+    nome: "Regeneração de Energia",
+    custo: 3,
+    categoria: "Magia",
+
+    descricao: "Recupera +2 de mana a cada turno.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "recuperacao_recurso",
+        recurso: "mana",
+        valor: 2,
+        periodo: "turno",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 58,
+    id: "mestre-das-sombras",
+    nome: "Mestre das Sombras",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Pode fundir-se às sombras por até 3 turnos, ficando invisível em áreas escuras.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "invisibilidade",
+        duracao: 3,
+        unidade: "turno",
+        condicoes: [
+          {
+            tipo: "ambiente",
+            valor: "escuro",
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 59,
+    id: "passo-dimensional",
+    nome: "Passo Dimensional",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Pode se teleportar até 10 metros como ação bônus, uma vez por combate.",
+
+    parametros: [],
+
+    usos: {
+      quantidade: 1,
+      periodo: "combate",
+    },
+
+    efeitos: [
+      {
+        tipo: "teleporte",
+        alcance: 10,
+        unidade: "metros",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 60,
+    id: "olhar-intimidador",
+    nome: "Olhar Intimidador",
+    custo: 3,
+    categoria: "Social",
+
+    descricao:
+      "Na primeira vez que o encararem, inimigos devem testar coragem usando Espírito.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "forcar_teste",
+        atributo: "espirito",
+        contexto: ["coragem"],
+        alvo: "inimigo",
+        condicoes: [
+          {
+            tipo: "primeiro_contato",
+            valor: true,
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 61,
+    id: "voar",
+    nome: "Voar",
+    custo: 3,
+    categoria: "Movimento",
+
+    descricao:
+      "Possui capacidade de voar. Sua movimentação é triplicada enquanto estiver voando.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "movimento_especial",
+        modo: "voo",
+      },
+      {
+        tipo: "multiplicador_movimento",
+        valor: 3,
+        condicoes: [
+          {
+            tipo: "movimento",
+            valor: "voando",
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
 ];
