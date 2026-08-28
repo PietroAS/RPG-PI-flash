@@ -1093,4 +1093,294 @@ export const advantages = [
       maximo: 1,
     },
   },
+  {
+    numero: 41,
+    id: "percepcao-total",
+    nome: "Percepção Total",
+    custo: 3,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Pode perceber presenças invisíveis e ocultas ao redor (curta distância).",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "percepcao_especial",
+        contexto: ["invisivel", "oculto"],
+        alcance: "curta_distancia",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 42,
+    id: "canalizador",
+    nome: "Canalizador",
+    custo: 3,
+    categoria: "Magia",
+
+    descricao: "Reduz o custo de mana/energia de magias em 1 (mínimo 1).",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "reducao_custo",
+        recurso: "mana",
+        contexto: ["magia"],
+        valor: 1,
+        custoMinimo: 1,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 43,
+    id: "magia-rapida",
+    nome: "Magia Rápida",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Pode lançar uma magia simples como ação bônus, além da principal.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "acao_extra",
+        acao: "magia_simples",
+        quantidade: 1,
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 44,
+    id: "defletir",
+    nome: "Defletir",
+    custo: 5,
+    categoria: "Combate",
+
+    descricao:
+      "Pode redirecionar um ataque que receberia para outro alvo, uma vez por turno.",
+
+    parametros: [],
+
+    usos: {
+      quantidade: 1,
+      periodo: "turno",
+    },
+
+    efeitos: [
+      {
+        tipo: "redirecionar_ataque",
+        alvoOriginal: "usuario",
+        novoAlvo: "outro",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 45,
+    id: "arma-viva",
+    nome: "Arma Viva",
+    custo: 3,
+    categoria: "Combate",
+
+    descricao:
+      "Sua arma tem vínculo mágico e nunca pode ser perdida; retorna ao dono em 1 turno.",
+
+    parametros: [
+      {
+        id: "arma",
+        nome: "Arma vinculada",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "vinculo_item",
+        alvoParametro: "arma",
+        retornoAutomatico: true,
+        tempoRetorno: 1,
+        unidade: "turno",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+  {
+    numero: 46,
+    id: "passos-silenciosos",
+    nome: "Passos Silenciosos",
+    custo: 3,
+    categoria: "Movimento",
+
+    descricao:
+      "Move-se sem emitir som algum; quase impossível de detectar por audição.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "movimento_silencioso",
+        deteccao: "audicao",
+        dificuldade: "quase_impossivel",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 47,
+    id: "aura-inspiradora",
+    nome: "Aura Inspiradora",
+    custo: 3,
+    categoria: "Social",
+
+    descricao: "Aliados próximos recebem +2 em testes de ataque e coragem.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "bonus_aliados",
+        valor: 2,
+        contexto: ["ataque", "coragem"],
+        alcance: "proximo",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 48,
+    id: "sangue-ancestral",
+    nome: "Sangue Ancestral",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Possui poder herdado. Escolha um efeito menor mágico permanente, como chamas nas mãos ou voz ecoante.",
+
+    parametros: [
+      {
+        id: "efeitoAncestral",
+        nome: "Efeito ancestral",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "habilidade_especial",
+        alvoParametro: "efeitoAncestral",
+        permanente: true,
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 49,
+    id: "golpe-especial",
+    nome: "Golpe Especial",
+    custo: null,
+    categoria: "Combate",
+
+    descricao:
+      "Conhece um golpe especial. O custo depende dos modificadores escolhidos conforme as regras de Ataques Especiais.",
+
+    parametros: [
+      {
+        id: "golpe",
+        nome: "Golpe especial",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "habilidade_especial",
+        alvoParametro: "golpe",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: true,
+      maximo: null,
+    },
+  },
+
+  {
+    numero: 50,
+    id: "barreira-magica",
+    nome: "Barreira Mágica",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Ganha uma proteção invisível que absorve 5 de dano mágico por combate.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "barreira",
+        dano: "magico",
+        capacidade: 5,
+        renovacao: "combate",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
 ];
