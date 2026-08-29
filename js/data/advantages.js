@@ -50,11 +50,14 @@ export const advantages = [
     categoria: "Sobrevivência",
     descricao: "Uma vez por sessão, pode refazer uma rolagem falha.",
     parametros: [],
+    usos: {
+      quantidade: 1,
+      periodo: "sessao",
+    },
+
     efeitos: [
       {
         tipo: "rerrolagem",
-        quantidade: 1,
-        periodo: "sessao",
         condicoes: [
           {
             tipo: "resultado",
@@ -634,7 +637,7 @@ export const advantages = [
 
     repeticoes: {
       permitido: true,
-      maximo: null,
+      maximo: 4,
     },
   },
 
@@ -675,11 +678,14 @@ export const advantages = [
 
     parametros: [],
 
+    usos: {
+      quantidade: 1,
+      periodo: "combate",
+    },
+
     efeitos: [
       {
         tipo: "ignorar_ataque",
-        quantidade: 1,
-        periodo: "combate",
         condicoes: [
           {
             tipo: "ataque_acertaria",
