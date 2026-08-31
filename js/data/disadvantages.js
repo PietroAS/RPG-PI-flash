@@ -878,4 +878,483 @@ export const disadvantages = [
       maximo: 1,
     },
   },
+  {
+    numero: 26,
+    id: "odiado",
+    nome: "Odiado",
+    custo: 1,
+    categoria: "Social",
+
+    descricao: "Um grupo social ou raça o detesta e pode atacá-lo ou evitá-lo.",
+
+    parametros: [
+      {
+        id: "grupo",
+        nome: "Grupo ou raça",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "hostilidade_social",
+        alvoParametro: "grupo",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: true,
+      maximo: null,
+    },
+  },
+
+  {
+    numero: 27,
+    id: "gasto-excessivo",
+    nome: "Gasto Excessivo",
+    custo: 1,
+    categoria: "Social",
+
+    descricao:
+      "Não consegue guardar dinheiro. Sempre que ganha algo, gasta metade.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "perda_recurso",
+        recurso: "dinheiro",
+        proporcao: 0.5,
+        condicoes: [
+          {
+            tipo: "receber_recurso",
+            recurso: "dinheiro",
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 28,
+    id: "corpo-marcado",
+    nome: "Corpo Marcado",
+    custo: 1,
+    categoria: "Social",
+
+    descricao:
+      "Símbolo, tatuagem ou maldição visível que chama atenção indesejada.",
+
+    parametros: [
+      {
+        id: "marca",
+        nome: "Marca",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "atencao_indesejada",
+        alvoParametro: "marca",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 29,
+    id: "surdo-parcial",
+    nome: "Surdo Parcial",
+    custo: 1,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Penalidade -2 em testes auditivos. Pode falhar em perceber perigo.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "penalidade_teste",
+        valor: -2,
+        contexto: ["percepcao_auditiva"],
+      },
+      {
+        tipo: "dificuldade_percepcao",
+        contexto: ["perigo"],
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 30,
+    id: "toque-amaldicoado",
+    nome: "Toque Amaldiçoado",
+    custo: 2,
+    categoria: "Magia",
+
+    descricao:
+      "O toque do personagem causa pequenos efeitos negativos (murchar plantas, falhar aparelhos, etc.).",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "efeito_negativo_toque",
+        contexto: ["murchar_plantas", "falhar_aparelhos"],
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+  //-------------------------------
+  //Desvantagens Maiores
+  //-------------------------------
+
+  {
+    numero: 31,
+    id: "cego",
+    nome: "Cego",
+    custo: 4,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Não enxerga. Depende totalmente de outros sentidos ou magia para se orientar e agir. Ataques físicos sofrem -5 se não guiados por som ou toque.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "incapacidade_sensorial",
+        sentido: "visao",
+        grau: "total",
+      },
+      {
+        tipo: "penalidade_ataque",
+        valor: -5,
+        contexto: ["ataque_fisico"],
+        condicoes: [
+          {
+            tipo: "sem_orientacao",
+            valores: ["som", "toque"],
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 32,
+    id: "mudo",
+    nome: "Mudo",
+    custo: 3,
+    categoria: "Social",
+
+    descricao:
+      "Incapaz de falar. Não pode usar magias verbais e sofre penalidade -3 em comunicação social.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "incapacidade",
+        contexto: ["fala"],
+      },
+      {
+        tipo: "restricao_magia",
+        requisito: "verbal",
+      },
+      {
+        tipo: "penalidade_teste",
+        valor: -3,
+        contexto: ["comunicacao_social"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 33,
+    id: "paralisia-parcial",
+    nome: "Paralisia Parcial",
+    custo: 4,
+    categoria: "Movimento",
+
+    descricao:
+      "Movimento severamente limitado; deslocamento reduzido pela metade e -2 em Agilidade.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "multiplicador_movimento",
+        valor: 0.5,
+      },
+      {
+        tipo: "penalidade_teste",
+        atributo: "agilidade",
+        valor: -2,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 34,
+    id: "amnesia",
+    nome: "Amnésia",
+    custo: 3,
+    categoria: "Profissão",
+
+    descricao:
+      "Perdeu todas as lembranças. Não sabe de onde veio, e pode esquecer habilidades complexas.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "perda_memoria",
+        grau: "total",
+        automatizavel: false,
+      },
+      {
+        tipo: "risco_esquecer_habilidade",
+        contexto: ["habilidade_complexa"],
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 35,
+    id: "loucura",
+    nome: "Loucura",
+    custo: 4,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Sofre crises mentais esporádicas (alucinações, vozes, delírios). O Mestre decide quando ocorre.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "crise_mental",
+        contexto: ["alucinacoes", "vozes", "delirios"],
+        origemAtivacao: "mestre",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+  {
+    numero: 36,
+    id: "dependente-de-magia",
+    nome: "Dependente de Magia",
+    custo: 3,
+    categoria: "Magia",
+
+    descricao:
+      "Sem magia, o corpo enfraquece. Sofre -2 em todos os testes se ficar mais de um dia sem conjurar.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "penalidade_teste",
+        valor: -2,
+        alvo: "todos",
+        condicoes: [
+          {
+            tipo: "tempo_sem_conjurar",
+            valor: 1,
+            unidade: "dia",
+            comparacao: "maior_que",
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 37,
+    id: "corpo-enfraquecido",
+    nome: "Corpo Enfraquecido",
+    custo: 4,
+    categoria: "Sobrevivência",
+
+    descricao: "Resistência física péssima. Pontos de Vida reduzidos à metade.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "multiplicador_pv",
+        valor: 0.5,
+        alvo: "todas_partes_corpo",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 38,
+    id: "vampirico",
+    nome: "Vampírico",
+    custo: 4,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Precisa consumir sangue para sobreviver. Se não o fizer em 24h, perde 1 PV por hora.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "necessidade_periodica",
+        recurso: "sangue",
+        periodo: 24,
+        unidade: "hora",
+      },
+      {
+        tipo: "perda_pv",
+        valor: 1,
+        periodo: "hora",
+        condicoes: [
+          {
+            tipo: "necessidade_nao_saciada",
+            recurso: "sangue",
+            tempo: 24,
+            unidade: "hora",
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 39,
+    id: "espirito-perturbado",
+    nome: "Espírito Perturbado",
+    custo: 3,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Sofre visões e sussurros espirituais. -2 em concentração e testes mentais prolongados.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "penalidade_teste",
+        valor: -2,
+        contexto: ["concentracao", "teste_mental_prolongado"],
+      },
+      {
+        tipo: "efeito_narrativo",
+        contexto: ["visoes", "sussurros_espirituais"],
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 40,
+    id: "amaldicoado",
+    nome: "Amaldiçoado",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Está sob uma maldição poderosa. O Mestre escolhe um efeito negativo permanente.",
+
+    parametros: [
+      {
+        id: "maldicao",
+        nome: "Efeito da maldição",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "habilidade_especial",
+        alvoParametro: "maldicao",
+        permanente: true,
+        origemAtivacao: "mestre",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
 ];
