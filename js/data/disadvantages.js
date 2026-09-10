@@ -1808,16 +1808,14 @@ export const disadvantages = [
     custo: 3,
     categoria: "Magia",
 
-    descricao:
-      "Parte da alma está selada. Metade do dano mágico recebido é dobrado.",
+    descricao: "Parte da alma está selada. Recebe 50% a mais de dano mágico.",
 
     parametros: [],
 
     efeitos: [
       {
         tipo: "multiplicador_dano_recebido",
-        valor: 2,
-        proporcaoAfetada: 0.5,
+        valor: 1.5,
         dano: "magico",
       },
     ],
