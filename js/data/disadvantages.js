@@ -6,7 +6,8 @@ export const disadvantages = [
     custo: 1,
     categoria: "Sobrevivência",
 
-    descricao: "Recebe -2 em testes contra medo e intimidação.",
+    descricao:
+      "Fica abalado facilmente diante de perigo ou ameaças. Testes de coragem sofrem -2.",
 
     parametros: [],
 
@@ -31,7 +32,8 @@ export const disadvantages = [
     custo: 1,
     categoria: "Social",
 
-    descricao: "Tem dificuldade em resistir a agir antes de pensar.",
+    descricao:
+      "Age antes de pensar. Deve rolar teste de autocontrole para evitar atitudes precipitadas.",
 
     parametros: [],
 
@@ -56,8 +58,7 @@ export const disadvantages = [
     custo: 1,
     categoria: "Sobrevivência",
 
-    descricao:
-      "Recebe -2 em testes de percepção visual e mira a longa distância.",
+    descricao: "Sofre -2 em ataques ou testes à longa distância.",
 
     parametros: [],
 
@@ -88,7 +89,7 @@ export const disadvantages = [
     custo: 1,
     categoria: "Combate",
 
-    descricao: "Recebe -1 em testes relacionados à Força.",
+    descricao: "Recebe -2 em testes relacionados à Força.",
 
     parametros: [],
 
@@ -96,7 +97,7 @@ export const disadvantages = [
       {
         tipo: "penalidade_teste",
         atributo: "forca",
-        valor: -1,
+        valor: -2,
       },
     ],
 
@@ -114,7 +115,7 @@ export const disadvantages = [
     categoria: "Sobrevivência",
 
     descricao:
-      "Possui uma doença crônica que pode causar limitações ou crises conforme definido com o Mestre.",
+      "Sofre -1 em testes físicos prolongados e precisa de tratamento regular ou a penalidade aumenta. (máximo -4)",
 
     parametros: [
       {
@@ -129,7 +130,7 @@ export const disadvantages = [
       {
         tipo: "condicao_persistente",
         alvoParametro: "doenca",
-        automatizavel: false,
+        valor: -1,
       },
     ],
 
@@ -1684,6 +1685,300 @@ export const disadvantages = [
             valor: "estranho",
           },
         ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+  {
+    numero: 51,
+    id: "marca-dos-deuses",
+    nome: "Marca dos Deuses",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Um deus o marcou como traidor. Sofre desvantagens em todos os testes religiosos e mágicos.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "rolagem_com_desvantagem",
+        contexto: ["teste_religioso", "teste_magico"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 52,
+    id: "odiado-universalmente",
+    nome: "Odiado Universalmente",
+    custo: 4,
+    categoria: "Social",
+
+    descricao:
+      "Um evento o tornou odiado por quase todos. Inimigos o reconhecem à distância.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "hostilidade_social",
+        alvo: "quase_todos",
+        automatizavel: false,
+      },
+      {
+        tipo: "reconhecimento_automatico",
+        alvo: "inimigos",
+        alcance: "distancia",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 53,
+    id: "doenca-terminal",
+    nome: "Doença Terminal",
+    custo: 4,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Está morrendo. O Mestre define quanto tempo resta. Sofre -2 em todos os testes físicos.",
+
+    parametros: [
+      {
+        id: "tempoRestante",
+        nome: "Tempo restante",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "penalidade_teste",
+        valor: -2,
+        contexto: ["teste_fisico"],
+      },
+      {
+        tipo: "condicao_persistente",
+        contexto: ["doenca_terminal"],
+        alvoParametro: "tempoRestante",
+        origemAtivacao: "mestre",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 54,
+    id: "espirito-preso",
+    nome: "Espírito Preso",
+    custo: 3,
+    categoria: "Magia",
+
+    descricao:
+      "Parte da alma está selada. Metade do dano mágico recebido é dobrado.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "multiplicador_dano_recebido",
+        valor: 2,
+        proporcaoAfetada: 0.5,
+        dano: "magico",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 55,
+    id: "corpo-de-cristal",
+    nome: "Corpo de Cristal",
+    custo: 4,
+    categoria: "Combate",
+
+    descricao: "Pele translúcida e quebradiça. Recebe +50% de dano físico.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "multiplicador_dano_recebido",
+        valor: 1.5,
+        dano: "fisico",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+  {
+    numero: 56,
+    id: "sombra-viva",
+    nome: "Sombra Viva",
+    custo: 3,
+    categoria: "Magia",
+
+    descricao: "Sua sombra tem vontade própria e às vezes age contra você.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "entidade_autonoma",
+        entidade: "sombra",
+        comportamento: "pode_agir_contra_usuario",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 57,
+    id: "dupla-personalidade",
+    nome: "Dupla Personalidade",
+    custo: 3,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Outra mente habita o corpo. Pode assumir o controle em momentos de estresse.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "perda_controle",
+        origem: "outra_personalidade",
+        condicoes: [
+          {
+            tipo: "estresse",
+            valor: true,
+          },
+        ],
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 58,
+    id: "corrupcao-interna",
+    nome: "Corrupção Interna",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Uma energia maligna cresce dentro de você. O Mestre decide efeitos crescentes e mutações.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "efeito_progressivo",
+        contexto: ["corrupcao", "mutacao"],
+        origemAtivacao: "mestre",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 59,
+    id: "sem-sorte",
+    nome: "Sem Sorte",
+    custo: 3,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Não pode rolar críticos positivos. Crítico é tratado como sucesso normal.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "alterar_resultado",
+        resultadoOriginal: "sucesso_critico",
+        resultadoFinal: "sucesso",
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 60,
+    id: "conexao-infernal",
+    nome: "Conexão Infernal",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Um demônio o observa. Pode oferecer poder, mas interfere nas decisões e atrai inimigos.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "influencia_externa",
+        origem: "demonio",
+        contexto: ["interferir_decisoes"],
+        automatizavel: false,
+      },
+      {
+        tipo: "atracao_entidades",
+        contexto: ["inimigos"],
+        automatizavel: false,
+      },
+      {
+        tipo: "oferta_poder",
+        origem: "demonio",
+        automatizavel: false,
       },
     ],
 
