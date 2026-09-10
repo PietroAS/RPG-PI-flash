@@ -1357,4 +1357,339 @@ export const disadvantages = [
       maximo: 1,
     },
   },
+  {
+    numero: 41,
+    id: "alvo-dos-mortos",
+    nome: "Alvo dos Mortos",
+    custo: 3,
+    categoria: "Magia",
+
+    descricao:
+      "Espíritos e mortos-vivos são atraídos por você. Eles o reconhecem instantaneamente.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "atracao_entidades",
+        contexto: ["espirito", "morto_vivo"],
+        alvo: "usuario",
+        automatizavel: false,
+      },
+      {
+        tipo: "reconhecimento_automatico",
+        contexto: ["espirito", "morto_vivo"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 42,
+    id: "pacto-quebrado",
+    nome: "Pacto Quebrado",
+    custo: 3,
+    categoria: "Magia",
+
+    descricao:
+      "Quebrou um juramento mágico. Sofre azar constante e penalidades em magias de sua antiga escola.",
+
+    parametros: [
+      {
+        id: "escolaMagia",
+        nome: "Antiga escola de magia",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "azar_constante",
+        automatizavel: false,
+      },
+      {
+        tipo: "penalidade_magia",
+        alvoParametro: "escolaMagia",
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 43,
+    id: "sem-emocoes",
+    nome: "Sem Emoções",
+    custo: 3,
+    categoria: "Social",
+
+    descricao: "Não sente empatia. Recebe -4 em testes sociais e de liderança.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "penalidade_teste",
+        valor: -4,
+        contexto: ["teste_social", "lideranca"],
+      },
+      {
+        tipo: "incapacidade_emocional",
+        contexto: ["empatia"],
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 44,
+    id: "aura-sombria",
+    nome: "Aura Sombria",
+    custo: 3,
+    categoria: "Social",
+
+    descricao:
+      "Sua presença causa medo em inocentes. -2 em Carisma e não pode passar despercebido.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "penalidade_teste",
+        atributo: "carisma",
+        valor: -2,
+      },
+      {
+        tipo: "causar_medo",
+        alvo: "inocentes",
+        automatizavel: false,
+      },
+      {
+        tipo: "restricao",
+        contexto: ["passar_despercebido"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 45,
+    id: "vulneravel-a-ferro",
+    nome: "Vulnerável a Ferro",
+    custo: 3,
+    categoria: "Combate",
+
+    descricao: "Armas de ferro ignoram metade de sua defesa.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "ignorar_defesa",
+        proporcao: 0.5,
+        condicoes: [
+          {
+            tipo: "material_arma",
+            valor: "ferro",
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+  {
+    numero: 46,
+    id: "viciado-grave",
+    nome: "Viciado Grave",
+    custo: 4,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Depende de uma substância poderosa/rara. Ficar sem ela causa -4 em todos os testes e dano constante.",
+
+    parametros: [
+      {
+        id: "substancia",
+        nome: "Substância",
+        tipo: "texto",
+        obrigatorio: true,
+      },
+    ],
+
+    efeitos: [
+      {
+        tipo: "penalidade_teste",
+        valor: -4,
+        alvo: "todos",
+        condicoes: [
+          {
+            tipo: "dependencia_nao_saciada",
+            alvoParametro: "substancia",
+          },
+        ],
+      },
+      {
+        tipo: "dano_continuo",
+        condicoes: [
+          {
+            tipo: "dependencia_nao_saciada",
+            alvoParametro: "substancia",
+          },
+        ],
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: true,
+      maximo: null,
+    },
+  },
+
+  {
+    numero: 47,
+    id: "insonia-cronica",
+    nome: "Insônia Crônica",
+    custo: 3,
+    categoria: "Sobrevivência",
+
+    descricao:
+      "Nunca descansa bem. Começa o dia com -2 em todos os testes até realizar descanso mágico.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "penalidade_teste",
+        valor: -2,
+        alvo: "todos",
+        condicoes: [
+          {
+            tipo: "inicio_dia",
+            valor: true,
+          },
+          {
+            tipo: "sem_descanso_magico",
+            valor: true,
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 48,
+    id: "corpo-fragil",
+    nome: "Corpo Frágil",
+    custo: 3,
+    categoria: "Sobrevivência",
+
+    descricao: "Dobra o dano recebido de quedas, venenos e doenças.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "multiplicador_dano_recebido",
+        valor: 2,
+        contexto: ["queda", "veneno", "doenca"],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 49,
+    id: "alma-dividida",
+    nome: "Alma Dividida",
+    custo: 4,
+    categoria: "Magia",
+
+    descricao:
+      "Metade da alma está em outro plano. Pode ser controlado por forças externas em momentos críticos.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "vulnerabilidade_controle",
+        origem: "forcas_externas",
+        condicoes: [
+          {
+            tipo: "momento_critico",
+            valor: true,
+          },
+        ],
+        automatizavel: false,
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
+
+  {
+    numero: 50,
+    id: "rosto-desfigurado",
+    nome: "Rosto Desfigurado",
+    custo: 3,
+    categoria: "Social",
+
+    descricao:
+      "Aparência terrível. Sofre -4 em interações sociais com estranhos.",
+
+    parametros: [],
+
+    efeitos: [
+      {
+        tipo: "penalidade_teste",
+        valor: -4,
+        contexto: ["interacao_social"],
+        condicoes: [
+          {
+            tipo: "alvo",
+            valor: "estranho",
+          },
+        ],
+      },
+    ],
+
+    repeticoes: {
+      permitido: false,
+      maximo: 1,
+    },
+  },
 ];
