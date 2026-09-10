@@ -128,9 +128,21 @@ export const disadvantages = [
 
     efeitos: [
       {
+        tipo: "penalidade_teste",
+        valor: -1,
+        contexto: ["teste_fisico_prolongado"],
+        progressao: {
+          condicao: "tratamento_nao_realizado",
+          incremento: -1,
+          limite: -4,
+          criterio: "mestre",
+        },
+      },
+      {
         tipo: "condicao_persistente",
         alvoParametro: "doenca",
-        valor: -1,
+        exigeTratamento: true,
+        automatizavel: false,
       },
     ],
 
