@@ -315,11 +315,7 @@ export const disadvantages = [
         tipo: "penalidade_teste",
         atributo: "destreza",
         valor: -2,
-      },
-      {
-        tipo: "dificuldade_manuseio",
-        contexto: ["arma", "objeto_fragil"],
-        automatizavel: false,
+        contexto: ["manuseio_arma", "objeto_fragil"],
       },
     ],
 
@@ -419,7 +415,7 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "influencia_social",
+        tipo: "efeito_narrativo",
         contexto: ["desconfianca", "evitar_personagem"],
         automatizavel: false,
       },
