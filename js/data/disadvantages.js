@@ -463,7 +463,7 @@ export const disadvantages = [
 
         afetados: ["destreza"],
 
-        contexto: ["manuzear_objetos"],
+        contexto: ["manusear_objetos"],
 
         condicoes: [],
 
@@ -849,15 +849,26 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -1,
-        alvo: "todos",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 1,
+        },
+
+        afetados: ["testes"],
+
+        contexto: ["todos_testes"],
+
         condicoes: [
           {
-            tipo: "dependencia_nao_saciada",
+            condicao: "dependencia_nao_saciada",
             alvoParametro: "dependencia",
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
@@ -881,15 +892,26 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -1,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 1,
+        },
+
+        afetados: ["testes_fisicos"],
+
         contexto: ["teste_fisico"],
+
         condicoes: [
           {
-            tipo: "clima",
+            condicao: "clima",
             valores: ["frio", "umido"],
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
@@ -913,14 +935,22 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "forcar_teste",
-        contexto: ["autocontrole"],
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["autocontrole"],
+
+        contexto: ["teste_autocontrole"],
+
         condicoes: [
           {
-            tipo: "estado",
+            condicao: "estado",
             valores: ["ridicularizado", "sujo"],
           },
         ],
+
         automatizavel: false,
       },
     ],
@@ -945,9 +975,25 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
-        contexto: ["engano", "manipulacao", "percepcao_mentiras"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["engano", "manipulacao", "percepcao_mentiras"],
+
+        contexto: [
+          "teste_engano",
+          "teste_manipulacao",
+          "teste_percepcao_mentiras",
+        ],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -971,14 +1017,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "forcar_teste",
-        contexto: ["autocontrole"],
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["autocontrole"],
+
+        contexto: ["teste_autocontrole"],
+
         condicoes: [
           {
-            tipo: "ver_sangue",
-            valor: true,
+            condicao: "ver_sangue",
           },
         ],
+
         automatizavel: false,
       },
     ],
@@ -1009,8 +1062,17 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "hostilidade_social",
-        alvoParametro: "grupo",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
@@ -1035,15 +1097,25 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "perda_recurso",
-        recurso: "dinheiro",
-        proporcao: 0.5,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "*",
+          quantidade: 0.5,
+        },
+
+        afetados: ["dinheiro_recebido"],
+
+        contexto: ["recurso_recebido"],
+
         condicoes: [
           {
-            tipo: "receber_recurso",
-            recurso: "dinheiro",
+            condicao: "receber_dinheiro",
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
@@ -1074,8 +1146,17 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "atencao_indesejada",
-        alvoParametro: "marca",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
@@ -1100,14 +1181,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
-        contexto: ["percepcao_auditiva"],
-      },
-      {
-        tipo: "dificuldade_percepcao",
-        contexto: ["perigo"],
-        automatizavel: false,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["percepcao_auditiva"],
+
+        contexto: ["teste_auditivo"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -1131,8 +1219,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "efeito_negativo_toque",
-        contexto: ["murchar_plantas", "falhar_aparelhos"],
+        tipo: "Especial",
+        alvo: "Qualquer",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [
+          {
+            condicao: "contato_fisico",
+          },
+        ],
+
         automatizavel: false,
       },
     ],
