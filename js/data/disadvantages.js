@@ -13,9 +13,25 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
-        contexto: ["medo", "intimidacao"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["coragem"],
+
+        contexto: ["teste_coragem"],
+
+        condicoes: [
+          {
+            condicao: "perigo_ou_ameaca",
+          },
+        ],
+
+        automatizavel: true,
       },
     ],
 
@@ -39,8 +55,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "comportamento_compulsivo",
-        contexto: ["agir_sem_pensar"],
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["autocontrole"],
+
+        contexto: [],
+
+        condicoes: [
+          {
+            condicao: "atitude_precipitada",
+          },
+        ],
+
         automatizavel: false,
       },
     ],
@@ -64,15 +93,26 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
-        contexto: ["percepcao_visual", "mira"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["ataques", "testes"],
+
+        contexto: ["longa_distancia"],
+
         condicoes: [
           {
-            tipo: "distancia",
+            condicao: "distancia",
             valor: "longa",
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
@@ -95,9 +135,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        atributo: "forca",
-        valor: -2,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["forca"],
+
+        contexto: ["teste_forca"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -128,20 +180,28 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -1,
-        contexto: ["teste_fisico_prolongado"],
-        progressao: {
-          condicao: "tratamento_nao_realizado",
-          incremento: -1,
-          limite: -4,
-          criterio: "mestre",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 1,
         },
-      },
-      {
-        tipo: "condicao_persistente",
-        alvoParametro: "doenca",
-        exigeTratamento: true,
+
+        afetados: ["testes_fisicos"],
+
+        contexto: ["teste_fisico_prolongado"],
+
+        condicoes: [
+          {
+            condicao: "tratamento_nao_realizado",
+            efeito: "aumentar_penalidade",
+            incremento: 1,
+            limite: 4,
+            criterio: "mestre",
+          },
+        ],
+
         automatizavel: false,
       },
     ],
@@ -164,10 +224,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        atributo: "carisma",
-        valor: -2,
-        contexto: ["confianca", "teste_social"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["carisma"],
+
+        contexto: ["teste_social_confianca"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -190,8 +261,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "reducao_categoria_movimento",
-        valor: 1,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 1,
+        },
+
+        afetados: ["movimento"],
+
+        contexto: ["categoria_movimento"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -214,13 +298,39 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
-        contexto: ["cooperacao"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["cooperacao"],
+
+        contexto: ["teste_cooperacao"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "comportamento_compulsivo",
-        contexto: ["recusar_ajuda"],
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [
+          {
+            condicao: "receber_ajuda",
+          },
+        ],
+
         automatizavel: false,
       },
     ],
@@ -244,13 +354,35 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "aumento_dano_recebido",
-        valor: 1,
-        dano: "magico",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "+",
+          quantidade: 1,
+        },
+
+        afetados: ["dano_recebido"],
+
+        contexto: ["dano_magico"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "vulnerabilidade_efeito",
-        origem: "magia",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["efeitos_magicos"],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
@@ -282,14 +414,23 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "condicao",
-        condicao: "panico",
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["panico"],
+
+        contexto: [],
+
         condicoes: [
           {
-            tipo: "exposto_fobia",
+            condicao: "exposto_fobia",
             alvoParametro: "fobia",
           },
         ],
+
+        automatizavel: false,
       },
     ],
 
