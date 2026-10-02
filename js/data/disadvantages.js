@@ -453,10 +453,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        atributo: "destreza",
-        valor: -2,
-        contexto: ["manuseio_arma", "objeto_fragil"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["destreza"],
+
+        contexto: ["manuzear_objetos"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -480,8 +491,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "comportamento_compulsivo",
-        contexto: ["investigar_misterio"],
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [
+          {
+            condicao: "misterio_ou_situacao_desconhecida",
+          },
+        ],
+
         automatizavel: false,
       },
     ],
@@ -506,9 +530,25 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
-        contexto: ["interacao_social_amigavel"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["interacao_social"],
+
+        contexto: ["teste_social"],
+
+        condicoes: [
+          {
+            condicao: "interacao_amistosa",
+          },
+        ],
+
+        automatizavel: true,
       },
     ],
 
@@ -531,9 +571,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        atributo: "percepcao",
-        valor: -2,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["percepcao"],
+
+        contexto: ["teste_percepcao"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -556,8 +608,17 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "efeito_narrativo",
-        contexto: ["desconfianca", "evitar_personagem"],
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
@@ -581,15 +642,26 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        atributo: "carisma",
-        valor: -2,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["carisma"],
+
+        contexto: ["teste_carisma"],
+
         condicoes: [
           {
-            tipo: "alvo",
+            condicao: "alvo",
             valor: "npc_sensivel",
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
@@ -612,9 +684,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "modificador_pv",
-        valor: -1,
-        alvo: "todas_partes_corpo",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 1,
+        },
+
+        afetados: ["pv_partes_corpo"],
+
+        contexto: [],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -643,9 +727,22 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "alterar_resultado",
-        resultadoFinal: "falha_critica",
-        origemAtivacao: "mestre",
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["resultado_rolagem"],
+
+        contexto: ["falha_critica"],
+
+        condicoes: [
+          {
+            condicao: "ativacao_mestre",
+          },
+        ],
+
+        automatizavel: false,
       },
     ],
 
@@ -674,9 +771,18 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "rolagem_com_desvantagem",
-        quantidadeRolagens: 2,
-        criterio: "pior_resultado",
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["rolagem"],
+
+        contexto: ["pior_resultado"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -699,14 +805,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        atributo: "inteligencia",
-        valor: -2,
-      },
-      {
-        tipo: "penalidade_teste",
-        valor: -2,
-        contexto: ["memorizacao"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["inteligencia", "memorizacao"],
+
+        contexto: ["teste_inteligencia", "teste_memorizacao"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
