@@ -2220,8 +2220,18 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "rolagem_com_desvantagem",
-        contexto: ["teste_religioso", "teste_magico"],
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["testes_religiosos", "testes_magicos"],
+
+        contexto: ["rolagem_com_desvantagem"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -2245,14 +2255,18 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "hostilidade_social",
-        alvo: "quase_todos",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
-      },
-      {
-        tipo: "reconhecimento_automatico",
-        alvo: "inimigos",
-        alcance: "distancia",
       },
     ],
 
@@ -2283,15 +2297,39 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["testes_fisicos"],
+
         contexto: ["teste_fisico"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "condicao_persistente",
-        contexto: ["doenca_terminal"],
-        alvoParametro: "tempoRestante",
-        origemAtivacao: "mestre",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [
+          {
+            condicao: "tempo_restante_definido_mestre",
+          },
+        ],
+
         automatizavel: false,
       },
     ],
@@ -2315,9 +2353,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "multiplicador_dano_recebido",
-        valor: 1.5,
-        dano: "magico",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "*",
+          quantidade: 1.5,
+        },
+
+        afetados: ["dano_recebido"],
+
+        contexto: ["dano_magico"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -2340,9 +2390,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "multiplicador_dano_recebido",
-        valor: 1.5,
-        dano: "fisico",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "*",
+          quantidade: 1.5,
+        },
+
+        afetados: ["dano_recebido"],
+
+        contexto: ["dano_fisico"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -2364,9 +2426,17 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "entidade_autonoma",
-        entidade: "sombra",
-        comportamento: "pode_agir_contra_usuario",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
@@ -2391,14 +2461,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "perda_controle",
-        origem: "outra_personalidade",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["controle_personagem"],
+
+        contexto: [],
+
         condicoes: [
           {
-            tipo: "estresse",
-            valor: true,
+            condicao: "estresse",
           },
         ],
+
         automatizavel: false,
       },
     ],
@@ -2423,9 +2500,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "efeito_progressivo",
-        contexto: ["corrupcao", "mutacao"],
-        origemAtivacao: "mestre",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [
+          {
+            condicao: "ativacao_mestre",
+          },
+        ],
+
         automatizavel: false,
       },
     ],
@@ -2450,9 +2539,18 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "alterar_resultado",
-        resultadoOriginal: "sucesso_critico",
-        resultadoFinal: "sucesso",
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["resultado_rolagem"],
+
+        contexto: ["sucesso_critico_para_sucesso"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -2476,19 +2574,17 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "influencia_externa",
-        origem: "demonio",
-        contexto: ["interferir_decisoes"],
-        automatizavel: false,
-      },
-      {
-        tipo: "atracao_entidades",
-        contexto: ["inimigos"],
-        automatizavel: false,
-      },
-      {
-        tipo: "oferta_poder",
-        origem: "demonio",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
