@@ -1261,20 +1261,41 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "incapacidade_sensorial",
-        sentido: "visao",
-        grau: "total",
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["visao"],
+
+        contexto: [],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "penalidade_ataque",
-        valor: -5,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 5,
+        },
+
+        afetados: ["ataques_fisicos"],
+
         contexto: ["ataque_fisico"],
+
         condicoes: [
           {
-            tipo: "sem_orientacao",
+            condicao: "sem_orientacao",
             valores: ["som", "toque"],
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
@@ -1298,17 +1319,51 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "incapacidade",
-        contexto: ["fala"],
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["fala"],
+
+        contexto: [],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "restricao_magia",
-        requisito: "verbal",
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["magias_verbais"],
+
+        contexto: [],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "penalidade_teste",
-        valor: -3,
-        contexto: ["comunicacao_social"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 3,
+        },
+
+        afetados: ["comunicacao_social"],
+
+        contexto: ["teste_comunicacao_social"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -1332,13 +1387,39 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "multiplicador_movimento",
-        valor: 0.5,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "*",
+          quantidade: 0.5,
+        },
+
+        afetados: ["movimento"],
+
+        contexto: ["deslocamento"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "penalidade_teste",
-        atributo: "agilidade",
-        valor: -2,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["agilidade"],
+
+        contexto: ["teste_agilidade"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -1362,13 +1443,17 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "perda_memoria",
-        grau: "total",
-        automatizavel: false,
-      },
-      {
-        tipo: "risco_esquecer_habilidade",
-        contexto: ["habilidade_complexa"],
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["memoria"],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
@@ -1393,9 +1478,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "crise_mental",
-        contexto: ["alucinacoes", "vozes", "delirios"],
-        origemAtivacao: "mestre",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [
+          {
+            condicao: "ativacao_mestre",
+          },
+        ],
+
         automatizavel: false,
       },
     ],
@@ -1419,17 +1516,28 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
-        alvo: "todos",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["testes"],
+
+        contexto: ["todos_testes"],
+
         condicoes: [
           {
-            tipo: "tempo_sem_conjurar",
+            condicao: "tempo_sem_conjurar",
             valor: 1,
             unidade: "dia",
             comparacao: "maior_que",
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
@@ -1452,9 +1560,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "multiplicador_pv",
-        valor: 0.5,
-        alvo: "todas_partes_corpo",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "*",
+          quantidade: 0.5,
+        },
+
+        afetados: ["pv_partes_corpo"],
+
+        contexto: [],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -1478,23 +1598,48 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "necessidade_periodica",
-        recurso: "sangue",
-        periodo: 24,
-        unidade: "hora",
-      },
-      {
-        tipo: "perda_pv",
-        valor: 1,
-        periodo: "hora",
+        tipo: "Especial",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["necessidade_sangue"],
+
+        contexto: [],
+
         condicoes: [
           {
-            tipo: "necessidade_nao_saciada",
-            recurso: "sangue",
-            tempo: 24,
+            condicao: "periodo_sem_consumir_sangue",
+            valor: 24,
             unidade: "hora",
           },
         ],
+
+        automatizavel: true,
+      },
+
+      {
+        tipo: "Dano",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 1,
+        },
+
+        afetados: ["pv"],
+
+        contexto: ["por_hora"],
+
+        condicoes: [
+          {
+            condicao: "necessidade_sangue_nao_saciada",
+            valor: 24,
+            unidade: "hora",
+          },
+        ],
+
+        automatizavel: true,
       },
     ],
 
@@ -1518,17 +1663,38 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
-        contexto: ["concentracao", "teste_mental_prolongado"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["concentracao", "testes_mentais"],
+
+        contexto: ["teste_concentracao", "teste_mental_prolongado"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "efeito_narrativo",
-        contexto: ["visoes", "sussurros_espirituais"],
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
-
     repeticoes: {
       permitido: false,
       maximo: 1,
@@ -1556,10 +1722,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "habilidade_especial",
-        alvoParametro: "maldicao",
-        permanente: true,
-        origemAtivacao: "mestre",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [
+          {
+            condicao: "permanente",
+          },
+        ],
+
         automatizavel: false,
       },
     ],
