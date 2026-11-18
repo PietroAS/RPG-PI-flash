@@ -1760,14 +1760,18 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "atracao_entidades",
-        contexto: ["espirito", "morto_vivo"],
-        alvo: "usuario",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
-      },
-      {
-        tipo: "reconhecimento_automatico",
-        contexto: ["espirito", "morto_vivo"],
       },
     ],
 
@@ -1798,12 +1802,17 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "azar_constante",
-        automatizavel: false,
-      },
-      {
-        tipo: "penalidade_magia",
-        alvoParametro: "escolaMagia",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["magias"],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
@@ -1827,13 +1836,35 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -4,
-        contexto: ["teste_social", "lideranca"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 4,
+        },
+
+        afetados: ["testes_sociais", "lideranca"],
+
+        contexto: ["teste_social", "teste_lideranca"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "incapacidade_emocional",
-        contexto: ["empatia"],
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["empatia"],
+
+        contexto: [],
+
+        condicoes: [],
+
         automatizavel: false,
       },
     ],
@@ -1858,18 +1889,40 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        atributo: "carisma",
-        valor: -2,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["carisma"],
+
+        contexto: ["teste_carisma"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "causar_medo",
-        alvo: "inocentes",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: [],
+
+        contexto: [],
+
+        condicoes: [
+          {
+            condicao: "presenca_percebida",
+          },
+        ],
+
         automatizavel: false,
-      },
-      {
-        tipo: "restricao",
-        contexto: ["passar_despercebido"],
       },
     ],
 
@@ -1892,14 +1945,26 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "ignorar_defesa",
-        proporcao: 0.5,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "*",
+          quantidade: 0.5,
+        },
+
+        afetados: ["defesa"],
+
+        contexto: ["defesa_contra_arma"],
+
         condicoes: [
           {
-            tipo: "material_arma",
+            condicao: "material_arma",
             valor: "ferro",
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
@@ -1929,24 +1994,45 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -4,
-        alvo: "todos",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 4,
+        },
+
+        afetados: ["testes"],
+
+        contexto: ["todos_testes"],
+
         condicoes: [
           {
-            tipo: "dependencia_nao_saciada",
+            condicao: "dependencia_nao_saciada",
             alvoParametro: "substancia",
           },
         ],
+
+        automatizavel: true,
       },
+
       {
-        tipo: "dano_continuo",
+        tipo: "Dano",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["pv"],
+
+        contexto: [],
+
         condicoes: [
           {
-            tipo: "dependencia_nao_saciada",
+            condicao: "dependencia_nao_saciada",
             alvoParametro: "substancia",
           },
         ],
+
         automatizavel: false,
       },
     ],
@@ -1971,19 +2057,28 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -2,
-        alvo: "todos",
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 2,
+        },
+
+        afetados: ["testes"],
+
+        contexto: ["todos_testes"],
+
         condicoes: [
           {
-            tipo: "inicio_dia",
-            valor: true,
+            condicao: "inicio_dia",
           },
           {
-            tipo: "sem_descanso_magico",
-            valor: true,
+            condicao: "sem_descanso_magico",
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
@@ -2006,9 +2101,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "multiplicador_dano_recebido",
-        valor: 2,
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "*",
+          quantidade: 2,
+        },
+
+        afetados: ["dano_recebido"],
+
         contexto: ["queda", "veneno", "doenca"],
+
+        condicoes: [],
+
+        automatizavel: true,
       },
     ],
 
@@ -2032,14 +2139,21 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "vulnerabilidade_controle",
-        origem: "forcas_externas",
+        tipo: "Narrativo",
+        alvo: "Self",
+
+        valor: null,
+
+        afetados: ["controle_personagem"],
+
+        contexto: [],
+
         condicoes: [
           {
-            tipo: "momento_critico",
-            valor: true,
+            condicao: "momento_critico",
           },
         ],
+
         automatizavel: false,
       },
     ],
@@ -2064,15 +2178,26 @@ export const disadvantages = [
 
     efeitos: [
       {
-        tipo: "penalidade_teste",
-        valor: -4,
-        contexto: ["interacao_social"],
+        tipo: "Debuff",
+        alvo: "Self",
+
+        valor: {
+          operador: "-",
+          quantidade: 4,
+        },
+
+        afetados: ["interacao_social"],
+
+        contexto: ["teste_social"],
+
         condicoes: [
           {
-            tipo: "alvo",
+            condicao: "alvo",
             valor: "estranho",
           },
         ],
+
+        automatizavel: true,
       },
     ],
 
